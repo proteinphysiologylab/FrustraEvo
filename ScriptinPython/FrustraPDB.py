@@ -80,7 +80,7 @@ os.system(delete)
 hmmbuild = "hmmbuild --amino "+sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/familias.hmm"+" "+sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/AlignClean.fasta"
 
 os.system(hmmbuild)
-hmmsearch = "hmmsearch --domtblout "+sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/salida"+" "+sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/familias.hmm "+sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/AlignClean.fasta"
+hmmsearch = "hmmsearch --domtblout "+sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/salida"+" "+sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/familias.hmm "+sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/AlignSearch.fasta"
 os.system(hmmsearch)
 
 hmmsal = open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/salida",'r')
