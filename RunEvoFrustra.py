@@ -116,15 +116,13 @@ os.system(equivalences)
 
 fastam='python '+jobsDir+'/ScriptinPython/FastaMod.py '+jobsDir+' '+jobID
 os.system(fastam)
-cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/long.txt '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences/long.txt'
-os.system(cp)
-cd='cd '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences cat *SalidaSRes* > AllSalidaSResB.txt'
+cd='cd '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences;cat *SalidaSRes* > AllSalidaSResB.txt'
 os.system(cd)
 logoc='python '+jobsDir+'/ScriptinPython/LogoCheck.py '+jobsDir+' '+jobID
 os.system(logoc)
-logo = 'cd '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences Rscript Logo.R'
+logo = 'cd '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences;Rscript Logo.R'
 os.system(logo)
-gene = 'cd '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences Rscript Generator.R'
+gene = 'cd '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences;Rscript Generator.R'
 os.system(gene)
 #system("cd $jobsDir/OutPutFiles$jobID/Equivalences Rscript SeqLogo.R")
 
@@ -136,20 +134,20 @@ os.system(cp)
 
 cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/SalidaAlign.fasta '+jobsDir+'/OutPut'+jobID+'/SalidaAlign.fasta'
 os.system(cp)
-cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/SinPDB.txt '+jobsDir+'/OutPut'+jobID+'/SinPDB.fasta'
+cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/EvoFrustra-log.txt '+jobsDir+'/OutPut'+jobID+'/EvoFrustra-log.fasta'
 os.system(cp)
 cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/ListaPDBC.txt '+jobsDir+'/OutPut'+jobID+'/ListaPDB.txt'
 os.system(cp)
-cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/CharactPosDataN '+jobsDir+'/OutPut'+jobID+'/IC'
+cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences/CharactPosDataN '+jobsDir+'/OutPut'+jobID+'/IC'
 os.system(cp)
-cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/IC.csv '+jobsDir+'/OutPut'+jobID+'/IC.csv'
+cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences/IC.csv '+jobsDir+'/OutPut'+jobID+'/IC.csv'
 os.system(cp)
 cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/familias.hmm '+jobsDir+'/OutPut'+jobID+'/familias.hmm'
 os.system(cp)
 #cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/seqlogo.png '+jobsDir+'/OutPut'+jobID+'/seqlogo.png
 #os.system(cp)
 
-tar='cd '+jobsDir+' tar -zcvf OutPut'+jobID+'.tar.gz OutPut'+jobID
+tar='cd '+jobsDir+';tar -zcvf OutPut'+jobID+'.tar.gz OutPut'+jobID
 os.system(tar)
 
 #sleep(60)
