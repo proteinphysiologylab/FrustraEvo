@@ -50,7 +50,6 @@ for alin in align.readlines():
 				if spbusca[0] == 'REMARK' and spbusca[1]=='465' and spbusca[7] == ch:
 					chain.append(ch)
 					posi=busca[21]+busca[22]+busca[23]+busca[24]+busca[25]
-					print(posi.lstrip())
 					com.append(posi.lstrip())
 					iden.append(hash[spbusca[6]])
 					count=count+1
