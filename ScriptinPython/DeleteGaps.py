@@ -14,7 +14,7 @@ for seq_record in SeqIO.parse(pathAlign, "fasta"):
 i=0
 j=0
 porc=c*0.6 
-cgaps=0;
+cgaps=0
 tam=len(vector[0])
 aux=""
 vectorgaps = list()
@@ -23,6 +23,7 @@ while i<tam:
 	cgaps=0
 	while(j<c):
 		aux=vector[j]
+		print (i)
 		if aux[i] == "-":
 			cgaps = cgaps + 1
 		j = j + 1 

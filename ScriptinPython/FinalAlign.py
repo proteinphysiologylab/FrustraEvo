@@ -95,6 +95,7 @@ sres.close()
 
 
 longalign=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Equivalences/long.txt",'w')
+print(str(longline))
 longalign.write(str(longline))
 longalign.close()
 

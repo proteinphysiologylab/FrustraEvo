@@ -19,9 +19,9 @@ while True:
 		line=linea[1:]
 		spline=line.split("_")
 		if spline[1] == "":
-			frustra=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Frustration/"+spline[0]+".pdb.done/FrustrationData/"+spline[0]+".pdb_singleresidue")
+			frustra=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Frustration/"+spline[0]+".pdb.done/FrustrationData/"+spline[0]+".pdb_msingleresidue")
 		else:
-			frustra=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Frustration/"+spline[0]+"_"+spline[1]+".pdb.done/FrustrationData/"+spline[0]+".pdb_singleresidue")
+			frustra=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Frustration/"+spline[0]+"_"+spline[1]+".pdb.done/FrustrationData/"+spline[0]+"_"+spline[1]+".pdb_msingleresidue")
 		for fline in frustra.readlines():
 			c=c+1
 			spfrus= fline.split(" ")

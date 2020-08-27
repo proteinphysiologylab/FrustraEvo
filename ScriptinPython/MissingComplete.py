@@ -49,7 +49,9 @@ for alin in align.readlines():
 			if len(spline) >= 2:
 				if spbusca[0] == 'REMARK' and spbusca[1]=='465' and spbusca[7] == ch:
 					chain.append(ch)
-					com.append(spbusca[10])
+					posi=busca[21]+busca[22]+busca[23]+busca[24]+busca[25]
+					print(posi.lstrip())
+					com.append(posi.lstrip())
 					iden.append(hash[spbusca[6]])
 					count=count+1
 			else:
@@ -75,6 +77,8 @@ for alin in align.readlines():
 					sressal.write(Sres)
 				else:
 					if spl[0] > com[cnt]:
+						if com[cnt] == 0:
+							print(pdbch+' '+com[cnt])
 						while (int(spl[0]) - 1 >= int(com[cnt]) and count>cnt2):
 							sressal.write(com[cnt]+' '+chain[cnt]+' 0.000 '+iden[cnt]+' Missing Residue\n')
 							cnt=cnt+1
