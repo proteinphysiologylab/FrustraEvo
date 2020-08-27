@@ -56,22 +56,16 @@ alin = open(jobsDir+'/OutPutFiles'+jobID+'/Alignment.fasta','w') # Alignment wit
 co=0
 
 for linef in sfasta.readlines():
-	linef=linef[:-1]
-	c+=1
 	if linef[0] == '>':
-		if c!=1:
-			salidafasta.write('\n')
-			alin.write('\n')
 		alin.write('>Seq'+str(c)+'\n')
 	else:
 		co=0
 		lon=len(linef)
 		while co < lon:
-			if linef[co] == '-':
-				alin.write(linef[co])
-			else:
-				alin.write(linef[co])
+			if linef[co] != '-':
 				salidafasta.write(linef[co])
+			alin.write(linef[co])
+				
 			co+=1
 salidafasta.close()
 sfasta.close()
