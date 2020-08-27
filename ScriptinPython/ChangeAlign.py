@@ -14,25 +14,25 @@ for seq_record in SeqIO.parse(pathAlign, "fasta"):
 	pdbid=sseqid[0]+"_"+sseqid[1]
 	archisal3.write(">"+seqid+"\n")	
 	archisal4.write(">"+seqid+"\n")
-	if sseqid >=2:	
+	d=len(sseqid)
+	if d >=2:	
 		archisres=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Frustration/"+sseqid[0]+"_"+sseqid[1]+".pdb.done/FrustrationData/"+sseqid[0]+"_"+sseqid[1]+".pdb_msingleresidue",'r')
 	else:
 		archisres=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Frustration/"+sseqid[0]+".pdb.done/FrustrationData/"+sseqid[0]+".pdb_msingleresidue",'r')
-	c=len(seq)
-	d=len(sseqid)
+	c=0
 	if(d>2):
-		c=sseqid[2]
+		c=int(sseqid[d-2]) - 1
 	archisres.readline()
 	l = archisres.readline()
 	sl = l.split(" ")
-	i=sl[0]
-	while(i<c):
+	i=int(sl[0])
+	while int(i)<int(c):
 		l = archisres.readline()
 		i = i + 1
 	w=0
 	while True:
 		srespos =  l.split(" ") 
-		if not srespos:
+		if not srespos or len(srespos)<4:
 			break
 		if seq[w] == '-' or seq[w] == 'X':
 			archisal3.write("-")
