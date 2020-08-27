@@ -23,7 +23,6 @@ while i<tam:
 	cgaps=0
 	while(j<c):
 		aux=vector[j]
-		print (i)
 		if aux[i] == "-":
 			cgaps = cgaps + 1
 		j = j + 1 
