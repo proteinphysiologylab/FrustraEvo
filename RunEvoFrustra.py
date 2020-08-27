@@ -96,7 +96,6 @@ else:
 #--- Run Frustration --- 
 
 frustra='python '+jobsDir+'/ScriptinPython/FrustraPDB.py '+jobsDir+' '+jobID+' '+missa
-print(frustra)
 os.system(frustra)
 
 #----Equivalences---
