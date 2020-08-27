@@ -25,7 +25,7 @@ for seq_record in SeqIO.parse(pathAlign, "fasta"):
 	archisres.readline()
 	l = archisres.readline()
 	sl = l.split(" ")
-	i=sl[0]
+	i=int(sl[0])
 	while(i<c):
 		l = archisres.readline()
 		i = i + 1
