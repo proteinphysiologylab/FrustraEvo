@@ -8,7 +8,6 @@ for linea in pos.readlines():
 		line=linea[1:]
 		spline=line.split('_')
 		pdbch=spline[0]
-		print(spline[0])
 		if len(spline)>=2:
 			ch=spline[1]
 			pdbch=spline[0]+'_'+spline[1]
@@ -35,7 +34,6 @@ for linea in pos.readlines():
 						sresline = sresline[:-1]
 						splitres=sresline.split(" ")
 						if splitres[0] == slinea[ter-1] or len(sresline)<1:
-							print (slinea[ter-1])
 							break
 				if float(splitres[7]) > 0.55:
 					salida.write(str(ter)+"\t"+str(splitres[0])+"\t"+str(splitres[3])+"\t"+str(splitres[7],)+"\t"+"MIN\n")
