@@ -77,8 +77,6 @@ for alin in align.readlines():
 					sressal.write(Sres)
 				else:
 					if spl[0] > com[cnt]:
-						if com[cnt] == 0:
-							print(pdbch+' '+com[cnt])
 						while (int(spl[0]) - 1 >= int(com[cnt]) and count>cnt2):
 							sressal.write(com[cnt]+' '+chain[cnt]+' 0.000 '+iden[cnt]+' Missing Residue\n')
 							cnt=cnt+1
