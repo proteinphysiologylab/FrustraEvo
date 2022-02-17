@@ -29,7 +29,7 @@ for seq_record in SeqIO.parse(pathAlign, "fasta"):
 		salida1.write(">"+pdb+"\n")
 		salida2.write(">"+pdb+"\n")
 		salida3.write(">"+pdb+"\n")
-		sres=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Frustration/"+pdb+".done/FrustrationData/"+pdb+".pdb_singleresidue",'r')
+		sres=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Frustration/"+pdb+".done/FrustrationData/"+pdb+".pdb_msingleresidue",'r')
 		lsres=sres.readline()
 	if c==0:
 		c=1
