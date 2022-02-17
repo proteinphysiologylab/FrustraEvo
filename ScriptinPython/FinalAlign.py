@@ -12,11 +12,12 @@ m=0
 control=0 
 cgaps=0;
 tam=0
+tam=0
+r=0
 
 for seq_record in SeqIO.parse(pathAlign, "fasta"):
 	seqid=seq_record.id
 	seq=seq_record.seq
-	tam=len(seq)
 	pdbid=seqid.split("_")
 	sres=""
 	longline=0
@@ -28,34 +29,32 @@ for seq_record in SeqIO.parse(pathAlign, "fasta"):
 		salida1.write(">"+pdb+"\n")
 		salida2.write(">"+pdb+"\n")
 		salida3.write(">"+pdb+"\n")
-		sres=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Frustration/"+pdb+".pdb.done/FrustrationData/"+pdb+".pdb_msingleresidue",'r')
-		lsres=sres.readline()	
-	r=1
+		sres=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Frustration/"+pdb+".done/FrustrationData/"+pdb+".pdb_singleresidue",'r')
+		lsres=sres.readline()
 	if c==0:
 		c=1
+		tam=len(seq)
 		i=0
 		while(i<tam):
 			if seq[i] == "-" or seq[i] == "Z":
 				vector.append(0)
 			else:
 				vector.append(1)
-			i = i + 1
+			i += 1
 	else:
 		splitres=""
+		tam=len(seq)
+		lsres = sres.readline()
 		if r==1 and len(pdbid)>2:
-			lsres = sres.readline()
 			splitres=lsres.split(" ")
-			r=splitres[0]
-			r = int(r)
+			r= int(splitres[0])
 			a = int(pdbid[2])-1
 			while (r<a):
 				lsres=sres.readline()
 				r = r + 1
-		j=0
 		n=0
 		q=0
-		lsres = sres.readline()
-		while(j<tam):
+		for j in range (0,tam):
 			if vector[j] == 0:
 				if seq[j] != "-":
 					lsres = sres.readline()
@@ -74,20 +73,19 @@ for seq_record in SeqIO.parse(pathAlign, "fasta"):
 					salida2.write(str(seq[j]))
 				if n==51:
 					salida1.write("\n")
-					longline+=1
 					n=0
 				if seq[j] == "Z":
 					salida3.write("Z ")
-					lsres = sres.readline()
+				elif seq[j] == "-":
+					salida3.write("G ")
 				else:
-					if seq[j] == "-":
-						salida3.write("G ")
-					else:
+					if len(splitres) < 2:
 						splitres = lsres.split(" ")
-						r = r + 1
-						salida3.write(str(splitres[0])+" ")
-						lsres = sres.readline()
-			j = j + 1
+					lsres = sres.readline()
+					salida3.write(str(splitres[0])+" ")
+					splitres = lsres.split(" ")
+					r = r + 1
+					
 		salida1.write("\n")
 		salida2.write("\n")
 		salida3.write("\n")

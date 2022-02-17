@@ -16,12 +16,12 @@ for seq_record in SeqIO.parse(pathAlign, "fasta"):
 	archisal4.write(">"+seqid+"\n")
 	d=len(sseqid)
 	if d >=2:	
-		archisres=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Frustration/"+sseqid[0]+"_"+sseqid[1]+".pdb.done/FrustrationData/"+sseqid[0]+"_"+sseqid[1]+".pdb_msingleresidue",'r')
+		archisres=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Frustration/"+sseqid[0]+"_"+sseqid[1]+".done/FrustrationData/"+sseqid[0]+"_"+sseqid[1]+".pdb_msingleresidue",'r')
 	else:
-		archisres=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Frustration/"+sseqid[0]+".pdb.done/FrustrationData/"+sseqid[0]+".pdb_msingleresidue",'r')
+		archisres=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Frustration/"+sseqid[0]+".done/FrustrationData/"+sseqid[0]+".pdb_msingleresidue",'r')
 	c=0
 	if(d>2):
-		c=int(sseqid[d-2]) - 1
+		c=int(sseqid[d-2])
 	archisres.readline()
 	l = archisres.readline()
 	sl = l.split(" ")
@@ -32,22 +32,20 @@ for seq_record in SeqIO.parse(pathAlign, "fasta"):
 	w=0
 	while True:
 		srespos =  l.split(" ") 
-		if not srespos or len(srespos)<4:
-			break
-		if seq[w] == '-' or seq[w] == 'X':
+		if seq[w] == '-' or seq[w] == 'X' or seq[w] == 'B':
 			archisal3.write("-")
 			archisal4.write("-")
-		else:
-			if srespos[4] == "Missing":
+		elif len(srespos) >= 4 and srespos[4] == "Missing":
 				archisal3.write("-")
 				archisal4.write("Z")
 				l = archisres.readline()
-			else:
-				archisal3.write(seq[w])
-				archisal4.write(seq[w])
-				l = archisres.readline()				
-		w = w + 1
-		if w == len(seq):
+		else:
+			archisal3.write(seq[w])
+			archisal4.write(seq[w])
+			l = archisres.readline()				
+		w = w + 1		
+
+		if w == len(seq):	
 			break
 	archisal4.write("\n")
 	archisal3.write("\n")

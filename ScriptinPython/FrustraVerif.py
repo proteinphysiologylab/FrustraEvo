@@ -1,5 +1,6 @@
 import sys
 import os
+import os.path as path
 
 lista=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/AlignSE.fasta",'r')
 sal=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/SeqAlign.fasta",'w')
@@ -18,28 +19,15 @@ while True:
 	if linea[0] == ">":
 		line=linea[1:]
 		spline=line.split("_")
-		if spline[1] == "":
-			frustra=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Frustration/"+spline[0]+".pdb.done/FrustrationData/"+spline[0]+".pdb_msingleresidue")
+		if len(spline) == 1:
+			pathPDB=sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Frustration/"+spline[0]+".done/FrustrationData/"+spline[0]+".pdb_singleresidue"
+			if path.exists(pathPDB):
+				error=1
 		else:
-			frustra=open(sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Frustration/"+spline[0]+"_"+spline[1]+".pdb.done/FrustrationData/"+spline[0]+"_"+spline[1]+".pdb_msingleresidue")
-		for fline in frustra.readlines():
-			c=c+1
-			spfrus= fline.split(" ")
-			tam=len(spfrus)
-			c=c+1
-			if ta==1:
-				if tam<7:
-					error=0
-				else:
-					if c>4:
-						error=1
-			else:
-				if tam<8:
-					error=0
-				else:
-					if c>4:
-						error=1
-		frustra.close()
+			pathPDB=sys.argv[1]+"/OutPutFiles"+sys.argv[2]+"/Frustration/"+spline[0]+"_"+spline[1]+".done/FrustrationData/"+spline[0]+"_"+spline[1]+".pdb_singleresidue"
+			if path.exists(pathPDB):
+				error=1
+		
 		if error==0:
 			errorsal.write(linea+'\n')
 			linea=lista.readline()

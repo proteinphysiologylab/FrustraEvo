@@ -43,7 +43,7 @@ for alin in align.readlines():
 		tc=splig
 		pdb=spline[0]
 		count=0
-		bus=open(sys.argv[1]+'/OutPutFiles'+sys.argv[2]+'/'+pdb+'.pdb','r')
+		bus=open(sys.argv[1]+'/OutPutFiles'+sys.argv[2]+'/Frustration/'+pdb+'.pdb','r')
 		for busca in bus.readlines():
 			spbusca=busca.split(' ')
 			if len(spline) >= 2:
@@ -60,11 +60,11 @@ for alin in align.readlines():
 					count=count+1
 		bus.close()
 		if count==0:
-			cp='cp '+sys.argv[1]+'/OutPutFiles'+sys.argv[2]+'/Frustration/'+pdbch+'.pdb.done/FrustrationData/'+pdb+'.pdb_singleresidue '+sys.argv[1]+'/OutPutFiles'+sys.argv[2]+'/Frustration/'+pdbch+'.pdb.done/FrustrationData/'+pdbch+'.pdb_msingleresidue'
+			cp='cp '+sys.argv[1]+'/OutPutFiles'+sys.argv[2]+'/Frustration/'+pdbch+'.done/FrustrationData/'+pdbch+'.pdb_singleresidue '+sys.argv[1]+'/OutPutFiles'+sys.argv[2]+'/Frustration/'+pdbch+'.done/FrustrationData/'+pdbch+'.pdb_msingleresidue'
 			os.system(cp)
 		else:
-			sres=open(sys.argv[1]+'/OutPutFiles'+sys.argv[2]+'/Frustration/'+pdbch+'.pdb.done/FrustrationData/'+pdb+'.pdb_singleresidue','r')
-			sressal=open(sys.argv[1]+'/OutPutFiles'+sys.argv[2]+'/Frustration/'+pdbch+'.pdb.done/FrustrationData/'+pdbch+'.pdb_msingleresidue','w')
+			sres=open(sys.argv[1]+'/OutPutFiles'+sys.argv[2]+'/Frustration/'+pdbch+'.done/FrustrationData/'+pdbch+'.pdb_singleresidue','r')
+			sressal=open(sys.argv[1]+'/OutPutFiles'+sys.argv[2]+'/Frustration/'+pdbch+'.done/FrustrationData/'+pdbch+'.pdb_msingleresidue','w')
 			cnt=0
 			spl=''
 			cnt2=0

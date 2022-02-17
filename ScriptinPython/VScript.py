@@ -1,7 +1,7 @@
 import sys
 import os
 
-verfrust="python "+sys.argv[1]+"/ScriptinPython/FrustraVerif.py "+sys.argv[1]+" "+sys.argv[2]
+verfrust="python2 "+sys.argv[1]+"/ScriptinPython/FrustraVerif.py "+sys.argv[1]+" "+sys.argv[2]
 os.system(verfrust)
 
 Lista= open(sys.argv[1]+'/OutPutFiles'+sys.argv[2]+'/ListaPDBC.txt','r')

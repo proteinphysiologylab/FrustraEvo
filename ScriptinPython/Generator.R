@@ -14,9 +14,9 @@
   svg("HistogramFrustration.svg", height = 4, width =50)
   par(mar=c(2.5,2.5,2,2))
   par(mgp=c(2,0.5,0))
-  barplot(names.arg=seq(from=1, to=N, by=1),  rbind(h_minimos, h_neutros, h_maximos), col=c("green", "gray", "red"), ylim=c(-0.30,2), axis.lty=1)
+  barplot(names.arg=seq(from=1, to=N, by=1),  rbind(h_minimos, h_neutros, h_maximos), col=c("darkgreen", "gray", "red4"), ylim=c(-0.30,2), axis.lty=1)
   box(lwd=2)
-  legend(x="topleft", legend=c("Minimum", "Neutral", "Maximum"), pch=c(15, 15, 15), col=c("green", "gray", "red"))
+  legend(x="topleft", legend=c("Minimum", "Neutral", "Maximum"), pch=c(15, 15, 15), col=c("darkgreen", "gray", "red4"))
   dev.off()
 
   
