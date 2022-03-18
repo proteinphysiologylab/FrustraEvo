@@ -12,7 +12,7 @@ os.system(rm)
 
 missa = input('Considers Missing Residues (Y/N): ')
 missa=missa.upper()
-
+#missa='N'
 d=1
 
 while d:
@@ -26,8 +26,6 @@ while d:
 pathm='mkdir '+jobsDir+'/OutPut'+jobID
 os.system(pathm)
 pathm='mkdir '+jobsDir+'/OutPut'+jobID+'/PDB'
-os.system(pathm)
-pathm='mkdir '+jobsDir+'/OutPut'+jobID+'/VisualizationScript'
 os.system(pathm)
 
 pathm='mkdir '+jobsDir+'/OutPutFiles'+jobID
@@ -75,43 +73,25 @@ alin.close()
 tamanio=len(sys.argv)
 
 
-if tamanio<4 :
-		system("perl $jobsDir/Script/FindPDB.pl $jobsDir $jobID") #Find the pdbid (in case you are running without a list like input)
-else:
-	listapdb = open(jobsDir+'/'+sys.argv[3],'r') #Passing all in lower case, expect chain.
-	salpdb = open(jobsDir+'/OutPutFiles'+jobID+'/ListaPDB.txt','w')
-	for lpdb in listapdb.readlines():
-		lpdb=lpdb[:-1]
-		splitm=lpdb.split("_")
-		splitm[0] = splitm[0].lower()
-		ta=len(splitm)
-		if ta>3:
-			salpdb.write(splitm[0]+'_'+splitm[1]+'_'+splitm[2]+'_'+splitm[3]+'\n')
-		elif ta==2:
-			salpdb.write(splitm[0]+'_'+splitm[1]+'\n')
-		else:
-			salpdb.write(splitm[0]+'\n')
-	salpdb.close()
-	listapdb.close()
 #--- Run Frustration --- 
 
-frustra='python '+jobsDir+'/ScriptinPython/FrustraPDB.py '+jobsDir+' '+jobID+' '+missa
+frustra='python2 '+jobsDir+'/ScriptinPython/FrustraPDB.py '+jobsDir+' '+jobID+' '+missa
 os.system(frustra)
 
 #----Equivalences---
 
-final='python '+jobsDir+'/ScriptinPython/FinalAlign.py '+jobsDir+' '+jobID
+final='python3 '+jobsDir+'/ScriptinPython/FinalAlign.py '+jobsDir+' '+jobID
 os.system(final)
-equivalences='python '+jobsDir+'/ScriptinPython/Equivalences.py '+jobsDir+' '+jobID 
+equivalences='python3 '+jobsDir+'/ScriptinPython/Equivalences.py '+jobsDir+' '+jobID 
 os.system(equivalences)
 
 #-- Call all .R scripts---
 
-fastam='python '+jobsDir+'/ScriptinPython/FastaMod.py '+jobsDir+' '+jobID
+fastam='python3 '+jobsDir+'/ScriptinPython/FastaMod.py '+jobsDir+' '+jobID
 os.system(fastam)
 cd='cd '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences;cat *SalidaSRes* > AllSalidaSResB.txt'
 os.system(cd)
-logoc='python '+jobsDir+'/ScriptinPython/LogoCheck.py '+jobsDir+' '+jobID
+logoc='python3 '+jobsDir+'/ScriptinPython/LogoCheck.py '+jobsDir+' '+jobID
 os.system(logoc)
 logo = 'cd '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences;Rscript Logo.R'
 os.system(logo)
@@ -119,7 +99,7 @@ gene = 'cd '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences;Rscript Generator.R'
 os.system(gene)
 #system("cd $jobsDir/OutPutFiles$jobID/Equivalences Rscript SeqLogo.R")
 
-VScript='python '+jobsDir+'/ScriptinPython/VScript.py '+jobsDir+' '+jobID #*
+VScript='python3 '+jobsDir+'/ScriptinPython/VScript.py '+jobsDir+' '+jobID #*
 os.system(VScript)
 
 cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences/HistogramFrustration.svg '+jobsDir+'/OutPut'+jobID+'/HistogramFrustration.svg'
