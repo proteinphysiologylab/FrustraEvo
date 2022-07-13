@@ -8,6 +8,39 @@ hmmer
 
 frustratometeR (https://github.com/proteinphysiologylab/frustratometeR)
 
+# Minimum code to calculate frustration in a protein (You need to creat a .py file an put the code below)
+
+`import os`
+`import sys`
+
+`sys.path.append('')#Path to Functions.py file`
+`import Functions`
+
+`jodib=sys.argv[1]`
+`path_to_r=sys.argv[2]`
+`fasta_file=sys.argv[3]`
+`list_file=''`
+`prot_ref=sys.argv[4]`
+`path_to_Pdbs=sys.argv[5]`
+
+`print('Coping files for Frustration Logo')`
+`Functions.copyfiles(jodib,path_to_r,path_to_Pdbs)`
+`list_file=Functions.pdb_list(fasta_file)`
+`print('Changes in MSA Frustration Logo')`
+`Functions.changes(jodib,fasta_file)`
+`print('Running Frutration')`
+`Functions.FrustraPDB(list_file,jodib,path_to_Pdbs)`
+`print('Running Checks')`
+`Functions.checks(jodib)`
+`print('Preparing MSA Files to process')`
+`Functions.prepare_file(jodib,prot_ref)`
+`Functions.FinalAlign(jodib)`
+`print('Running Equivalences')`
+`Functions.Equivalences(jodib)`
+`print('Running Checks')`
+`Functions.LogoCheck(jodib)`
+`print('Making the plots')`
+`Functions.plots_logo(jodib,prot_ref)`
 
 ## **You can find an example of how to use the package at:**
 
