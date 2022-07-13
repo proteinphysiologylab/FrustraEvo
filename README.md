@@ -5,6 +5,7 @@ FrustraEvo is a very simple tool to calculate the frustration logo and the furst
 Dependencies:
 
 hmmer
+
 frustratometeR (https://github.com/proteinphysiologylab/frustratometeR)
 
 
