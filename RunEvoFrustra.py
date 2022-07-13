@@ -1,129 +1,53 @@
-import sys
 import os
+import sys
 
-fastafile=sys.argv[2]
-jobID=sys.argv[1]
-jobsDir=os.getcwd()
-
-rm='rm -r '+jobsDir+'/OutPutFiles'+jobID
-os.system(rm)
-rm='rm -r '+jobsDir+'/OutPut'+jobID
-os.system(rm)
-
-missa = input('Considers Missing Residues (Y/N): ')
-missa=missa.upper()
-#missa='N'
-d=1
-
-while d:
-	if missa == "Y" or missa == "N":
-		d=0
-	else:
-		missa = input('Considers Missing Residues (Y/N): ')
-		missa=missa.upper()
-
-#--- Make directories----
-pathm='mkdir '+jobsDir+'/OutPut'+jobID
-os.system(pathm)
-pathm='mkdir '+jobsDir+'/OutPut'+jobID+'/PDB'
-os.system(pathm)
-
-pathm='mkdir '+jobsDir+'/OutPutFiles'+jobID
-os.system(pathm)
-pathm='mkdir '+jobsDir+'/OutPutFiles'+jobID+'/Frustration'
-os.system(pathm)
-pathm='mkdir '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences'
-os.system(pathm)
-
-#--- Copy files ---
-cp='cp '+jobsDir+'/ScriptinPython/Generator.R '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences/Generator.R'
-os.system(cp)
-cp='cp '+jobsDir+'/ScriptinPython/SeqLogo.R '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences/SeqLogo.R'
-os.system(cp)
-cp='cp '+jobsDir+'/ScriptinPython/Logo.R '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences/Logo.R'
-os.system(cp)
-
-c=0
-n=0
-
-#--- Changing Alignment --- 
-
-salidafasta=open(jobsDir+'/OutPutFiles'+jobID+'/Sequences.fasta','w') # Sequences without gaps 
-sfasta = open(jobsDir+'/'+fastafile,'r') # Input Alignment 
-alin = open(jobsDir+'/OutPutFiles'+jobID+'/Alignment.fasta','w') # Alignment without \n
-co=0
-
-for linef in sfasta.readlines():
-	if linef[0] == '>':
-		alin.write('>Seq'+str(c)+'\n')
-	else:
-		co=0
-		lon=len(linef)
-		while co < lon:
-			if linef[co] != '-':
-				salidafasta.write(linef[co])
-			alin.write(linef[co])
-				
-			co+=1
-salidafasta.close()
-sfasta.close()
-alin.close()
+sys.path.append('')#Path al archivo Functions.py
+import Functions
 
 
-tamanio=len(sys.argv)
+#How to run the pipeline in linux terminal:
+#python run_logo.py jodib path_to_r fasta_file list_file prot_ref path_to_Pdbs 
+#python run_logo.py SarsCov Scripts/ SarsCov_ali.fasta Lista_SarsCov NP_000129 PdbsSarsCov
+
+#jodib: name of the job, example: SarsCov
+#path_to_r: Path to R script files
+#fasta_file: name of the fasta, example: SarsCov_ali.fasta
+#prot_ref: Id of the reference protein of your logo, example: NP_000129
+#path_to_Pdbs: Path to the PDBs folder
 
 
-#--- Run Frustration --- 
+jodib=sys.argv[1]
+path_to_r=sys.argv[2]
+fasta_file=sys.argv[3]
+list_file=''
+prot_ref=sys.argv[4]
+path_to_Pdbs=sys.argv[5]
 
-frustra='python2 '+jobsDir+'/ScriptinPython/FrustraPDB.py '+jobsDir+' '+jobID+' '+missa
-os.system(frustra)
+#the parameter Scripts is the path to the .r and .py files for plots
 
-#----Equivalences---
-
-final='python3 '+jobsDir+'/ScriptinPython/FinalAlign.py '+jobsDir+' '+jobID
-os.system(final)
-equivalences='python3 '+jobsDir+'/ScriptinPython/Equivalences.py '+jobsDir+' '+jobID 
-os.system(equivalences)
-
-#-- Call all .R scripts---
-
-fastam='python3 '+jobsDir+'/ScriptinPython/FastaMod.py '+jobsDir+' '+jobID
-os.system(fastam)
-cd='cd '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences;cat *SalidaSRes* > AllSalidaSResB.txt'
-os.system(cd)
-logoc='python3 '+jobsDir+'/ScriptinPython/LogoCheck.py '+jobsDir+' '+jobID
-os.system(logoc)
-logo = 'cd '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences;Rscript Logo.R'
-os.system(logo)
-gene = 'cd '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences;Rscript Generator.R'
-os.system(gene)
-#system("cd $jobsDir/OutPutFiles$jobID/Equivalences Rscript SeqLogo.R")
-
-VScript='python3 '+jobsDir+'/ScriptinPython/VScript.py '+jobsDir+' '+jobID #*
-os.system(VScript)
-
-cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences/HistogramFrustration.svg '+jobsDir+'/OutPut'+jobID+'/HistogramFrustration.svg'
-os.system(cp)
-
-cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/SalidaAlign.fasta '+jobsDir+'/OutPut'+jobID+'/SalidaAlign.fasta'
-os.system(cp)
-cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/EvoFrustra-log.txt '+jobsDir+'/OutPut'+jobID+'/EvoFrustra-log.fasta'
-os.system(cp)
-cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/ListaPDBC.txt '+jobsDir+'/OutPut'+jobID+'/ListaPDB.txt'
-os.system(cp)
-cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences/CharactPosDataN '+jobsDir+'/OutPut'+jobID+'/IC'
-os.system(cp)
-cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/Equivalences/IC.csv '+jobsDir+'/OutPut'+jobID+'/IC.csv'
-os.system(cp)
-cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/familias.hmm '+jobsDir+'/OutPut'+jobID+'/familias.hmm'
-os.system(cp)
-#cp='cp '+jobsDir+'/OutPutFiles'+jobID+'/seqlogo.png '+jobsDir+'/OutPut'+jobID+'/seqlogo.png
-#os.system(cp)
-
-tar='cd '+jobsDir+';tar -zcvf OutPut'+jobID+'.tar.gz OutPut'+jobID
-os.system(tar)
-
-#sleep(60)
-
-#system("cd $jobsDir rm -r OutPutFiles$jobID")
-#system("cd $jobsDir rm -r OutPut$jobID")
+print('Coping files for Frustration Logo')
+Functions.copyfiles(jodib,path_to_r,path_to_Pdbs)
+list_file=Functions.pdb_list(fasta_file)
+print('Changes in MSA Frustration Logo')
+Functions.changes(jodib,fasta_file)
+print('Running Frutration')
+Functions.FrustraPDB(list_file,jodib,path_to_Pdbs)
+print('Running Checks')
+Functions.checks(jodib)
+print('Preparing MSA Files to process')
+Functions.prepare_file(jodib,prot_ref)
+Functions.FinalAlign(jodib)
+print('Running Equivalences')
+Functions.Equivalences(jodib
+print('Preparing file for sequences for Sequence logo')
+Functions.FastaMod(jodib)
+print('Running Checks')
+Functions.LogoCheck(jodib)
+print('Making the plots')
+Functions.plots_logo(jodib,prot_ref
+print('Making Visualization scripts (.pml)')
+Functions.VScript(jodib)
+print('Running CMaps for Mutational')
+Functions.CMaps_Mutational(jodib,path_to_r,prot_ref)
+print('Running CMaps for Configurational')
+Functions.CMaps_Configurational(jodib,path_to_r,prot_ref)
