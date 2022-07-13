@@ -455,6 +455,7 @@ def Equivalences(JodID):
 		else:
 			ter=0
 			slinea=linea.split(" ")
+			splitres=sresline.split(" ")
 			tam=len(slinea)
 			while(ter<tam - 1):
 				ter+=1
