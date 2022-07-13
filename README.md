@@ -8,7 +8,7 @@ hmmer
 
 frustratometeR (https://github.com/proteinphysiologylab/frustratometeR)
 
-# Minimum code to calculate frustration in a protein (You need to creat a .py file an put the code below)
+# Minimum code to calculate frustration in a protein (You need to creat a .py file and put the code below)
 
 `import os`
 
