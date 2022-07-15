@@ -10,61 +10,27 @@ frustratometeR (https://github.com/proteinphysiologylab/frustratometeR)
 
 # Minimum code to calculate frustration in a protein (You need to creat a .py file and put the code below)
 
-`import os`
+`import os\n`
+`import sys\n`
+`sys.path.append('')#Path to Functions.py file\n`
+`import Functions\n`
+`jodib=sys.argv[1]\n`
+`path_to_r=sys.argv[2]\n`
+`fasta_file=sys.argv[3]\n`
+`list_file=''\n`
+`prot_ref=sys.argv[4]\n`
+`path_to_Pdbs=sys.argv[5]\n`
 
-`import sys`
-
-`sys.path.append('')#Path to Functions.py file`
-
-`import Functions`
-
-`jodib=sys.argv[1]`
-
-`path_to_r=sys.argv[2]`
-
-`fasta_file=sys.argv[3]`
-
-`list_file=''`
-
-`prot_ref=sys.argv[4]`
-
-`path_to_Pdbs=sys.argv[5]`
-
-`print('Coping files for Frustration Logo')`
-
-`Functions.copyfiles(jodib,path_to_r,path_to_Pdbs)`
-
-`list_file=Functions.pdb_list(fasta_file)`
-
-`print('Changes in MSA Frustration Logo')`
-
-`Functions.changes(jodib,fasta_file)`
-
-`print('Running Frutration')`
-
-`Functions.FrustraPDB(list_file,jodib,path_to_Pdbs)`
-
-`print('Running Checks')`
-
-`Functions.checks(jodib)`
-
-`print('Preparing MSA Files to process')`
-
-`Functions.prepare_file(jodib,prot_ref)`
-
-`Functions.FinalAlign(jodib)`
-
-`print('Running Equivalences')`
-
-`Functions.Equivalences(jodib)`
-
-`print('Running Checks')`
-
-`Functions.LogoCheck(jodib)`
-
-`print('Making the plots')`
-
-`Functions.plots_logo(jodib,prot_ref)`
+`Functions.copyfiles(jodib,path_to_r,path_to_Pdbs)\n`
+`list_file=Functions.pdb_list(fasta_file)\n`
+`Functions.changes(jodib,fasta_file)\n`
+`Functions.FrustraPDB(list_file,jodib,path_to_Pdbs)\n`
+`Functions.checks(jodib)\n`
+`Functions.prepare_file(jodib,prot_ref)\n`
+`Functions.FinalAlign(jodib)\n`
+`Functions.Equivalences(jodib)\n`
+`Functions.LogoCheck(jodib)\n`
+`Functions.plots_logo(jodib,prot_ref)\n`
 
 ## **You can find an example of how to use the package at:**
 
