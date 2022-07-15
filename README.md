@@ -68,7 +68,7 @@ frustratometeR (https://github.com/proteinphysiologylab/frustratometeR)
 
 ## **You can find an example of how to use the package at:**
 
-https://github.com/proteinphysiologylab/FrustraEvo/Examples
+https://github.com/proteinphysiologylab/FrustraEvo/tree/master/Examples
 
 ## **You can also find useful examples in our wiki!!:**
 
