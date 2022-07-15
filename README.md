@@ -4,7 +4,7 @@ FrustraEvo is a very simple tool to calculate the frustration logo and the furst
 
 Dependencies:
 
-hmmer
+hmmer (`sudo apt-get install -y hmmer`)
 
 frustratometeR (https://github.com/proteinphysiologylab/frustratometeR)
 
