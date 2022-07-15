@@ -1,4 +1,4 @@
-tabla=read.table("AllSalidaSRes.txt", stringsAsFactors=F, header=F)
+tabla=read.table("AllEquival.txt.txt", stringsAsFactors=F, header=F)
 N=read.delim("long.txt", stringsAsFactors=F, header=F)
 
 
