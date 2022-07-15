@@ -10,7 +10,7 @@ frustratometeR (https://github.com/proteinphysiologylab/frustratometeR)
 
 # Minimum code to calculate frustration in a protein (You need to creat a .py file and put the code below)
 
-`import os
+`import os\n
  import sys
  sys.path.append('')#Path to Functions.py file
  import Functions
