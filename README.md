@@ -9,46 +9,45 @@ hmmer
 frustratometeR (https://github.com/proteinphysiologylab/frustratometeR)
 
 # Minimum code to calculate frustration in a protein (You need to creat a .py file and put the code below)
+`import os`
 
-`import os
+`import sys`
 
- import sys
- 
- sys.path.append('')#Path to Functions.py file
+`sys.path.append('')#Path to Functions.py file`
 
- import Functions
- 
- jodib=sys.argv[1]
- 
- path_to_r=sys.argv[2]
- 
- fasta_file=sys.argv[3]
- 
- list_file=''
- 
- prot_ref=sys.argv[4]
- 
- path_to_Pdbs=sys.argv[5]
- 
- Functions.copyfiles(jodib,path_to_r,path_to_Pdbs)
- 
- list_file=Functions.pdb_list(fasta_file)
- 
- Functions.changes(jodib,fasta_file)
- 
- Functions.FrustraPDB(list_file,jodib,path_to_Pdbs)
- 
- Functions.checks(jodib)
- 
- Functions.prepare_file(jodib,prot_ref)
- 
- Functions.FinalAlign(jodib)
- 
- Functions.Equivalences(jodib)
- 
- Functions.LogoCheck(jodib)
+`import Functions`
 
- Functions.plots_logo(jodib,prot_ref)`
+`jodib=sys.argv[1]`
+
+`path_to_r=sys.argv[2]`
+
+`fasta_file=sys.argv[3]`
+
+`list_file=''`
+
+`prot_ref=sys.argv[4]`
+
+`path_to_Pdbs=sys.argv[5]`
+
+`Functions.copyfiles(jodib,path_to_r,path_to_Pdbs)`
+
+`list_file=Functions.pdb_list(fasta_file)`
+
+`Functions.changes(jodib,fasta_file)`
+
+`Functions.FrustraPDB(list_file,jodib,path_to_Pdbs)`
+
+`Functions.checks(jodib)`
+
+`Functions.prepare_file(jodib,prot_ref)`
+
+`Functions.FinalAlign(jodib)`
+
+`Functions.Equivalences(jodib)`
+
+`Functions.LogoCheck(jodib)`
+
+`Functions.plots_logo(jodib,prot_ref)`
 
 ## **You can find an example of how to use the package at:**
 
