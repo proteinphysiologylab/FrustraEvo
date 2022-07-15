@@ -72,8 +72,8 @@ https://github.com/proteinphysiologylab/FrustraEvo/tree/master/Examples
 
 ## **You can also find useful examples in our wiki!!:**
 
-https://github.com/proteinphysiologylab/FrustraEvo/tree/master//wiki
+https://github.com/proteinphysiologylab/FrustraEvo/tree/master/wiki
 
 ## **You can find the data used in the Wiki examples at:**
 
-https://github.com/proteinphysiologylab/FrustraEvo/tree/master//Data
+https://github.com/proteinphysiologylab/FrustraEvo/tree/master/Data
