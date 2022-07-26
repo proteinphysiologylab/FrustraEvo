@@ -518,7 +518,6 @@ def plots_logo(JodID,prot_ref,path_to_r):
 	'''
 	path_direc='FrustraEvo_'+JodID
 	os.system('Rscript '+path_to_r+'/Logo.R --dir '+os.getcwd()+'/'+path_direc+'/Equivalences/')
-	print('Rscript '+path_to_r+'/Logo.R --dir '+os.getcwd()+'/'+path_direc+'/Equivalences/')
 	add_ref(JodID,prot_ref)
 	os.system('Rscript '+path_to_r+'/Generator.R --dir '+os.getcwd()+'/'+path_direc+'/Equivalences/')
 	os.system('mv '+path_direc+'/Equivalences/HistogramFrustration.svg'+' '+path_direc+'/OutPutFiles/FrustrationLogo'+JodID+'.svg')
@@ -626,7 +625,7 @@ def CMaps_Mutational(JodID,path_to_r,prot_ref):
 	MSA_Long.close()
 	dir_total=directory+path_direc
 	os.system('cd '+path_direc+'/CMaps;python3 IC_Conts_Mutational.py '+str(long)+' '+dir_total)
-	os.system('cd '+path_direc+'/CMaps;Rscript IC_conts_Mut.r')
+	os.system('Rscript '+path_to_r+'/IC_conts_Mut.R --dir '+os.getcwd()+'/'+path_direc+'/CMaps/')
 	add_ref_Cmaps(JodID,prot_ref,'Mut')
 	os.system('cp '+path_direc+'/CMaps/IC_Mut.png'+' '+path_direc+'/OutPutFiles/CMaps'+'_'+JodID+'_Mut.png')
 
@@ -657,7 +656,7 @@ def CMaps_Configurational(JodID,path_to_r,prot_ref):
 	MSA_Long.close()
 	dir_total=directory+path_direc
 	os.system('cd '+path_direc+'/CMaps;python3 IC_Conts_Conf.py '+str(long)+' '+dir_total)
-	os.system('cd '+path_direc+'/CMaps;Rscript IC_conts_Conf.r')
+	os.system('Rscript '+path_to_r+'/IC_conts_Conf.R --dir '+os.getcwd()+'/'+path_direc+'/CMaps/')
 	os.system('cp '+path_direc+'/CMaps/IC_Conf.png'+' '+path_direc+'/OutPutFiles/CMaps'+'_'+JodID+'_Conf.png')
 	add_ref_Cmaps(JodID,prot_ref,'Conf')
 	
