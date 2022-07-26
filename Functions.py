@@ -20,7 +20,7 @@ def copyfiles(JodID,path_to_r,path_to_Pdbs):
 	os.system('mkdir '+path_direc+'/Equivalences')
 	os.system('mkdir '+path_direc+'/OutPutFiles')
 	os.system('mkdir '+path_direc+'/Frustration')
-	os.system('cp '+path_to_r+'/*.R* '+path_direc+'/Equivalences/')
+	#os.system('cp '+path_to_r+'/*.R* '+path_direc+'/Equivalences/')
 	
 def pdb_list(fasta_file):
 	'''     This function is for the creation of folders and copying of necessary files
@@ -512,14 +512,15 @@ def LogoCheck(JodID):
 	out.close()
 
 
-def plots_logo(JodID,prot_ref):
+def plots_logo(JodID,prot_ref,path_to_r):
 	'''     This function makes the plots for the frustration logo: 
 			- JodID: the job name
 	'''
 	path_direc='FrustraEvo_'+JodID
-	os.system('cd '+path_direc+'/Equivalences;Rscript Logo.R')
+	os.system('Rscript '+path_to_r+'/Logo.R --dir '+os.getcwd()+'/'+path_direc+'/Equivalences/')
+	print('Rscript '+path_to_r+'/Logo.R --dir '+os.getcwd()+'/'+path_direc+'/Equivalences/')
 	add_ref(JodID,prot_ref)
-	os.system('cd '+path_direc+'/Equivalences;Rscript Generator.R')
+	os.system('Rscript '+path_to_r+'/Generator.R --dir '+os.getcwd()+'/'+path_direc+'/Equivalences/')
 	os.system('mv '+path_direc+'/Equivalences/HistogramFrustration.svg'+' '+path_direc+'/OutPutFiles/FrustrationLogo'+JodID+'.svg')
 	#os.system('tar -zcvf '+JodID+'.tar.gz '+path_direc)
 
