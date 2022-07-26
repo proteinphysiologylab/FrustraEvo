@@ -1,7 +1,11 @@
-N=read.delim("long.txt", stringsAsFactors=F, header=F)
+suppressPackageStartupMessages(library("argparse"))  
+parser <- ArgumentParser()
+parser$add_argument("--dir", help="long.txt")
+args <- parser$parse_args()
+N=read.delim(paste(args$dir, "long.txt", sep=""), stringsAsFactors=F, header=F)
 rangoresiduos<- c(1,N$V1)
 
-IC_Conts_Conf <- read.delim("IC_Conf")
+IC_Conts_Conf <- read.delim(paste(args$dir, "IC_Conf", sep=""))
 
 #------------------Configurational
 maxfrust_Conf<- subset(IC_Conts_Conf, IC_Conts_Conf$EstadoConservado=='MAX')
@@ -13,7 +17,7 @@ min<-hist(minfrust_Conf$ICtotal*minfrust_Conf$FreqConts, breaks=20, probability=
 neu<-hist(neufrust_Conf$ICtotal*neufrust_Conf$FreqConts, breaks=20, probability=1)
 
 
-png(filename="histICConf.png", height=400, width=600, bg="white")
+png(filename=paste(args$dir, "histICConf.png", sep=""), height=400, width=600, bg="white")
 plot(neu, col='grey', xlab='IC of Confational Frustration')
 lines(min, col='green')
 lines(max, col='red')
@@ -23,7 +27,7 @@ densmax<-density(maxfrust_Conf$ICtotal*maxfrust_Conf$FreqConts, bw=0.07)
 densmin<-density(minfrust_Conf$ICtotal*minfrust_Conf$FreqConts,bw=0.07)
 densneu<-density(neufrust_Conf$ICtotal*neufrust_Conf$FreqConts,bw=0.07)
 
-png(filename="densICConf.png", height=400, width=600, bg="white")
+png(filename=paste(args$dir, "densICConf.png", sep=""), height=400, width=600, bg="white")
 plot(densmax, col='red', xlab='FIC')
 lines(densneu, col='grey')
 lines(densmin, col='green')
@@ -38,7 +42,7 @@ cuts<-levels(cut(IC_Conts_Conf$FreqConts,breaks = 10))
 cuts<-gsub(","," - ",cuts)
 cuts<-gsub("\\(","[",cuts)
 
-png(filename="IC_Conf.png", height=1200, width=1200, bg="white")
+png(filename=paste(args$dir, "IC_Conf.png", sep=""), height=1200, width=1200, bg="white")
 
 # Add extra space to right of plot area; change clipping to figure
 par(mar=c(6, 6, 4.1, 8), xpd=TRUE)
