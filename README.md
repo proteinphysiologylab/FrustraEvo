@@ -8,6 +8,8 @@ hmmer (`sudo apt-get install -y hmmer`)
 
 frustratometeR (https://github.com/proteinphysiologylab/frustratometeR)
 
+R library : argparse
+
 # Minimum code to calculate frustration in a protein (You need to creat a .py file and put the code below)
 `import os`
 
