@@ -14,7 +14,7 @@ posicionmax=int(sys.argv[1])+1
 listapdbs='PDB_ListChk.txt'
 
 #archivo de equivalencia para cada pdb (entre numeracion del pdb y posicion del residuo en alineamiento)
-equivalenciares='SalidaSRes'
+equivalenciares='Equival_'
 
 #archivo donde se guardaran los calculos.
 archivosalida= 'IC_Conf'
