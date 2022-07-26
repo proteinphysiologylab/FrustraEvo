@@ -11,7 +11,7 @@ posicionmin=1
 posicionmax=int(sys.argv[1])+1
 
 #lista de pdbs para analizar
-listapdbs='ListaPDBC.txt'
+listapdbs='PDB_ListChk.txt'
 
 #archivo de equivalencia para cada pdb (entre numeracion del pdb y posicion del residuo en alineamiento)
 equivalenciares='SalidaSRes'
