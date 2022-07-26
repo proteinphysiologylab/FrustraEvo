@@ -3,47 +3,42 @@ import sys
 
 sys.path.append('')#Path to Functions.py file
 import Functions
+import argparse
 
+parser = argparse.ArgumentParser(description='Calculation of the frustration logo.')
+parser.add_argument("--JobId", help="The name of the job")
+parser.add_argument("--RPath", default='Scripts', help="Path to R script files (Default: Scripts)")
+parser.add_argument("--fasta", help="Name of the fasta")
+parser.add_argument("--ref", default='None', help="Id of the reference protein of your logo (Default: None)")
+parser.add_argument("--pdb_db", default='None', help="Path to the PDBs folder (Default: None)")
 
 #How to run the pipeline in linux terminal:
-#python run_logo.py jodib path_to_r fasta_file list_file prot_ref path_to_Pdbs 
-#python run_logo.py SarsCov Scripts/ SarsCov_ali.fasta Lista_SarsCov NP_000129 PdbsSarsCov
+#python run_logo.py JobId RPath fasta list_file ref pdb_db 
 
-#jodib: name of the job, example: SarsCov
-#path_to_r: Path to R script files
-#fasta_file: name of the fasta, example: SarsCov_ali.fasta
-#prot_ref: Id of the reference protein of your logo, example: NP_000129
-#path_to_Pdbs: Path to the PDBs folder
-
-
-jodib=sys.argv[1]
-path_to_r=sys.argv[2]
-fasta_file=sys.argv[3]
+args = parser.parse_args()
 list_file=''
-prot_ref=sys.argv[4]
-path_to_Pdbs=sys.argv[5]
 
 #the parameter Scripts is the path to the .r and .py files for plots
 
 print('Coping files for Frustration Logo')
-Functions.copyfiles(jodib,path_to_r,path_to_Pdbs)
-list_file=Functions.pdb_list(fasta_file)
+Functions.copyfiles(args.JobId,args.RPath,args.pdb_db)
+list_file=Functions.pdb_list(args.fasta)
 print('Changes in MSA Frustration Logo')
-Functions.changes(jodib,fasta_file)
+Functions.changes(args.JobId,args.fasta)
 print('Running Frutration')
-Functions.FrustraPDB(list_file,jodib,path_to_Pdbs)
+Functions.FrustraPDB(list_file,args.JobId,args.pdb_db)
 print('Running Checks')
-Functions.checks(jodib)
+Functions.checks(args.JobId)
 print('Preparing MSA Files to process')
-Functions.prepare_file(jodib,prot_ref)
-Functions.FinalAlign(jodib)
+Functions.prepare_file(args.JobId,args.ref)
+Functions.FinalAlign(args.JobId)
 print('Running Equivalences')
-Functions.Equivalences(jodib)
+Functions.Equivalences(args.JobId)
 print('Preparing file for sequences for Sequence logo')
-Functions.FastaMod(jodib)
+Functions.FastaMod(args.JobId)
 print('Running Checks')
-Functions.LogoCheck(jodib)
+Functions.LogoCheck(args.JobId)
 print('Making the plots')
-Functions.plots_logo(jodib,prot_ref)
+Functions.plots_logo(args.JobId,args.ref,args.RPath)
 print('Making Visualization scripts (.pml)')
-Functions.VScript(jodib)
+Functions.VScript(args.JobId)
