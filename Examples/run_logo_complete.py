@@ -13,7 +13,8 @@ parser.add_argument("--ref", default='None', help="Id of the reference protein o
 parser.add_argument("--pdb_db", default='None', help="Path to the PDBs folder (Default: None)")
 
 #How to run the pipeline in linux terminal:
-#python run_logo.py JobId RPath fasta list_file ref pdb_db 
+#python3 run_logo.py --JobId XXX --fasta XXX.fasta --ref XXX --pdb_db XXX
+
 
 args = parser.parse_args()
 list_file=''
