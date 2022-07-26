@@ -18,7 +18,7 @@ neu<-hist(neufrust_Conf$ICtotal*neufrust_Conf$FreqConts, breaks=20, probability=
 
 
 png(filename=paste(args$dir, "histICConf.png", sep=""), height=400, width=600, bg="white")
-plot(neu, col='grey', xlab='IC of Confational Frustration')
+plot(neu, col='grey', xlab='IC of Configurational Frustration')
 lines(min, col='green')
 lines(max, col='red')
 dev.off()
