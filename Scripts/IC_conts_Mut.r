@@ -1,9 +1,13 @@
-N=read.delim("long.txt", stringsAsFactors=F, header=F)
+suppressPackageStartupMessages(library("argparse"))  
+parser <- ArgumentParser()
+parser$add_argument("--dir", help="long.txt")
+args <- parser$parse_args()
+N=read.delim(paste(args$dir, "long.txt", sep=""), stringsAsFactors=F, header=F)
 rangoresiduos<- c(1,N$V1)
 
-IC_Conts_Mut <- read.delim("IC_Mut")
+IC_Conts_Mut <- read.delim(paste(args$dir, "IC_Mut", sep=""))
 
-#------------------Mutacional
+#------------------Mutational
 maxfrust_Mut<- subset(IC_Conts_Mut, IC_Conts_Mut$EstadoConservado=='MAX')
 minfrust_Mut<-subset(IC_Conts_Mut, IC_Conts_Mut$EstadoConservado=='MIN')
 neufrust_Mut<-subset(IC_Conts_Mut, IC_Conts_Mut$EstadoConservado=='NEU')
@@ -13,7 +17,7 @@ min<-hist(minfrust_Mut$ICtotal*minfrust_Mut$FreqConts, breaks=20, probability=1)
 neu<-hist(neufrust_Mut$ICtotal*neufrust_Mut$FreqConts, breaks=20, probability=1)
 
 
-png(filename="histICMut.png", height=400, width=600, bg="white")
+png(filename=paste(args$dir, "histICMut.png", sep=""), height=400, width=600, bg="white")
 plot(neu, col='grey', xlab='IC of Mutational Frustration')
 lines(min, col='green')
 lines(max, col='red')
@@ -23,7 +27,7 @@ densmax<-density(maxfrust_Mut$ICtotal*maxfrust_Mut$FreqConts, bw=0.07)
 densmin<-density(minfrust_Mut$ICtotal*minfrust_Mut$FreqConts,bw=0.07)
 densneu<-density(neufrust_Mut$ICtotal*neufrust_Mut$FreqConts,bw=0.07)
 
-png(filename="densICMut.png", height=400, width=600, bg="white")
+png(filename=paste(args$dir, "densICMut.png", sep=""), height=400, width=600, bg="white")
 plot(densmax, col='red', xlab='FIC')
 lines(densneu, col='grey')
 lines(densmin, col='green')
@@ -38,7 +42,7 @@ cuts<-levels(cut(IC_Conts_Mut$FreqConts,breaks = 10))
 cuts<-gsub(","," - ",cuts)
 cuts<-gsub("\\(","[",cuts)
 
-png(filename="IC_Mut.png", height=1200, width=1200, bg="white")
+png(filename=paste(args$dir, "IC_Mut.png", sep=""), height=1200, width=1200, bg="white")
 
 # Add extra space to right of plot area; change clipping to figure
 par(mar=c(6, 6, 4.1, 8), xpd=TRUE)
