@@ -1,5 +1,9 @@
-tabla=read.table("AllEquival.txt", stringsAsFactors=F, header=F)
-N=read.delim("long.txt", stringsAsFactors=F, header=F)
+suppressPackageStartupMessages(library("argparse"))  
+parser <- ArgumentParser()
+parser$add_argument("--dir", help="AllEquival.txt")
+args <- parser$parse_args()
+tabla=read.table(paste(args$dir, "AllEquival.txt", sep=""), stringsAsFactors=F, header=F)
+N=read.delim(paste(args$dir, "long.txt", sep=""), stringsAsFactors=F, header=F)
 
 
 # limites frustracion single res
@@ -12,7 +16,7 @@ hist(frust_index)
 
 #m=matrix(nrow=N, ncol=N, data=0)
 
-sink("CharactPosDataN")
+sink(paste(args$dir, "CharactPosDataN", sep=""))
 cat("Res", "\t", "%Min", "\t" , "%Neu","\t","%Max","\t","CantMin","\t","CantNeu","\t","CantMax","\t","ICMin","\t","ICNeu","\t","ICMax","\t","ICTot","\t","FrustEstado","\n")
 
 
@@ -30,12 +34,6 @@ for (CharactPos in 1:N$V1)
   neutros_t=neutros
   
   total=minimos+maximos+neutros
-  
-  #Laplace correction -> No es aplicable aca, porque se usa para predicciones. Si k (resultado)=0, entonces P= 1/n+2 donde n es el num de seqs usadas.
-  #neutros[which(neutros==0)]=1/(total+2) 
-  #maximos[which(maximos==0)]=1/(total+2) 
-  #minimos[which(minimos==0)]=1/(total+2)
-  
   
   #small sample correction: restar a Hbackground/esperada (s-1)/2*ln(2)*n donde n es el numero de secuencias sampleadas 
   correccion= (3-1)/(2*log(2)*total)
@@ -61,10 +59,6 @@ for (CharactPos in 1:N$V1)
   h_shannon= -(0.4*log2(0.4)+0.1*log2(0.1)+0.5*log2(0.5)) -shannon
   h_shannon_corregida= h_shannon - correccion
   
-  #   h_shannon= -(0.4*log2(0.4)+0.1*log2(0.1)+0.5*log2(0.5)) -shannon-((3-1)/(2*log(2)*total))
-  
-  #   h_shannon=log2(3)-shannon-((3-1)/(2*log(2)*total))
-  
   
   h_minimos=minimos*h_shannon_corregida
   h_maximos=maximos*h_shannon_corregida
@@ -86,5 +80,3 @@ for (CharactPos in 1:N$V1)
   
 }
 
-
-#sink()
