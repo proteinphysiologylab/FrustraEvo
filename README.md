@@ -15,41 +15,53 @@ R library : argparse
 
 `import sys`
 
-`sys.path.append('')#Path to Functions.py file`
+`sys.path.append('')`#Path to Functions.py file
 
 `import Functions`
 
-`jodib=sys.argv[1]`
+`import argparse`
 
-`path_to_r=sys.argv[2]`
+`parser = argparse.ArgumentParser(description='Calculation of the frustration logo.')`
 
-`fasta_file=sys.argv[3]`
+`parser.add_argument("--JobId", help="The name of the job")`
+
+`parser.add_argument("--RPath", default='Scripts', help="Path to R script files (Default: Scripts)")`
+
+`parser.add_argument("--fasta", help="Name of the fasta")`
+
+`parser.add_argument("--ref", default='None', help="Id of the reference protein of your logo (Default: None)")`
+
+`parser.add_argument("--pdb_db", default='None', help="Path to the PDBs folder (Default: None)")`
+
+`parser.add_argument("--cmaps", default='None', help="Put 'yes' for contactmaps calculation (Default: None)")
+
+`args = parser.parse_args()`
 
 `list_file=''`
 
-`prot_ref=sys.argv[4]`
+`Functions.copyfiles(args.JobId,args.RPath,args.pdb_db)`
 
-`path_to_Pdbs=sys.argv[5]`
+`list_file=Functions.pdb_list(args.fasta)`
 
-`Functions.copyfiles(jodib,path_to_r,path_to_Pdbs)`
+`Functions.changes(args.JobId,args.fasta)`
 
-`list_file=Functions.pdb_list(fasta_file)`
+`Functions.FrustraPDB(list_file,args.JobId,args.pdb_db)`
 
-`Functions.changes(jodib,fasta_file)`
+`Functions.checks(args.JobId)`
 
-`Functions.FrustraPDB(list_file,jodib,path_to_Pdbs)`
+`Functions.prepare_file(args.JobId,args.ref)`
 
-`Functions.checks(jodib)`
+`Functions.FinalAlign(args.JobId)`
 
-`Functions.prepare_file(jodib,prot_ref)`
+`Functions.Equivalences(args.JobId)`
 
-`Functions.FinalAlign(jodib)`
+`Functions.FastaMod(args.JobId)`
 
-`Functions.Equivalences(jodib)`
+`Functions.LogoCheck(args.JobId)`
 
-`Functions.LogoCheck(jodib)`
+`Functions.plots_logo(args.JobId,args.ref,args.RPath)`
 
-`Functions.plots_logo(jodib,prot_ref)`
+To run in terminal: `python3 run_logo.py --JobId XXX --fasta XXX.fasta --ref XXXXX --pdb_db XXX`
 
 ## **You can find an example of how to use the package at:**
 
