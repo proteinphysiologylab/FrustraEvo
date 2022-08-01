@@ -33,7 +33,7 @@ R library : argparse
 
 `parser.add_argument("--pdb_db", default='None', help="Path to the PDBs folder (Default: None)")`
 
-`parser.add_argument("--cmaps", default='None', help="Put 'yes' for contactmaps calculation (Default: None)")
+`parser.add_argument("--cmaps", default='None', help="Put 'yes' for contactmaps calculation (Default: None)")`
 
 `args = parser.parse_args()`
 
