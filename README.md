@@ -49,7 +49,7 @@ R library : argparse
 
 `print('Making the plots')`
 
-Functions.plots_logo(args.JobId,args.ref,args.RPath)
+`Functions.plots_logo(args.JobId,args.ref,args.RPath)`
 
 To run in terminal: `python3 run_logo.py --JobId XXX --fasta XXX.fasta --ref XXXXX --pdb_db XXX`
 
