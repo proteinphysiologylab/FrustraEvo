@@ -520,7 +520,9 @@ def plots_logo(JodID,prot_ref,path_to_r):
 	os.system('Rscript '+path_to_r+'/Logo.R --dir '+os.getcwd()+'/'+path_direc+'/Equivalences/')
 	add_ref(JodID,prot_ref)
 	os.system('Rscript '+path_to_r+'/Generator.R --dir '+os.getcwd()+'/'+path_direc+'/Equivalences/')
-	os.system('mv '+path_direc+'/Equivalences/HistogramFrustration.svg'+' '+path_direc+'/OutPutFiles/FrustrationLogo'+JodID+'.svg')
+	os.system('mv '+path_direc+'/Equivalences/HistogramFrustration.png'+' '+path_direc+'/OutPutFiles/FrustrationLogo'+JodID+'.png')
+	os.system('cp '+path_direc+'/MSA_Final.fasta'+' '+path_direc+'/OutPutFiles/MSA_'+JodID+'.fasta')
+	os.system('mv '+path_direc+'/EvoFrustra-log'+' '+path_direc+'/OutPutFiles/Error_'+JodID+'.log')
 	#os.system('tar -zcvf '+JodID+'.tar.gz '+path_direc)
 
 def add_ref(JodID,prot_ref):
@@ -559,36 +561,34 @@ def VScript(JodID):
 			- JodID: the job name
 	'''
 	path_direc='FrustraEvo_'+JodID
-	list_chk= open(path_direc+'/PDB_ListChk.txt','r')
-	os.system('mkdir '+path_direc+'/Visualization')
-	os.system('cp '+path_direc+'/Frustration/*.pdb* '+path_direc+'/Visualization/')
+	list_chk= open(path_direc+'/AuxFiles/PDB_ListChk.txt','r')
 	for line in list_chk:
 		line=line.rstrip('\n')
 		pdbid=line
-		sal = open(path_direc+'/Visualization/'+pdbid+'.pml','w')
-		Equ = open(path_direc+'/Equivalences/Equival_'+pdbid+'.txt','r')
-		ECon = open(path_direc+'/Equivalences/CharactPosDataN','r')
+		sal = open(path_direc+'/Data/'+pdbid+'.done/FrustrationData/'+pdbid+'.pml','w')
+		Equ = open(path_direc+'/Data/'+pdbid+'.done/Equival_'+pdbid+'.txt','r')
+		ECon = open(path_direc+'/OutPutFiles/IC_SingleRes_'+JodID,'r')
 		sal.write('load '+pdbid+'.pdb\nhide all\nshow cartoon, all\nbg_color white\ncolor black, all')
 		EstCon=ECon.readline()
 		for EstCon in ECon.readlines():
 			Equi= Equ.readline()
 			splitE= Equi.split()
 			splitEC= EstCon.split()
-			if splitEC[11] == 'MAX' and float(splitEC[10])>0.5:
+			if splitEC[14] == 'MAX' and float(splitEC[13])>0.5:
 				if splitEC[0] != splitE[0]:
 					while int(splitEC[0]) == int(splitE[0]):
 						EstCon=ECon.readline()
 				if splitE[1] != 'N/A':
 					sal.write('\nshow sticks, resi '+splitE[1]+'\ncolor red,resi '+splitE[1]+' and chain '+splitE[5])
 					
-			if splitEC[11] == 'MIN' and float(splitEC[10])>0.5:
+			if splitEC[14] == 'MIN' and float(splitEC[13])>0.5:
 				if splitEC[0] != splitE[0]:
 					while int(splitEC[0]) == int(splitE[0]):
 						EstCon=ECon.readline()
 				if splitE[1] != 'N/A':
 					sal.write('\nshow sticks, resi '+splitE[1]+'\ncolor green,resi '+splitE[1]+' and chain '+splitE[5])
 
-			if splitEC[11] == 'NEU' and float(splitEC[10])>0.5:
+			if splitEC[14] == 'NEU' and float(splitEC[13])>0.5:
 				if splitEC[0] != splitE[0]:
 					while int(splitEC[0]) == int(splitE[0]):
 						EstCon=ECon.readline()
@@ -685,6 +685,26 @@ def add_ref_Cmaps(JodID,prot_ref,Mode):
 			out.write(sp[0]+'\t'+sp[1]+'\t'+vectorAA[int(sp[0])-1]+'\t'+vectorAA[int(sp[1])-1]+'\t'+str(num[int(sp[0])-1])+'\t'+str(num[int(sp[1])-1])+'\t'+prot_ref+'\t'+sp[2]+'\t'+sp[3]+'\t'+sp[4]+'\t'+sp[5]+'\t'+sp[6]+'\t'+sp[7]+'\t'+sp[8]+'\t'+sp[9]+'\t'+sp[10]+'\t'+sp[11]+'\t'+sp[12]+'\t'+sp[13]+'\t'+sp[14]+'\t'+sp[15]+'\n')
 
 	ic.close()
-	out.close()	
+	out.close()
 	res.close()
 	os.system('cp '+path_direc+'/CMaps/IC_'+Mode+'_ref'+' '+path_direc+'/OutPutFiles/IC_'+Mode+'_'+JodID)
+
+def clean_files(JodID):
+	path_direc='FrustraEvo_'+JodID
+	os.system('mkdir '+path_direc+'/AuxFiles')
+	os.system('rm '+path_direc+'/MSA_Final.fasta')
+	os.system('mv '+path_direc+'/long.txt '+path_direc+'/AuxFiles/')
+	os.system('mv '+path_direc+'/MSA_Chk.fasta '+path_direc+'/AuxFiles/')
+	os.system('mv '+path_direc+'/MSA_Chk_Ref.fasta '+path_direc+'/AuxFiles/')
+	os.system('mv '+path_direc+'/MSA_Clean.fasta '+path_direc+'/AuxFiles/')
+	os.system('mv '+path_direc+'/PDB_List.txt '+path_direc+'/AuxFiles/')
+	os.system('mv '+path_direc+'/PDB_ListChk.txt '+path_direc+'/AuxFiles/')
+	os.system('mv '+path_direc+'/Positions '+path_direc+'/AuxFiles/')
+	os.system('mv '+path_direc+'/Frustration/ '+path_direc+'/Data/')
+	os.system('cd '+path_direc+'/Data;rm *.pdb*')
+	lista=open(path_direc+'/AuxFiles/PDB_ListChk.txt')
+	for line in lista.readlines():
+		line=line.rstrip('\n')
+		os.system('mv '+path_direc+'/Equivalences/Equival_'+line+'.txt '+path_direc+'/Data/'+line+'.done/')
+	lista.close()
+	os.system('rm -r '+path_direc+'/Equivalences/')
