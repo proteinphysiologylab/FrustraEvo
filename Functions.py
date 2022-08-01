@@ -6,14 +6,20 @@ from Bio import SeqIO
 import numpy as np
 
 
-def copyfiles(JodID,path_to_r,path_to_Pdbs):
+def PreparingFiles(JobId,path_to_r,path_to_Pdbs,fasta):
+	copyfiles(JobId,path_to_r,path_to_Pdbs)
+	list_pdb=pdb_list(fasta)
+	changes(JobId,fasta)
+	return list_pdb
+	
+def copyfiles(JobID,path_to_r,path_to_Pdbs):
 
 	'''     This function is for the creation of folders and copying of necessary files
 		Parameters:
-			- JodID: the job name
+			- JobID: the job name
 			- path_to_r: path to the R files
 	'''
-	path_direc='FrustraEvo_'+JodID
+	path_direc='FrustraEvo_'+JobID
 	if os.path.isdir(path_direc):
 		os.system('rm -r '+path_direc)
 	os.system('mkdir '+path_direc)
@@ -38,14 +44,14 @@ def pdb_list(fasta_file):
 	msa.close()
 	return(sp[0]+'.list')
 
-def changes(JodID,MSA_File):
+def changes(JobID,MSA_File):
 	'''     This function make changes in the MSA and make a List
 		Parameters:
-			- JodID: the job name
+			- JobID: the job name
 			- MSA_File: the MSA
 			
 	'''
-	path_direc='FrustraEvo_'+JodID
+	path_direc='FrustraEvo_'+JobID
 	out=open(path_direc+'/MSA_Clean.fasta','w')
 	out_list=open(path_direc+'/PDB_List.txt','w')
 	pathAlign=MSA_File
@@ -57,22 +63,22 @@ def changes(JodID,MSA_File):
 	out.close()
 	out_list.close()
 
-def FrustraPDB(list_pdbs,JodID,pathPDB='None'):
+def FrustraPDB(list_pdbs,JobID,pathPDB='None'):
 	'''     This function is for the frustration calculation
 		Parameters:
 			- list_pdbs: the list with the Pdbs 
-			- JodID: the job name
+			- JobID: the job name
 			- pathPDB: path to the folder with the pdbs ()
 			
 	If you do not have the pdbs structures, the pipeline will download them from the Protein Data Bank database
 	'''
-	path_direc='FrustraEvo_'+JodID
+	path_direc='FrustraEvo_'+JobID
 	pdbs=open(list_pdbs,'r')
 	frustdir=path_direc+'/Frustration/'
 	for line in pdbs.readlines():
 		line=line.rstrip('\n')
 		if pathPDB == 'None':
-			os.system('cd '+frustdir+'/;wget \'http://www.rcsb.org/pdb/files/'+line+'.pdb\' -O '+JodID+'/Frustration/'+line+'.pdb')
+			os.system('cd '+frustdir+'/;wget \'http://www.rcsb.org/pdb/files/'+line+'.pdb\' -O '+JobID+'/Frustration/'+line+'.pdb')
 		else:
 			#line=line.lower()
 			os.system('cp '+pathPDB+'/'+line+'.pdb '+frustdir+'/'+line+'.pdb')
@@ -82,14 +88,14 @@ def FrustraPDB(list_pdbs,JodID,pathPDB='None'):
 	frustra.write('library(frustratometeR)\nPdbsDir <- \''+directory+frustdir+'\'\nResultsDir <- \''+directory+frustdir+'\'\ndir_frustration(PdbsDir = PdbsDir, Mode = \'singleresidue\', ResultsDir = ResultsDir)\n')
 	frustra.close()
 	os.system('cd '+frustdir+';Rscript FrustraR.R > FrustraR.log')
-
+	
   
-def checks(JodID):
+def checks(JobID):
 	'''     This function checks the frustration calculations
 	Parameters:
-		- JodID: the job name
+		- JobID: the job name
 	'''
-	path_direc='FrustraEvo_'+JodID
+	path_direc='FrustraEvo_'+JobID
 	MSA=open(path_direc+'/MSA_Clean.fasta','r')
 	out=open(path_direc+'/MSA_Chk.fasta','w')
 	out_list=open(path_direc+'/PDB_ListChk.txt','w')	
@@ -124,12 +130,12 @@ def checks(JodID):
 	out_error.close()
 	
 
-def DeleteGaps(JodID):
+def DeleteGaps(JobID):
 	'''     This function find the reference protein using HHMSearch
 		Parameters:
-			- JodID: the job name
+			- JobID: the job name
 	'''
-	path_direc='FrustraEvo_'+JodID
+	path_direc='FrustraEvo_'+JobID
 	AClean=open(path_direc+'/MSA_Clean.fasta','w')
 	Asearch=open(path_direc+'/MSASearch.fasta','w')
 	pathAlign=path_direc+'/MSA_Chk.fasta'
@@ -187,13 +193,13 @@ def DeleteGaps(JodID):
 	return pdbidsal
 
 
-def prepare_file(JodID,prot_ref):
+def prepare_file(JobID,prot_ref):
 	'''     This function prepare files for the calculations of the Equivalences
 	Parameters:
-		- JodID: the job name
+		- JobID: the job name
 		- prot_ref: the reference protein
 	'''
-	path_direc='FrustraEvo_'+JodID
+	path_direc='FrustraEvo_'+JobID
 	MSA=open(path_direc+'/MSA_Chk.fasta','r')
 	out=open(path_direc+'/MSA_Chk_Ref.fasta','w')
 	f=0
@@ -212,12 +218,12 @@ def prepare_file(JodID,prot_ref):
 	os.system('cat '+path_direc+'/MSA_Chk.fasta >> '+path_direc+'/MSA_Chk_Ref.fasta')
 
 
-def MissingRes(JodID):
+def MissingRes(JobID):
 	'''     This function find Missing Residues
 		Parameters:
-			- JodID: the job name
+			- JobID: the job name
 	'''
-	path_direc='FrustraEvo_'+JodID
+	path_direc='FrustraEvo_'+JobID
 	hash = {'CYS' : 'C', 'ASP' : 'D', 'SER' : 'S','GLN' : 'Q','LYS' : 'K','ILE' : 'I','PRO' : 'P','THR' : 'T','PHE' : 'F','ASN' : 'N','GLY' : 'G','HIS' : 'H','LEU' : 'L','ARG' : 'R','TRP' : 'W','ALA' : 'A','VAL' : 'V','GLU' : 'E','TYR' : 'Y','MET' : 'M','MSE' : 'B'}
 	MSA=open(path_direc+'/MSA_Chk_Ref.fasta','r')
 	for line in MSA.readlines():
@@ -226,7 +232,7 @@ def MissingRes(JodID):
 			pdbch=line[1:]
 			spline=pdbch.split('-')
 			count=0
-			srch=open(JodID+'/Frustration/'+spline[0]+'.pdb','r')
+			srch=open(JobID+'/Frustration/'+spline[0]+'.pdb','r')
 			for lsrch in srch.readlines():
 				sp_sch=busca.split(' ')
 				if len(spline) >= 2:
@@ -243,9 +249,9 @@ def MissingRes(JodID):
 						count=count+1
 			srch.close()
 			if count!=0:
-				os.system('cp '+JodID+'/Frustration/'+pdbch+'.done/FrustrationData/'+pdbch+'.pdb_singleresidue '+JodID+'/Frustration/'+pdbch+'.done/FrustrationData/'+pdbch+'.pdb_msingleresidue')
-				frst_sr=open(JodID+'/Frustration/'+pdbch+'.done/FrustrationData/'+pdbch+'.pdb_msingleresidue','r')
-				frst_sr_out=open(JodID+'/Frustration/'+pdbch+'.done/FrustrationData/'+pdbch+'.pdb_singleresidue','w')
+				os.system('cp '+JobID+'/Frustration/'+pdbch+'.done/FrustrationData/'+pdbch+'.pdb_singleresidue '+JobID+'/Frustration/'+pdbch+'.done/FrustrationData/'+pdbch+'.pdb_msingleresidue')
+				frst_sr=open(JobID+'/Frustration/'+pdbch+'.done/FrustrationData/'+pdbch+'.pdb_msingleresidue','r')
+				frst_sr_out=open(JobID+'/Frustration/'+pdbch+'.done/FrustrationData/'+pdbch+'.pdb_singleresidue','w')
 				cnt=0
 				spl=''
 				cnt2=0
@@ -279,9 +285,9 @@ def MissingRes(JodID):
 def ChangeAlign():
 	'''     This function make changes in the alignment in the case if you hace missing residues
 	Parameters: 
-		- JodID: the job name
+		- JobID: the job name
 	'''
-	path_direc='FrustraEvo_'+JodID
+	path_direc='FrustraEvo_'+JobID
 	os.system('cp '+path_direc+'/MSA_Chk_Ref.fasta '+path_direc+'/MSA_Chk_Ref_aux.fasta')
 	pathAlign=path_direc+'/MSA_Chk_Ref_aux.fasta'
 
@@ -295,7 +301,7 @@ def ChangeAlign():
 		out_msa.write('>'+seqid+'\n')	
 		out_msa_ref.write('>'+seqid+'\n')
 		d=len(sseqid)
-		frst_sl=open(JodID+'/Frustration/'+pdbch+'.done/FrustrationData/'+pdbch+'.pdb_singleresidue','r')
+		frst_sl=open(JobID+'/Frustration/'+pdbch+'.done/FrustrationData/'+pdbch+'.pdb_singleresidue','r')
 		c=0
 		if(d>2):
 			c=int(sseqid[d-2])
@@ -333,12 +339,12 @@ def ChangeAlign():
 	os.system('rm '+path_direc+'/MSA_Chk_Ref_aux.fasta')
 	
 
-def FinalAlign(JodID):
+def FinalAlign(JobID):
 	'''     This function create the final files
 	Parameters: 
-		- JodID: the job name
+		- JobID: the job name
 	'''
-	path_direc='FrustraEvo_'+JodID
+	path_direc='FrustraEvo_'+JobID
 	pathAlign=path_direc+'/MSA_Chk_Ref.fasta'
 	out_msa=open(path_direc+'/MSA_Final.fasta','w')
 	out_pos=open(path_direc+'/Positions','w')
@@ -424,12 +430,12 @@ def FinalAlign(JodID):
 	out_pos.close()
 	
 
-def Equivalences(JodID):
+def Equivalences(JobID):
 	'''     This function create the final files
 		Parameters: 
-			- JodID: the job name
+			- JobID: the job name
 	'''
-	path_direc='FrustraEvo_'+JodID
+	path_direc='FrustraEvo_'+JobID
 	pos=open(path_direc+'/Positions','r')
 
 	for line in pos.readlines():
@@ -478,11 +484,11 @@ def Equivalences(JodID):
 	pos.close()
 	
 	
-def FastaMod(JodID):
+def FastaMod(JobID):
 	'''     This function create the file for the sequence logo: 
-			- JodID: the job name
+			- JobID: the job name
 	'''
-	path_direc='FrustraEvo_'+JodID
+	path_direc='FrustraEvo_'+JobID
 	fasta=path_direc+'/MSA_Final.fasta'
 	out=open(path_direc+'/Equivalences/Logo.fasta','w')
 
@@ -493,11 +499,11 @@ def FastaMod(JodID):
 	out.close()
 
 
-def LogoCheck(JodID):
+def LogoCheck(JobID):
 	'''     This function checks the logo 
-			- JodID: the job name
+			- JobID: the job name
 	'''
-	path_direc='FrustraEvo_'+JodID
+	path_direc='FrustraEvo_'+JobID
 	os.system('cd '+path_direc+'/Equivalences/;cat *Equival* > AllEquivalB.txt')
 	res=open(path_direc+'/Equivalences/AllEquivalB.txt','r')
 	out=open(path_direc+'/Equivalences/AllEquival.txt','w')
@@ -512,25 +518,32 @@ def LogoCheck(JodID):
 	out.close()
 
 
-def plots_logo(JodID,prot_ref,path_to_r):
+def plots_logo(JobID,prot_ref,path_to_r):
 	'''     This function makes the plots for the frustration logo: 
-			- JodID: the job name
+			- JobID: the job name
 	'''
-	path_direc='FrustraEvo_'+JodID
+	path_direc='FrustraEvo_'+JobID
+	checks(JobID)
+	prepare_file(JobID,prot_ref)
+	FinalAlign(JobID)
+	Equivalences(JobID)
+	FastaMod(JobID)
+	LogoCheck(JobID)
 	os.system('Rscript '+path_to_r+'/Logo.R --dir '+os.getcwd()+'/'+path_direc+'/Equivalences/')
-	add_ref(JodID,prot_ref)
+	add_ref(JobID,prot_ref)
 	os.system('Rscript '+path_to_r+'/Generator.R --dir '+os.getcwd()+'/'+path_direc+'/Equivalences/')
-	os.system('mv '+path_direc+'/Equivalences/HistogramFrustration.png'+' '+path_direc+'/OutPutFiles/FrustrationLogo'+JodID+'.png')
-	os.system('cp '+path_direc+'/MSA_Final.fasta'+' '+path_direc+'/OutPutFiles/MSA_'+JodID+'.fasta')
-	os.system('mv '+path_direc+'/EvoFrustra-log'+' '+path_direc+'/OutPutFiles/Error_'+JodID+'.log')
-	#os.system('tar -zcvf '+JodID+'.tar.gz '+path_direc)
+	os.system('mv '+path_direc+'/Equivalences/HistogramFrustration.png'+' '+path_direc+'/OutPutFiles/FrustrationLogo'+JobID+'.png')
+	os.system('cp '+path_direc+'/MSA_Final.fasta'+' '+path_direc+'/OutPutFiles/MSA_'+JobID+'.fasta')
+	os.system('mv '+path_direc+'/EvoFrustra-log'+' '+path_direc+'/OutPutFiles/Error_'+JobID+'.log')
+	clean_files(JobID)
+	VScript(JobID)
 
-def add_ref(JodID,prot_ref):
+def add_ref(JobID,prot_ref):
 	'''     This function generate the .pml files: 
-			- JodID: the job name
+			- JobID: the job name
 			- prot_ref: the reference protein
 	'''
-	path_direc='FrustraEvo_'+JodID
+	path_direc='FrustraEvo_'+JobID
 	res=open(path_direc+'/Equivalences/Equival_'+prot_ref+'.txt','r')
 	out=open(path_direc+'/Equivalences/CharactPosData','w')
 	ic=open(path_direc+'/Equivalences/CharactPosDataN','r')
@@ -554,20 +567,20 @@ def add_ref(JodID,prot_ref):
 	ic.close()
 	out.close()	
 	res.close()
-	os.system('cp '+path_direc+'/Equivalences/CharactPosData'+' '+path_direc+'/OutPutFiles/IC_SingleRes_'+JodID)
+	os.system('cp '+path_direc+'/Equivalences/CharactPosData'+' '+path_direc+'/OutPutFiles/IC_SingleRes_'+JobID)
 
-def VScript(JodID):
+def VScript(JobID):
 	'''     This function generate the .pml files: 
-			- JodID: the job name
+			- JobID: the job name
 	'''
-	path_direc='FrustraEvo_'+JodID
+	path_direc='FrustraEvo_'+JobID
 	list_chk= open(path_direc+'/AuxFiles/PDB_ListChk.txt','r')
 	for line in list_chk:
 		line=line.rstrip('\n')
 		pdbid=line
 		sal = open(path_direc+'/Data/'+pdbid+'.done/FrustrationData/'+pdbid+'.pml','w')
 		Equ = open(path_direc+'/Data/'+pdbid+'.done/Equival_'+pdbid+'.txt','r')
-		ECon = open(path_direc+'/OutPutFiles/IC_SingleRes_'+JodID,'r')
+		ECon = open(path_direc+'/OutPutFiles/IC_SingleRes_'+JobID,'r')
 		sal.write('load '+pdbid+'.pdb\nhide all\nshow cartoon, all\nbg_color white\ncolor black, all')
 		EstCon=ECon.readline()
 		for EstCon in ECon.readlines():
@@ -599,14 +612,14 @@ def VScript(JodID):
 		ECon.close()
 	list_chk.close()
 	
-def CMaps_Mutational(JodID,path_to_r,prot_ref):
+def CMaps_Mutational(JobID,path_to_r,prot_ref):
 	'''     This function generate the CMaps for mutational index: 
-			- JodID: the job name
+			- JobID: the job name
 			- path_to_r: path to the R files
 	'''
 	directory=os.getcwd()+'/'
-	path_direc='FrustraEvo_'+JodID
-	frustdir='FrustraEvo_'+JodID+'/Frustration/'
+	path_direc='FrustraEvo_'+JobID
+	frustdir='FrustraEvo_'+JobID+'/Frustration/'
 	if os.path.isdir(path_direc+'/CMaps'):
 		print('The Path: '+path_direc+'/CMaps exists')
 	else:
@@ -625,18 +638,18 @@ def CMaps_Mutational(JodID,path_to_r,prot_ref):
 	dir_total=directory+path_direc
 	os.system('cd '+path_direc+'/CMaps;python3 IC_Conts_Mutational.py '+str(long)+' '+dir_total)
 	os.system('Rscript '+path_to_r+'/IC_conts_Mut.R --dir '+os.getcwd()+'/'+path_direc+'/CMaps/')
-	add_ref_Cmaps(JodID,prot_ref,'Mut')
-	os.system('cp '+path_direc+'/CMaps/IC_Mut.png'+' '+path_direc+'/OutPutFiles/CMaps'+'_'+JodID+'_Mut.png')
+	add_ref_Cmaps(JobID,prot_ref,'Mut')
+	os.system('cp '+path_direc+'/CMaps/IC_Mut.png'+' '+path_direc+'/OutPutFiles/CMaps'+'_'+JobID+'_Mut.png')
 
 	
-def CMaps_Configurational(JodID,path_to_r,prot_ref):
+def CMaps_Configurational(JobID,path_to_r,prot_ref):
 	'''     This function generate the CMaps for Configurational index: 
-			- JodID: the job name
+			- JobID: the job name
 			- path_to_r: path to the R files
 	'''
 	directory=os.getcwd()+'/'
-	path_direc='FrustraEvo_'+JodID
-	frustdir='FrustraEvo_'+JodID+'/Frustration/'
+	path_direc='FrustraEvo_'+JobID
+	frustdir='FrustraEvo_'+JobID+'/Frustration/'
 	if os.path.isdir(path_direc+'/CMaps'):
 		print('The Path: '+path_direc+'/CMaps exists')
 	else:
@@ -655,15 +668,15 @@ def CMaps_Configurational(JodID,path_to_r,prot_ref):
 	dir_total=directory+path_direc
 	os.system('cd '+path_direc+'/CMaps;python3 IC_Conts_Conf.py '+str(long)+' '+dir_total)
 	os.system('Rscript '+path_to_r+'/IC_conts_Conf.R --dir '+os.getcwd()+'/'+path_direc+'/CMaps/')
-	os.system('cp '+path_direc+'/CMaps/IC_Conf.png'+' '+path_direc+'/OutPutFiles/CMaps'+'_'+JodID+'_Conf.png')
-	add_ref_Cmaps(JodID,prot_ref,'Conf')
+	os.system('cp '+path_direc+'/CMaps/IC_Conf.png'+' '+path_direc+'/OutPutFiles/CMaps'+'_'+JobID+'_Conf.png')
+	add_ref_Cmaps(JobID,prot_ref,'Conf')
 	
-def add_ref_Cmaps(JodID,prot_ref,Mode):
+def add_ref_Cmaps(JobID,prot_ref,Mode):
 	'''     This function generate the .pml files: 
-			- JodID: the job name
+			- JobID: the job name
 			- prot_ref: the reference protein
 	'''
-	path_direc='FrustraEvo_'+JodID
+	path_direc='FrustraEvo_'+JobID
 	res=open(path_direc+'/Equivalences/Equival_'+prot_ref+'.txt','r')
 	out=open(path_direc+'/CMaps/IC_'+Mode+'_ref','w')
 	ic=open(path_direc+'/CMaps/IC_'+Mode,'r')
@@ -687,10 +700,10 @@ def add_ref_Cmaps(JodID,prot_ref,Mode):
 	ic.close()
 	out.close()
 	res.close()
-	os.system('cp '+path_direc+'/CMaps/IC_'+Mode+'_ref'+' '+path_direc+'/OutPutFiles/IC_'+Mode+'_'+JodID)
+	os.system('cp '+path_direc+'/CMaps/IC_'+Mode+'_ref'+' '+path_direc+'/OutPutFiles/IC_'+Mode+'_'+JobID)
 
-def clean_files(JodID):
-	path_direc='FrustraEvo_'+JodID
+def clean_files(JobID):
+	path_direc='FrustraEvo_'+JobID
 	os.system('mkdir '+path_direc+'/AuxFiles')
 	os.system('rm '+path_direc+'/MSA_Final.fasta')
 	os.system('mv '+path_direc+'/long.txt '+path_direc+'/AuxFiles/')
