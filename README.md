@@ -39,27 +39,17 @@ R library : argparse
 
 `list_file=''`
 
-`Functions.copyfiles(args.JobId,args.RPath,args.pdb_db)`
+`print('Preparing Files...')`
 
-`list_file=Functions.pdb_list(args.fasta)`
+`list_file=Functions.PreparingFiles(args.JobId,args.RPath,args.pdb_db,args.fasta)`
 
-`Functions.changes(args.JobId,args.fasta)`
+`print('Running Frustration')`
 
 `Functions.FrustraPDB(list_file,args.JobId,args.pdb_db)`
 
-`Functions.checks(args.JobId)`
+`print('Making the plots')`
 
-`Functions.prepare_file(args.JobId,args.ref)`
-
-`Functions.FinalAlign(args.JobId)`
-
-`Functions.Equivalences(args.JobId)`
-
-`Functions.FastaMod(args.JobId)`
-
-`Functions.LogoCheck(args.JobId)`
-
-`Functions.plots_logo(args.JobId,args.ref,args.RPath)`
+Functions.plots_logo(args.JobId,args.ref,args.RPath)
 
 To run in terminal: `python3 run_logo.py --JobId XXX --fasta XXX.fasta --ref XXXXX --pdb_db XXX`
 
