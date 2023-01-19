@@ -27,21 +27,7 @@ GetoptLong(
   #"paths_to_frustratometeR_output=s@", "Paths to FrustratrometeR output folder."
 )
 
-#print(seqrefs)
-#print(cluster_names)
-#print(paths_to_frustraevo_output)
 
-# Example to execute
-#-------------------------------------------------------------------------
-# Rscript MSFA_singleresidue.R 
-# -m ~/hemoglobins/data_heatmaps/*.fasta 
-# -s 2dn1-A 2dn1-B 2dn1-B 
-# -c Alpha Beta Both 
-# -p ~/OutPutFiles*/
-#
-# output = "/media/victoria/VICTORIA_EXTERNAL_DISK/CORONAVIRUS/frustration/paper_figs/test_MSFA/FrustraEvo_Alfas"
-#seqrefs = "2dn1-A"
-#cluster_names = "Alpha_globins"
 msas = Sys.glob(file.path(output, "OutPutFiles/MSA_*.fasta"))
 positions = Sys.glob(file.path(output, "AuxFiles/Positions"))
 ##########
@@ -49,7 +35,6 @@ positions = Sys.glob(file.path(output, "AuxFiles/Positions"))
 ##########
 
 # extract and align single residue values
-#ictot_icseq_list = list()
 list_plots = list()
 list_dfs = list()
 
@@ -63,34 +48,7 @@ for(m in 1:length(msas)){
   list_df = list()
   # get alignment and sequence indexes
   for (i in 1:length(msa)){
-    # s = msa[[i]]
-    # index_a = 0
-    # index_s = 0
-    # aa = c()
-    # seqpos = c()
-    # alipos = c()
-    # 
-    # for(j in 1:length(s)){
-    #   index_s_b = index_s
-    # 
-    #   if (s[j] !='-'){
-    #     index_a = index_a + 1
-    #     index_s = index_s + 1
-    #     
-    #   } else {
-    #     index_a = index_a + 1
-    #   }
-    #   
-    #   index_s_a = index_s
-    #   if (index_s_b == index_s_a){
-    #     index_s = '-'
-    #   }
-    #   
-    #   aa = c(aa, s[j])
-    #   seqpos = c(seqpos, index_s)
-    #   alipos = c(alipos, index_a)
-    #   index_s =index_s_a
-    # }
+ 
     if (str_detect(names(msa)[i], seqrefs[m])){
       IsRef = "yes"
     } else {
@@ -104,9 +62,6 @@ for(m in 1:length(msas)){
     positions_seq = data.frame ( id = positions_msa[c(n)],
                          Res = as.numeric(unlist(str_split(positions_msa[c(n+1)], ' '))),
                          Res_ref = as.numeric(unlist(str_split(positions_msa[c(nref+1)], ' '))))
-   # positions_seq = subset(positions_seq, !is.na(Res))
-   # positions_seq$Protein_position =  positions_seq$Res
-   # positions_seq$Protein_position[!is.na( positions_seq$Protein_position)] = seq_along(na.omit( positions_seq$Protein_position)) 
     
     frust_sr = Sys.glob(file.path(output,'Data', paste(refid,".done/*/*.pdb_singleresidue", sep ="")))
     cl = cluster_names[m]
@@ -114,14 +69,7 @@ for(m in 1:length(msas)){
     dt$Cluster= cl
     df2 = suppressMessages(full_join(dt, positions_seq))
     df2$Alignment_position = df2$Res_ref
-    
-    # df = data.frame(aa,
-    #                 Protein_position = as.numeric(seqpos),
-    #                 Alignment_position = alipos,
-    #                 id= refid,
-    #                 IsRef)
-    # df = left_join(df,df2, by =c("Alignment_position", "id"))
-    
+   
     list_df[[i]] = df2
   }
   
