@@ -1,0 +1,12 @@
+UI: Initial number of sequences: 3
+UI: Initial number of positions: 38
+UI: Number of outliers: (<40% of identity to any other sequence): 0
+UI: Final number of sequences after removing outliers: 3
+UI: Final number of positions after removing gappy columns: 38
+II: Final number of columns in the disjunctive matrix: 43
+UI: Number of axes selected: 1
+UI: Percentage of initial variance considered informative: 97.4415 %
+UI: Percentage of variance explained by the axis 1  (selected): 97.4415 %
+UI: Checking a maximum number of groups equal to: 1
+UI: No stable cluster results have been found
+SC: NO

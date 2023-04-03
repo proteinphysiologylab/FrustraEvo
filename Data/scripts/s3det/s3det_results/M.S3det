@@ -1,0 +1,555 @@
+UI: Initial number of sequences: 503
+UI: Initial number of positions: 467
+UI: Number of outliers: (<40% of identity to any other sequence): 1
+OUT: AVM87576.1 matrix protein [Guangdong chinese water skink coronavirus]
+UI: Final number of sequences after removing outliers: 502
+UI: Final number of positions after removing gappy columns: 205
+II: Final number of columns in the disjunctive matrix: 1697
+UI: Number of axes selected: 5
+UI: Percentage of initial variance considered informative: 66.1687 %
+UI: Percentage of variance explained by the axis 1  (selected): 27.4703 %
+UI: Percentage of variance explained by the axis 2  (selected): 41.252 %
+UI: Percentage of variance explained by the axis 3  (selected): 52.7872 %
+UI: Percentage of variance explained by the axis 4  (selected): 59.9873 %
+UI: Percentage of variance explained by the axis 5  (selected): 66.1687 %
+UI: Checking a maximum number of groups equal to: 50
+UI: Stable cluster results have been found
+SC: YES
+UI: Number of groups selected: 6
+II: Clustering index value: CH_Index = 1122.41
+II: F-Fisher: 5718.71
+II: Best solution found 996 times out of 5020 iterations searching for 6 groups
+Clustering of sequences: 
+CL: M_protein_SARS-CoV-2 MN985325 Wuhan seafood market pneumonia virus	1
+CL: QIQ54051.1 membrane protein [Pangolin coronavirus]	1
+CL: BCG66630.1 membrane protein [Severe acute respiratory syndrome-related coronavirus]	1
+CL: AIA62323.1 membrane glycoprotein [BtRs-BetaCoV/GX2013]	1
+CL: AIA62333.1 membrane glycoprotein [BtRs-BetaCoV/YN2013]	1
+CL: AGC74168.1 membrane protein [Bat coronavirus Rp/Shaanxi2011]	1
+CL: AGZ48810.1 membrane protein [Bat SARS-like coronavirus RsSHC014]	1
+CL: AYV99793.1 membrane protein [SARS coronavirus Urbani]	1
+CL: AHX37561.1 membrane protein [Rhinolophus affinis coronavirus]	1
+CL: YP_003858587.1 membrane protein [Bat coronavirus BM48-31/BGR/2008]	1
+CL: APO40582.1 M protein [Severe acute respiratory syndrome-related coronavirus]	1
+CL: QDF43837.1 matrix protein [Coronavirus BtRs-BetaCoV/YN2018D]	1
+CL: YP_009072443.1 membrane protein [Bat Hp-betacoronavirus/Zhejiang2013]	1
+CL: ADY69165.1 putative membrane protein [Zaria bat coronavirus]	1
+CL: ABN10922.1 Membrane glycoprotein [Bat coronavirus HKU9-2]	1
+CL: ABN10930.1 Membrane glycoprotein [Bat coronavirus HKU9-3]	1
+CL: ADM33585.1 membrane glycoprotein [Bat coronavirus HKU9-10-2]	1
+CL: ABN10938.1 Membrane glycoprotein [Bat coronavirus HKU9-4]	1
+CL: YP_009273008.1 membrane protein [Rousettus bat coronavirus]	1
+CL: AVP25409.1 membrane glycoprotein [Rousettus bat coronavirus HKU9]	1
+CL: ABN10890.1 Membrane glycoprotein [Bat coronavirus HKU5-2]	1
+CL: AWH65960.1 M protein [Middle East respiratory syndrome-related coronavirus]	1
+CL: YP_009824992.1 membrane protein [Bat coronavirus]	1
+CL: AOG30815.1 membrane protein [Rousettus bat coronavirus]	1
+CL: AGX27817.1 M [Betacoronavirus Erinaceus/VMC/DEU/2012] [Betacoronavirus Erinaceus/VMC/DEU/2012]	1
+CL: AUM60030.1 membrane protein [Middle East respiratory syndrome-related coronavirus]	1
+CL: AWV67066.1 Membrane protein [Bat coronavirus]	1
+CL: QRN68106.1 membrane protein [Betacoronavirus Erinaceus]	1
+CL: QQH14877.1 membrane protein [Bat coronavirus]	1
+CL: AWV67050.1 Membrane protein [Bat coronavirus]	1
+CL: AWV67058.1 Membrane protein [Bat coronavirus]	1
+CL: Q0Q4E7.1 RecName: Full=Membrane protein; Short=M protein; AltName: Full=E1 glycoprotein; AltName: Full=Matrix glycoprotein; AltName: Full=Membrane glycoprotein [Bat coronavirus (BtCoV/133/2005)]	1
+CL: ADX59477.1 membrane protein [Rousettus bat coronavirus/Kenya/KY06/2006]	1
+CL: AVV62532.1 M protein [Middle East respiratory syndrome-related coronavirus]	1
+CL: QJX58369.1 matrix protein [Bat coronavirus HKU9-1]	1
+CL: QGA70698.1 membrane protein [Erinaceus hedgehog coronavirus HKU31]	1
+CL: AVV62543.1 M protein [Middle East respiratory syndrome-related coronavirus]	1
+CL: BBJ36014.1 small envelope protein [Bat coronavirus]	1
+CL: QRN68045.1 membrane protein [Betacoronavirus Erinaceus]	1
+CL: AHY61343.1 membrane glycoprotein [BtVs-BetaCoV/SC2013]	1
+CL: QOQ34387.1 membrane protein [Erinaceus amurensis coronavirus]	1
+CL: ANA96045.1 membrane protein [Bat coronavirus]	1
+CL: QCC20720.1 M [Hedgehog coronavirus 1] [Hedgehog coronavirus 1]	1
+CL: YP_001039974.1 membrane glycoprotein [Rousettus bat coronavirus HKU9]	1
+CL: ATY74387.1 membrane protein [Middle East respiratory syndrome-related coronavirus]	1
+CL: BAI67742.1 membrane glycoprotein [Bat coronavirus Philippines/Diliman1525G2/2008]	1
+CL: AWH65894.1 M protein [Tylonycteris bat coronavirus HKU4]	1
+CL: YP_009361863.1 membrane glycoprotein [Bat coronavirus]	1
+CL: QDF43842.1 matrix protein [Coronavirus BtRt-BetaCoV/GX2018]	1
+CL: ANI69841.1 membrane protein [Middle East respiratory syndrome-related coronavirus]	1
+CL: ATQ39392.1 membrane protein [Middle East respiratory syndrome-related coronavirus]	1
+CL: QIM73818.1 membrane protein [Coronaviridae sp.]	2
+CL: QLD98037.1 M protein [Middle East respiratory syndrome-related coronavirus]	1
+CL: ANA52020.1 membrane protein [Porcine hemagglutinating encephalomyelitis virus]	2
+CL: ARC95238.1 membrane protein [Porcine hemagglutinating encephalomyelitis virus]	2
+CL: AAF05705.1 membrane protein [Murine hepatitis virus]	2
+CL: BAJ04700.1 membrane protein [Murine hepatitis virus]	2
+CL: AAQ67209.1 triple spanning membrane protein [Equine coronavirus NC99]	2
+CL: ATP66775.1 membrane protein [Rodent coronavirus]	2
+CL: AAF19388.1 matrix glycoprotein [Murine hepatitis virus strain 2]	2
+CL: AVN88327.1 membrane protein [Water deer coronavirus]	2
+CL: AAY33957.1 structural protein M [Bovine coronavirus]	2
+CL: AZS64203.1 membrane protein [Bovine coronavirus]	2
+CL: AGT51425.1 membrane protein [Human coronavirus OC43]	2
+CL: AWH65883.1 M protein [Tylonycteris bat coronavirus HKU4]	1
+CL: AZU96329.1 M protein [Yak coronavirus]	2
+CL: AIX09802.1 membrane protein [Human coronavirus OC43]	2
+CL: ATP66764.1 membrane protein [Rodent coronavirus]	2
+CL: QIM73815.1 membrane protein [Coronaviridae sp.]	2
+CL: AGT51633.1 membrane protein [Human coronavirus OC43]	2
+CL: ATP66758.1 membrane protein [Rodent coronavirus]	2
+CL: ATP66735.1 membrane protein [Rodent coronavirus]	2
+CL: AID16657.1 membrane protein [Longquan Rl rat coronavirus]	2
+CL: AAW47244.1 membrane protein [Murine hepatitis virus]	2
+CL: QEY10636.1 M protein [Dromedary camel coronavirus HKU23]	2
+CL: QIM73830.1 membrane protein [Coronaviridae sp.]	2
+CL: AWB14617.1 membrane protein [Murine hepatitis virus]	2
+CL: QRK03925.1 membrane protein [Human coronavirus OC43]	2
+CL: ATP66729.1 membrane protein [Rodent coronavirus]	2
+CL: YP_209237.1 membrane protein [Murine hepatitis virus strain JHM]	2
+CL: QCI55927.1 membrane protein [Murine coronavirus]	2
+CL: ATP66781.1 membrane protein [Rodent coronavirus]	2
+CL: ACL13000.1 membrane protein [Canine respiratory coronavirus]	2
+CL: AQT26503.1 membrane protein [Canine respiratory coronavirus]	2
+CL: BAF75636.1 membrane protein [Bovine coronavirus]	2
+CL: VVU96370.1 Membrane protein [Canine respiratory coronavirus]	2
+CL: AYR18620.1 membrane protein [Betacoronavirus sp.]	2
+CL: AYR18602.1 membrane protein [Betacoronavirus sp.]	2
+CL: QIM73824.1 membrane protein [Coronaviridae sp.]	2
+CL: AHA83611.1 membrane protein [Rat coronavirus]	2
+CL: ATP66752.1 membrane protein [Rodent coronavirus]	2
+CL: ATN37901.1 matrix protein [Murine hepatitis virus]	2
+CL: Q9WCD1.1 RecName: Full=Membrane protein; Short=M protein; AltName: Full=E1 glycoprotein; AltName: Full=Matrix glycoprotein; AltName: Full=Membrane glycoprotein [Rat coronavirus (strain NJ)]	2
+CL: ATP66746.1 membrane protein [Rodent coronavirus]	2
+CL: ABD75500.1 membrane glycoprotein [Human coronavirus HKU1]	2
+CL: QEG03817.1 membrane protein [Human coronavirus OC43]	2
+CL: Q14EA7.1 RecName: Full=Membrane protein; Short=M protein; AltName: Full=E1 glycoprotein; AltName: Full=Matrix glycoprotein; AltName: Full=Membrane glycoprotein [Human coronavirus HKU1 (isolate N2)]	2
+CL: AFG25764.1 membrane protein [Rat coronavirus]	2
+CL: QGX41966.1 membrane protein [Alphacoronavirus sp.]	3
+CL: AIA62215.1 membrane glycoprotein [BtMf-AlphaCoV/GD2012]	3
+CL: QGX41972.1 membrane protein [Alphacoronavirus sp.]	3
+CL: QBP43262.1 M protein [Bat coronavirus]	3
+CL: ATJ03683.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: QHA24727.1 membrane protein [Hipposideros pomona bat coronavirus CHB25]	3
+CL: AIA62223.1 membrane glycoprotein [BtMf-AlphaCoV/HuB2013]	3
+CL: AGI02604.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: ADX59498.1 membrane protein [Chaerephon bat coronavirus/Kenya/KY22/2006]	3
+CL: QBP43273.1 M protein [Bat coronavirus]	3
+CL: AET71243.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: ABF61551.1 membrane protein [Infectious bronchitis virus]	4
+CL: AWM11477.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: QCX35163.1 membrane protein [Tylonycteris bat coronavirus HKU33]	3
+CL: QFU19228.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: YP_001718615.1 membrane protein [Miniopterus bat coronavirus HKU8]	3
+CL: AYR18570.1 matrix protein [Alphacoronavirus sp.]	3
+CL: ACV81757.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: AFZ88829.1 membrane protein [Infectious bronchitis virus]	4
+CL: ADX59454.1 membrane protein [Cardioderma bat coronavirus/Kenya/KY43/2006]	3
+CL: AST13132.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: YP_009201733.1 membrane glycoprotein [BtNv-AlphaCoV/SC2013]	3
+CL: QBO24660.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: QDF43797.1 matrix protein [Coronavirus BtSk-AlphaCoV/GX2018B]	3
+CL: ADX59491.1 membrane protein [Miniopterus bat coronavirus/Kenya/KY33/2006]	3
+CL: AFS18100.1 membrane protein [Infectious bronchitis virus]	4
+CL: AAT35841.1 M protein [Porcine epidemic diarrhea virus]	3
+CL: ALR84911.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: AFZ85191.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: ABQ84802.1 membrane protein [Infectious bronchitis virus]	4
+CL: QDF43807.1 matrix protein [Coronavirus BtSk-AlphaCoV/GX2018D]	3
+CL: ACV81753.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: ASK39748.1 M protein [Porcine epidemic diarrhea virus]	3
+CL: AFU92125.1 membrane protein [Hipposideros bat coronavirus HKU10]	3
+CL: ABQ84937.1 membrane protein [Infectious bronchitis virus]	4
+CL: ABM64779.1 M protein [Porcine epidemic diarrhea virus]	3
+CL: QFG71735.1 M protein [Porcine epidemic diarrhea virus]	3
+CL: AIC82413.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: ACZ67647.1 membrane protein [Infectious bronchitis virus]	4
+CL: AKS26492.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: ABQ84881.1 membrane protein [Infectious bronchitis virus]	4
+CL: QDF43802.1 matrix protein [Coronavirus BtSk-AlphaCoV/GX2018C]	3
+CL: QCX35173.1 membrane protein [Rhinolophus bat coronavirus HKU32]	3
+CL: AFZ85193.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: AJD09504.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: AAK50027.1 membrane protein [Infectious bronchitis virus]	4
+CL: QLI33797.1 matrix protein [Infectious bronchitis virus]	4
+CL: ALF39592.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: AFO70499.1 membrane protein [Human coronavirus NL63]	3
+CL: ANY58998.1 membrane M protein [Avian coronavirus]	4
+CL: AYR18534.1 matrix protein [Alphacoronavirus sp.]	3
+CL: AFZ88837.1 membrane protein [Infectious bronchitis virus]	4
+CL: APD51510.1 M protein [229E-related bat coronavirus]	3
+CL: AXR85436.1 membrane protein [Infectious bronchitis virus]	4
+CL: ARS22414.1 membrane glycoprotein [Infectious bronchitis virus]	4
+CL: AFN88521.1 membrane protein [Infectious bronchitis virus]	4
+CL: ACJ50195.1 membrane protein [Infectious bronchitis virus]	4
+CL: QIO03935.1 membrane protein [Infectious bronchitis virus]	4
+CL: AFK08619.1 M protein [Porcine epidemic diarrhea virus]	3
+CL: ACT55272.1 matrix glycoprotein [Infectious bronchitis virus]	4
+CL: ABQ84873.1 membrane protein [Infectious bronchitis virus]	4
+CL: AAK50030.1 membrane protein [Infectious bronchitis virus]	4
+CL: AFN88518.1 membrane protein [Infectious bronchitis virus]	4
+CL: ARI46224.1 membrane glycoprotein [Infectious bronchitis virus]	4
+CL: AZF86121.1 membrane protein [Alphacoronavirus Bat-CoV/P.kuhlii/Italy/206645-41/2011]	3
+CL: ACZ67633.1 membrane protein [Infectious bronchitis virus]	4
+CL: QGX41948.1 membrane protein [Alphacoronavirus sp.]	3
+CL: QDQ69125.1 membrane protein [Infectious bronchitis virus]	4
+CL: QOE77271.1 membrane glycoprotein [Lucheng Rn rat coronavirus]	3
+CL: QGX07414.1 membrane protein [Infectious bronchitis virus]	4
+CL: AEO86772.1 M protein [Duck coronavirus]	4
+CL: AJR29317.1 M protein [Infectious bronchitis virus]	4
+CL: QRR19176.1 membrane protein [Turkey coronavirus]	4
+CL: AAB66559.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: ACZ67643.1 membrane protein [Infectious bronchitis virus]	4
+CL: QDE55568.1 membrane protein [Bat alphacoronavirus]	3
+CL: AWM11501.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: ANO81458.1 membrane glycoprotein [Infectious bronchitis virus]	4
+CL: ASU92400.1 membrane protein [Infectious bronchitis virus]	4
+CL: YP_006908645.1 membrane protein [Rousettus bat coronavirus HKU10]	3
+CL: AFV59249.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: AFZ88835.1 membrane protein [Infectious bronchitis virus]	4
+CL: AND76838.1 M protein [Infectious bronchitis virus]	4
+CL: ACB87499.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: ACR16065.1 membrane protein [Infectious bronchitis virus]	4
+CL: ALH21115.1 membrane protein [Infectious bronchitis virus]	4
+CL: ACS45215.1 M protein [Infectious bronchitis virus]	4
+CL: AYR18594.1 matrix protein [Alphacoronavirus sp.]	3
+CL: APY20698.1 membrane protein [Infectious bronchitis virus]	4
+CL: ABQ84857.1 membrane protein [Infectious bronchitis virus]	4
+CL: ADW77296.1 membrane protein [Infectious bronchitis virus]	4
+CL: APD51494.1 M protein [NL63-related bat coronavirus]	3
+CL: QDQ69138.1 membrane protein [Infectious bronchitis virus]	4
+CL: ABQ84810.1 membrane protein [Infectious bronchitis virus]	4
+CL: YP_009824970.1 M protein [NL63-related bat coronavirus]	3
+CL: AFZ88834.1 membrane protein [Infectious bronchitis virus]	4
+CL: AKC34136.1 M protein [Infectious bronchitis virus]	4
+CL: AAX39762.1 membrane glycoprotein [Infectious bronchitis virus]	4
+CL: APZ73719.1 M protein [Infectious bronchitis virus]	4
+CL: ARB66184.1 M protein [Infectious bronchitis virus]	4
+CL: AFS18098.1 membrane protein [Infectious bronchitis virus]	4
+CL: QHQ97047.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: ACR16060.1 membrane protein [Infectious bronchitis virus]	4
+CL: QDQ69151.1 membrane protein [Infectious bronchitis virus]	4
+CL: AMO03296.1 membrane protein [Infectious bronchitis virus]	4
+CL: ADY62546.1 membrane protein [Infectious bronchitis virus]	4
+CL: QNT22135.1 Membrane protein [Rodent coronavirus]	3
+CL: QDQ69177.1 membrane protein [Infectious bronchitis virus]	4
+CL: AAX39761.1 membrane glycoprotein [Infectious bronchitis virus]	4
+CL: ARS22424.1 membrane glycoprotein [Infectious bronchitis virus]	4
+CL: QEY95712.1 membrane protein [Infectious bronchitis virus]	4
+CL: AJP08751.1 membrane protein [Infectious bronchitis virus]	4
+CL: AIB54166.1 membrane protein [Infectious bronchitis virus]	4
+CL: ADA83491.1 membrane protein [Infectious bronchitis virus]	4
+CL: YP_009755893.1 membrane protein [Alphacoronavirus Bat-CoV/P.kuhlii/Italy/3398-19/2015]	3
+CL: AOV85637.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: AJT47954.1 M protein [Infectious bronchitis virus]	4
+CL: ABQ84850.1 membrane protein [Infectious bronchitis virus]	4
+CL: ACV87272.1 membrane [Turkey coronavirus]	4
+CL: P05136.1 RecName: Full=Membrane protein; Short=M protein; AltName: Full=E1 glycoprotein; AltName: Full=Matrix glycoprotein; AltName: Full=Membrane glycoprotein [Avian infectious bronchitis virus (strain 6/82)]	4
+CL: ATE90971.1 matrix protein [Avian coronavirus]	4
+CL: AAK83028.1 membrane protein [Infectious bronchitis virus]	4
+CL: CAZ86703.1 membrane glycoprotein [Infectious bronchitis virus ITA/90254/2005]	4
+CL: ARJ35785.1 membrane protein [Avian coronavirus]	4
+CL: AYG86351.1 membrane glycoprotein [Infectious bronchitis virus]	4
+CL: YP_009336486.1 membrane protein [Lucheng Rn rat coronavirus]	3
+CL: ANA96051.1 membrane protein [Bat coronavirus]	3
+CL: QHA24699.1 membrane protein [Scotophilus kuhlii bat coronavirus 512-related]	3
+CL: AYR18403.1 matrix protein [Alphacoronavirus sp.]	3
+CL: QEY95697.1 membrane protein [Infectious bronchitis virus]	4
+CL: QIM61644.1 membrane protein [Avian coronavirus]	4
+CL: ATP66769.1 membrane protein [Rodent coronavirus]	3
+CL: AJD09521.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: APY23546.1 M protein [Infectious bronchitis virus]	4
+CL: ABD34826.1 membrane protein [Human coronavirus NL63]	3
+CL: ASV51730.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: AIB54169.1 membrane protein [Infectious bronchitis virus]	4
+CL: YP_009200738.1 membrane glycoprotein [BtRf-AlphaCoV/YN2012]	3
+CL: QOS02279.1 membrane protein [Avian coronavirus IA1162/2020]	4
+CL: P12649.1 RecName: Full=Membrane protein; Short=M protein; AltName: Full=E1 glycoprotein; AltName: Full=Matrix glycoprotein; AltName: Full=Membrane glycoprotein [Avian infectious bronchitis virus (strain KB8523)]	4
+CL: ARI44796.1 membrane protein [Bat coronavirus]	3
+CL: ABG36799.1 M protein [Infectious bronchitis virus]	4
+CL: ABF61498.1 membrane protein [Infectious bronchitis virus]	4
+CL: AMK51952.1 M protein [Infectious bronchitis virus]	4
+CL: AEF98434.1 membrane protein [Infectious bronchitis virus]	4
+CL: CEK09112.1 M [Guinea fowl coronavirus GfCoV/FR/2011] [Guinea fowl coronavirus GfCoV/FR/2011]	4
+CL: QDA76268.1 M protein [Pheasant coronavirus]	4
+CL: APX44069.1 M protein [Infectious bronchitis virus]	4
+CL: ACZ67631.1 membrane protein [Infectious bronchitis virus]	4
+CL: AXQ05205.1 membrane M protein [Avian coronavirus]	4
+CL: YP_009199793.1 membrane glycoprotein [BtRf-AlphaCoV/HuB2013]	3
+CL: AFS18117.1 membrane protein [Infectious bronchitis virus]	4
+CL: AAP92679.1 membrane protein [Infectious bronchitis virus]	4
+CL: QRG26542.1 membrane protein [Infectious bronchitis virus]	4
+CL: ANV78633.1 membrane protein [Scotophilus kuhlii coronavirus]	3
+CL: AXB38898.1 membrane M protein [Avian coronavirus]	4
+CL: APY23537.1 M protein [Infectious bronchitis virus]	4
+CL: AFK30969.1 membrane protein [Infectious bronchitis virus]	4
+CL: QHI01620.1 membrane protein [Infectious bronchitis virus]	4
+CL: AZN28590.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: QKV27968.1 membrane protein [Infectious bronchitis virus]	4
+CL: AFJ11180.1 M protein [Infectious bronchitis virus]	4
+CL: ATP66740.1 membrane protein [Rodent coronavirus]	3
+CL: AIB54162.1 membrane protein [Infectious bronchitis virus]	4
+CL: QDA76250.1 M protein [Infectious bronchitis virus]	4
+CL: ASO96553.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: AYR18415.1 matrix protein [Alphacoronavirus sp.]	3
+CL: AKS25256.1 membrane protein [Infectious bronchitis virus]	4
+CL: ADX59461.1 membrane protein [Chaerephon bat coronavirus/Kenya/KY41/2006]	3
+CL: AAX39758.1 membrane glycoprotein [Infectious bronchitis virus]	4
+CL: QOE77280.1 membrane glycoprotein [Lucheng Rn rat coronavirus]	3
+CL: ACS45213.1 M protein [Infectious bronchitis virus]	4
+CL: AAK50033.1 membrane protein [Infectious bronchitis virus]	4
+CL: AHN54762.1 membrane glycoprotein [Infectious bronchitis virus]	4
+CL: ABF61535.1 membrane protein [Infectious bronchitis virus]	4
+CL: ACV87261.1 membrane [Turkey coronavirus]	4
+CL: ARS23156.1 membrane protein [Infectious bronchitis virus]	4
+CL: APY23573.1 M protein [Infectious bronchitis virus]	4
+CL: QEY95717.1 membrane protein [Infectious bronchitis virus]	4
+CL: ACJ50171.1 membrane protein [Infectious bronchitis virus]	4
+CL: AYA44705.1 membrane protein [Infectious bronchitis virus]	4
+CL: ABF61506.1 membrane protein [Infectious bronchitis virus]	4
+CL: QQH14740.1 membrane protein [Infectious bronchitis virus]	4
+CL: QKV27955.1 membrane protein [Infectious bronchitis virus]	4
+CL: ABG36791.1 M protein [Infectious bronchitis virus]	4
+CL: ASK51720.1 membrane glycoprotein [Porcine enteric alphacoronavirus GDS04]	3
+CL: QDQ69203.1 membrane protein [Infectious bronchitis virus]	4
+CL: AQY55879.1 M protein [Infectious bronchitis virus]	4
+CL: ACT31317.1 membrane protein [Infectious bronchitis virus]	4
+CL: AAP68696.1 membrane protein [Infectious bronchitis virus]	4
+CL: ADV71818.1 membrane protein [Infectious bronchitis virus]	4
+CL: ACZ67645.1 membrane protein [Infectious bronchitis virus]	4
+CL: QDH43733.1 membrane protein [Human coronavirus NL63]	3
+CL: ACJ50163.1 membrane protein [Infectious bronchitis virus]	4
+CL: ACV87238.1 membrane [Turkey coronavirus]	4
+CL: ALQ43519.1 membrane protein [European turkey coronavirus 080385d]	4
+CL: AAK50026.1 membrane protein [Infectious bronchitis virus]	4
+CL: QIQ19610.1 M protein [Infectious bronchitis virus]	4
+CL: ABF61559.1 membrane protein [Infectious bronchitis virus]	4
+CL: QGM12395.1 membrane glycoprotein [Infectious bronchitis virus]	4
+CL: ARS22434.1 membrane glycoprotein [Infectious bronchitis virus]	4
+CL: YP_009328938.1 M protein [NL63-related bat coronavirus]	3
+CL: AAP86208.1 membrane protein [Infectious bronchitis virus]	4
+CL: QHI01610.1 membrane protein [Infectious bronchitis virus]	4
+CL: ABF61483.1 membrane protein [Infectious bronchitis virus]	4
+CL: ACZ67636.1 membrane protein [Infectious bronchitis virus]	4
+CL: ATP66791.1 membrane protein [Rodent coronavirus]	3
+CL: AFZ88833.1 membrane protein [Infectious bronchitis virus]	4
+CL: ACQ91089.1 membrane protein [Infectious bronchitis virus]	4
+CL: ABW75128.1 M [Turkey coronavirus] [Turkey coronavirus]	4
+CL: YP_009755901.1 membrane protein [Canada goose coronavirus]	4
+CL: QDY92363.1 membrane glycoprotein [Avian coronavirus]	4
+CL: ACZ67644.1 membrane protein [Infectious bronchitis virus]	4
+CL: APZ73692.1 M protein [Infectious bronchitis virus]	4
+CL: ACR16067.1 membrane protein [Infectious bronchitis virus]	4
+CL: ABQ84913.1 membrane protein [Infectious bronchitis virus]	4
+CL: QDQ69099.1 membrane protein [Infectious bronchitis virus]	4
+CL: ACQ91086.1 membrane protein [Infectious bronchitis virus]	4
+CL: AQY61373.1 M protein [Infectious bronchitis virus]	4
+CL: ABF61520.1 membrane protein [Infectious bronchitis virus]	4
+CL: QKV27916.1 membrane protein [Infectious bronchitis virus]	4
+CL: ACJ50187.1 membrane protein [Infectious bronchitis virus]	4
+CL: AYR18588.1 matrix protein [Alphacoronavirus sp.]	3
+CL: QER90707.1 membrane protein [Bat alphacoronavirus]	3
+CL: ACZ17397.1 M protein [Infectious bronchitis virus]	4
+CL: AAA46217.1 matrix protein [Infectious bronchitis virus]	4
+CL: ACJ50179.1 membrane protein [Infectious bronchitis virus]	4
+CL: YP_009019185.1 membrane protein [Mink coronavirus strain WD1127]	5
+CL: QIQ19636.1 M protein [Infectious bronchitis virus]	4
+CL: QKX95783.1 M protein [Mink coronavirus 1]	5
+CL: QPP46982.1 membrane protein [Minacovirus mink/NLD/2020/NT_4]	5
+CL: Q91QS9.1 RecName: Full=Membrane protein; Short=M protein; AltName: Full=E1 glycoprotein; AltName: Full=Matrix glycoprotein; AltName: Full=Membrane glycoprotein [Avian infectious bronchitis virus (strain Beaudette US)]	4
+CL: API61794.1 M protein [Infectious bronchitis virus]	4
+CL: QBG64660.1 M protein [Alphacoronavirus UKRn3]	3
+CL: ACZ67635.1 membrane protein [Infectious bronchitis virus]	4
+CL: AFQ31004.1 membrane glycoprotein [Infectious bronchitis virus]	4
+CL: AIB54161.1 membrane protein [Infectious bronchitis virus]	4
+CL: ASR18941.1 membrane protein [Ferret enteric coronavirus]	5
+CL: AVY53338.1 membrane protein [Alphacoronavirus Mink/China/1/2016]	5
+CL: APZ73811.1 M protein [Infectious bronchitis virus]	4
+CL: QJS39676.1 M protein [Infectious bronchitis virus]	4
+CL: ABW75142.1 M [Turkey coronavirus] [Turkey coronavirus]	4
+CL: ADD49352.1 membrane glycoprotein [Ferret systemic coronavirus]	5
+CL: AGK25218.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: ABF61490.1 membrane protein [Infectious bronchitis virus]	4
+CL: AAQ21589.1 M protein [Infectious bronchitis virus]	4
+CL: QLE11828.1 membrane protein [Bat alphacoronavirus]	3
+CL: ARI46304.1 membrane glycoprotein [Infectious bronchitis virus]	4
+CL: ADI80525.1 membrane protein [Mink coronavirus strain WD1133]	5
+CL: ADD49361.1 membrane glycoprotein [Ferret enteric coronavirus]	5
+CL: QQZ00189.1 M protein [Canine coronavirus]	5
+CL: P24412.1 RecName: Full=Membrane protein; Short=M protein; AltName: Full=E1 glycoprotein; AltName: Full=Matrix glycoprotein; AltName: Full=Membrane glycoprotein [Porcine respiratory coronavirus (STRAIN RM4)]	5
+CL: QHA24706.1 membrane protein [Rhinolophus affinis bat coronavirus HKU2-related]	3
+CL: QKV43717.1 membrane protein [Swine enteric coronavirus]	5
+CL: ACS44222.1 M [Feline coronavirus] [Feline coronavirus]	5
+CL: AAO33711.1 membrane glycoprotein [Canine coronavirus]	5
+CL: ADV71793.1 membrane protein [Infectious bronchitis virus]	4
+CL: AAC96007.1 envelope protein [Transmissible gastroenteritis virus]	5
+CL: AIN55780.1 membrane protein [Feline coronavirus]	5
+CL: YP_009256200.1 membrane protein [Ferret coronavirus]	5
+CL: QQZ00186.1 M protein [Canine coronavirus]	5
+CL: AQY55852.1 M protein [Infectious bronchitis virus]	4
+CL: ADB28912.1 membrane protein [Canine coronavirus]	5
+CL: AFG19730.1 membrane [Canine coronavirus]	5
+CL: ACR10302.1 matrix protein [Feline coronavirus]	5
+CL: YP_001552239.1 membrane glycoprotein [Rhinolophus bat coronavirus HKU2]	3
+CL: AAZ91441.1 membrane protein [Canine coronavirus]	5
+CL: AEQ61972.1 membrane protein [Canine coronavirus]	5
+CL: BAN67923.1 membrane protein [Canine coronavirus]	5
+CL: ACR10382.1 matrix protein [Feline coronavirus]	5
+CL: QJI07100.1 M protein [Canine coronavirus]	5
+CL: AFG19744.1 membrane [Canine coronavirus]	5
+CL: QQA04991.1 membrane protein [Canine coronavirus]	5
+CL: ABN51009.1 M protein [Infectious bronchitis virus]	4
+CL: AAT45197.1 membrane protein [Canine coronavirus]	5
+CL: AHZ94884.1 membrane protein [Porcine epidemic diarrhea virus]	3
+CL: QQZ00175.1 M protein [Canine coronavirus]	5
+CL: Q7T6S9.1 RecName: Full=Membrane protein; Short=M protein; AltName: Full=E1 glycoprotein; AltName: Full=Matrix glycoprotein; AltName: Full=Membrane glycoprotein [Canine coronavirus BGF10]	5
+CL: BAN67905.1 membrane protein [Feline coronavirus]	5
+CL: QQA04980.1 membrane protein [Canine coronavirus]	5
+CL: QJI07155.1 M protein [Canine coronavirus]	5
+CL: AYF53098.1 membrane protein [Feline alphacoronavirus 1]	5
+CL: ASV45152.1 membrane protein [Porcine respiratory coronavirus]	5
+CL: QQZ00181.1 M protein [Canine coronavirus]	5
+CL: ABI14450.1 M [Feline coronavirus] [Feline coronavirus]	5
+CL: ASR18949.1 membrane protein [Ferret systemic coronavirus]	5
+CL: BBA21171.1 membrane protein [Ferret coronavirus]	5
+CL: BAS25713.1 membrane protein [Ferret coronavirus]	5
+CL: AIN55916.1 membrane protein [Feline coronavirus]	5
+CL: ACT10910.1 membrane protein [Feline coronavirus UU5]	5
+CL: ACN60155.1 membrane protein [Canine coronavirus]	5
+CL: ACR46122.1 membrane glycoprotein [Feline coronavirus]	5
+CL: AAQ96367.1 M protein [Canine coronavirus]	5
+CL: ACR10364.1 matrix protein [Feline coronavirus]	5
+CL: AWN93246.1 membrane protein [Feline coronavirus]	5
+CL: QQZ00193.1 M protein [Canine coronavirus]	5
+CL: AAP68697.1 membrane protein [Infectious bronchitis virus]	4
+CL: AAK83029.1 membrane protein [Infectious bronchitis virus]	4
+CL: ACT10975.1 membrane protein [Feline coronavirus UU9]	5
+CL: ACR10320.1 matrix protein [Feline coronavirus]	5
+CL: AGT52085.1 membrane protein [Feline coronavirus]	5
+CL: ADL71502.1 membrane protein [Feline coronavirus UU34]	5
+CL: CAA74229.1 membrane protein [Feline coronavirus]	5
+CL: AJO26988.1 membrane protein [Feline coronavirus]	5
+CL: AUG98124.1 membrane protein [Feline coronavirus]	5
+CL: YP_009825012.1 membrane protein [Duck coronavirus]	4
+CL: AIN55926.1 membrane protein [Feline coronavirus]	5
+CL: AAA47912.1 matrix protein E1 precursor [Transmissible gastroenteritis virus]	5
+CL: AAZ86082.1 membrane protein [Feline coronavirus]	5
+CL: ADO39833.1 membrane protein [Feline coronavirus UU19]	5
+CL: BAC01158.1 membrane [Feline infectious peritonitis virus]	5
+CL: ACT10953.1 membrane protein [Feline coronavirus UU2]	5
+CL: ADL71470.1 membrane protein [Feline coronavirus UU21]	5
+CL: BAP19071.1 membrane protein [Feline coronavirus]	5
+CL: ACR10337.1 matrix protein [Feline coronavirus]	5
+CL: BAN67914.1 membrane protein [Feline coronavirus]	5
+CL: ACT10931.1 membrane protein [Feline coronavirus UU16]	5
+CL: AAB47501.1 M protein [Feline infectious peritonitis virus]	5
+CL: ADO39854.1 membrane protein [Feline coronavirus UU30]	5
+CL: ACR46152.1 membrane glycoprotein [Feline coronavirus]	5
+CL: ACT10870.1 membrane protein [Feline coronavirus UU11]	5
+CL: ASU62514.1 membrane protein [Feline coronavirus]	5
+CL: ACV85618.1 membrane glycoprotein [Infectious bronchitis virus]	4
+CL: ACR10355.1 matrix protein [Feline coronavirus]	5
+CL: ADL71491.1 membrane protein [Feline coronavirus UU31]	5
+CL: ADL71480.1 membrane protein [Feline coronavirus UU24]	5
+CL: ACT10921.1 membrane protein [Feline coronavirus UU15]	5
+CL: ACT10881.1 membrane protein [Feline coronavirus UU7]	5
+CL: ASU62504.1 membrane protein [Feline coronavirus]	5
+CL: AEK25515.1 membrane protein [Feline coronavirus UU47]	5
+CL: YP_009199612.1 membrane glycoprotein [BtMr-AlphaCoV/SAX2011]	3
+CL: ASB16892.1 membrane protein [Feline coronavirus]	5
+CL: YP_004070198.1 matrix protein [Feline infectious peritonitis virus]	5
+CL: ADL71460.1 membrane protein [Feline coronavirus UU18]	5
+CL: AIN55928.1 membrane protein [Feline coronavirus]	5
+CL: BAC01156.1 membrane [Feline infectious peritonitis virus]	5
+CL: ASU62493.1 membrane protein [Feline coronavirus]	5
+CL: ADU17730.1 membrane protein [Canine coronavirus]	5
+CL: AEK25526.1 membrane protein [Feline coronavirus UU54]	5
+CL: ACT10900.1 membrane protein [Feline coronavirus UU8]	5
+CL: AIN55903.1 membrane protein [Feline coronavirus]	5
+CL: AKV62759.1 membrane protein [Porcine respiratory coronavirus]	5
+CL: ACT10859.1 membrane protein [Feline coronavirus RM]	5
+CL: AXE71625.1 membrane glycoprotein [Feline coronavirus]	5
+CL: AIN55796.1 membrane protein [Feline coronavirus]	5
+CL: ACT10890.1 membrane protein [Feline coronavirus UU4]	5
+CL: QRN75105.1 membrane glycoprotein [Feline coronavirus]	5
+CL: BAJ08260.1 membrane protein [Feline coronavirus]	5
+CL: ADL71449.1 membrane protein [Feline coronavirus UU17]	5
+CL: QRN75117.1 membrane glycoprotein [Feline coronavirus]	5
+CL: ADO39844.1 membrane protein [Feline coronavirus UU20]	5
+CL: P36299.1 RecName: Full=Membrane protein; Short=M protein; AltName: Full=E1 glycoprotein; AltName: Full=Matrix glycoprotein; AltName: Full=Membrane glycoprotein [Canine enteric coronavirus INSAVC-1]	5
+CL: ABG89308.1 membrane protein [TGEV Miller M60]	5
+CL: AIN55894.1 membrane protein [Feline coronavirus]	5
+CL: QDM36991.1 membrane glycoprotein [Feline coronavirus]	5
+CL: QGX41954.1 membrane protein [Alphacoronavirus sp.]	3
+CL: AIN55791.1 membrane protein [Feline coronavirus]	5
+CL: ALK28778.1 M [229E-related bat coronavirus] [229E-related bat coronavirus]	3
+CL: YP_009755841.1 membrane protein [Shrew coronavirus]	3
+CL: QHA24668.1 membrane protein [Rousettus aegyptiacus bat coronavirus 229E-related]	3
+CL: QBP43295.1 M protein [Bat coronavirus]	3
+CL: APD51502.1 M protein [229E-related bat coronavirus]	3
+CL: ADV71806.1 membrane protein [Infectious bronchitis virus]	4
+CL: ADX59485.1 membrane protein [Miniopterus bat coronavirus/Kenya/KY27/2006]	3
+CL: QHA24721.1 membrane protein [Miniopterus schreibersii bat coronavirus 1-related]	3
+CL: ACA52160.1 membrane protein [Bat coronavirus 1B]	3
+CL: AIA62203.1 membrane glycoprotein [BtMf-AlphaCoV/AH2011]	3
+CL: AAC57077.1 membrane protein [Infectious bronchitis virus]	4
+CL: QHI08613.1 membrane protein [Porcine deltacoronavirus]	6
+CL: YP_008439205.1 membrane protein [Bat coronavirus CDPHE15/USA/2006]	3
+CL: AWV67127.1 membrane protein [Sparrow deltacoronavirus]	6
+CL: ASL24655.1 M protein [Myotis lucifugus coronavirus]	3
+CL: ALK28796.1 M [229E-related bat coronavirus] [229E-related bat coronavirus]	3
+CL: QNT22076.1 membrane protein [Porcine deltacoronavirus]	6
+CL: BBC54854.1 membrane protein [Quail coronavirus UAE-HKU30]	6
+CL: AAA45461.1 membrane protein [Human coronavirus 229E]	3
+CL: AWV96582.1 membrane protein [Porcine deltacoronavirus]	6
+CL: ALK28790.1 M [229E-related bat coronavirus] [229E-related bat coronavirus]	3
+CL: QIX02946.1 M protein [Infectious bronchitis virus]	4
+CL: AFH58016.1 Membrane [Feline coronavirus]	5
+CL: YP_001876439.1 matrix glycoprotein [Beluga whale coronavirus SW1]	1
+CL: AHB63483.1 membrane protein [Bottlenose dolphin coronavirus HKU22]	1
+CL: YP_009389427.1 membrane protein [Wencheng Sm shrew coronavirus]	3
+CL: QII89021.1 membrane protein [Bottlenose dolphin coronavirus]	1
+CL: ASF90467.1 membrane protein [Wencheng Sm shrew coronavirus]	3
+CL: QLI47733.1 M protein [Deltacoronavirus sp.]	6
+CL: ASF90462.1 membrane protein [Wencheng Sm shrew coronavirus]	3
+CL: ASF90472.1 membrane protein [Wencheng Sm shrew coronavirus]	3
+CL: ASF90493.1 membrane protein [Wencheng Sm shrew coronavirus]	3
+CL: AWV67136.1 membrane protein [Sparrow deltacoronavirus]	6
+CL: QDY92323.1 membrane glycoprotein [Avian coronavirus MW05]	6
+CL: YP_005352873.1 M gene product [Wigeon coronavirus HKU20]	6
+CL: YP_005352848.1 membrane protein [Sparrow coronavirus HKU17]	6
+CL: YP_005352865.1 M gene product [Night heron coronavirus HKU19]	6
+CL: YP_002308499.1 membrane protein [Thrush coronavirus HKU12-600]	6
+CL: YP_002308481.1 membrane protein [Bulbul coronavirus HKU11-934]	6
+CL: AXP20283.1 membrane protein [Quail deltacoronavirus]	6
+CL: YP_005352840.1 M gene product [White-eye coronavirus HKU16]	6
+CL: YP_002308508.1 membrane protein [Munia coronavirus HKU13-3514]	6
+CL: YP_005352856.1 M gene product [Magpie-robin coronavirus HKU18]	6
+CL: ACJ12046.1 membrane protein [Bulbul coronavirus HKU11-796]	6
+CL: YP_005352883.1 M gene product [Common moorhen coronavirus HKU21]	6
+CL: QLI47718.1 M protein [Deltacoronavirus sp.]	6
+CL: QLI47738.1 M protein [Deltacoronavirus sp.]	6
+
+UI: Number of groups with less than 3 sequences: 0
+Is there enough group diversity to perform the analysis?:
+GD: YES
+
+Are there any position predicted as being important for the whole family?: 
+PR: YES
+Positions predicted (SDPs): 
+Position	Average_rank	Number_of_groups_within_the_complete_partition	List_of_clusters(rank_within_cluster)
+RE: 311	1	2	Partition_based_on: Cluster_6(rank:1) Cluster_1_2_3_4_5_(rank:1)
+RE: 148	3	3	Partition_based_on: Cluster_3(rank:6) Cluster_5(rank:2) Cluster_1_2_4_6_(rank:1)
+
+UI: Number of positions predicted to be important for the group segregation: 2
+
+Are there any conserved position at 98 % of identity?: 
+CN: YES
+Conserved positions: 
+CP: 145
+CP: 171
+CP: 176
+CP: 180
+CP: 301
+CP: 305
+CP: 308
+CP: 318
+CP: 322
+CP: 335
+CP: 362
+CP: 375
+
+UI: Number of conserved positions (at 98 % of identity): 12
