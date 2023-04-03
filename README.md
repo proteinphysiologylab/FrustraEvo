@@ -17,43 +17,43 @@ import os
 
 import sys
 
+sys.path.append('')#Path to Functions.py file
+
+import Functions
+
+import argparse
+
+parser = argparse.ArgumentParser(description='Calculation of the frustration logo.')
+
+parser.add_argument("--JobId", help="The name of the job")
+
+parser.add_argument("--RPath", default='Scripts', help="Path to R script files (Default: Scripts)")
+
+parser.add_argument("--fasta", help="Name of the fasta")
+
+parser.add_argument("--ref", default='None', help="Id of the reference protein of your logo (Default: None)")
+
+parser.add_argument("--pdb_db", default='None', help="Path to the PDBs folder (Default: None)")
+
+parser.add_argument("--cmaps", default='None', help="Put 'yes' for contactmaps calculation (Default: None)")
+
+args = parser.parse_args()
+
+list_file=''
+
+print('Preparing Files...')
+
+list_file=Functions.PreparingFiles(args.JobId,args.RPath,args.pdb_db,args.fasta)
+
+print('Running Frustration')
+
+Functions.FrustraPDB(list_file,args.JobId,args.pdb_db)
+
+print('Making the plots')
+
+Functions.plots_logo(args.JobId,args.ref,args.RPath)
+
 ```
-
-`sys.path.append('')`#Path to Functions.py file
-
-`import Functions`
-
-`import argparse`
-
-`parser = argparse.ArgumentParser(description='Calculation of the frustration logo.')`
-
-`parser.add_argument("--JobId", help="The name of the job")`
-
-`parser.add_argument("--RPath", default='Scripts', help="Path to R script files (Default: Scripts)")`
-
-`parser.add_argument("--fasta", help="Name of the fasta")`
-
-`parser.add_argument("--ref", default='None', help="Id of the reference protein of your logo (Default: None)")`
-
-`parser.add_argument("--pdb_db", default='None', help="Path to the PDBs folder (Default: None)")`
-
-`parser.add_argument("--cmaps", default='None', help="Put 'yes' for contactmaps calculation (Default: None)")`
-
-`args = parser.parse_args()`
-
-`list_file=''`
-
-`print('Preparing Files...')`
-
-`list_file=Functions.PreparingFiles(args.JobId,args.RPath,args.pdb_db,args.fasta)`
-
-`print('Running Frustration')`
-
-`Functions.FrustraPDB(list_file,args.JobId,args.pdb_db)`
-
-`print('Making the plots')`
-
-`Functions.plots_logo(args.JobId,args.ref,args.RPath)`
 
 To run in terminal: `python3 run_logo.py --JobId XXX --fasta XXX.fasta --ref XXXXX --pdb_db XXX`
 
