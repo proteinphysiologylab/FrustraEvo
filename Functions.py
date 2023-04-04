@@ -4,7 +4,9 @@ import re
 import sys
 from Bio import SeqIO
 import numpy as np
-
+import warnings
+from Bio import BiopythonWarning
+warnings.simplefilter('ignore', BiopythonWarning)
 
 def copyfiles(JodID,path_to_r,path_to_Pdbs):
 
@@ -46,7 +48,7 @@ def changes(JodID,MSA_File):
 
         '''
         path_direc='FrustraEvo_'+JodID
-        out=open(path_direc+'/MSA_Clean.fasta','w')
+        out=open(path_direc+'/MSA_Clean_aux.fasta','w')
         out_list=open(path_direc+'/PDB_List.txt','w')
         pathAlign=MSA_File
         for seq_record in SeqIO.parse(pathAlign, 'fasta'):
@@ -67,23 +69,59 @@ def FrustraPDB(list_pdbs,JodID,pathPDB='None'):
         If you do not have the pdbs structures, the pipeline will download them from the Protein Data Bank database
         '''
         path_direc='FrustraEvo_'+JodID
-        pdbs=open(list_pdbs,'r')
         frustdir=path_direc+'/Frustration/'
-        for line in pdbs.readlines():
-                line=line.rstrip('\n')
-                if pathPDB == 'None':
-                        os.system('cd '+frustdir+'/;wget \'http://www.rcsb.org/pdb/files/'+line+'.pdb\' -O '+JodID+'/Frustration/'+line+'.pdb')
-                else:
-                        #line=line.lower()
-                        os.system('cp '+pathPDB+'/'+line+'.pdb '+frustdir+'/'+line+'.pdb')
-        pdbs.close()
         directory=os.getcwd()+'/'
         frustra=open(frustdir+'FrustraR.R','w')
         frustra.write('library(frustratometeR)\nPdbsDir <- \''+directory+frustdir+'\'\nResultsDir <-\''+directory+frustdir+'\'\ndir_frustration(PdbsDir = PdbsDir, Mode = \'singleresidue\', ResultsDir = ResultsDir)\n')
         frustra.close()
         os.system('cd '+frustdir+';Rscript FrustraR.R > FrustraR.log')
 
-  
+def obtain_seq(pdbid,JodID):
+	dic =  {'ALA' : 'A','ARG' : 'R','ASN' : 'N','ASP' : 'D','CYS' : 'C','GLN' : 'Q','GLU' : 'E','GLY' : 'G','HIS' : 'H','ILE' : 'I','LEU' : 'L','LYS' : 'K','MET' : 'M','PHE' : 'F','PRO' : 'P','SER' : 'S','THR' : 'T','TRP' : 'W','TYR' : 'Y', 'VAL' : 'V'}
+	seq=''
+	path_direc='FrustraEvo_'+JodID
+	pdb=open(path_direc+'/Frustration/'+pdbid+'.pdb')
+	for lpdb in pdb.readlines():
+		atom=lpdb[0]+lpdb[1]+lpdb[2]+lpdb[3]
+		if atom == 'ATOM':
+			ca=lpdb[13]+lpdb[14]
+			if ca == 'CA' and lpdb[16]==' ' and lpdb[26]==' ':
+				aa=lpdb[17]+lpdb[18]+lpdb[19]
+				seq+=dic[aa]
+	pdb.close()
+	return seq
+	
+
+def checks_seq(list_pdbs,JodID,pathPDB='None'):
+	path_direc='FrustraEvo_'+JodID
+	frustdir=path_direc+'/Frustration/'
+	MSA=open(path_direc+'/MSA_Clean_aux.fasta','r')
+	out=open(path_direc+'/MSA_Clean.fasta','w')
+	out_log=open(path_direc+'/ErrorSeq.log','w')
+	for seq_record in SeqIO.parse(MSA, 'fasta'):
+		seqid=seq_record.id
+		seq=seq_record.seq.replace('-','')
+		seq_to_print=seq_record.seq
+		pathpdb=path_direc+'/Frustration/'+seqid+'.pdb'
+		pathdb=pathPDB+'/'+seqid+'.pdb'
+		if not os.path.exists(pathdb):
+			os.system('cd '+frustdir+'/;wget \'http://www.rcsb.org/pdb/files/'+seqid+'.pdb\' -O '+JodID+'/Frustration/'+seqid+'.pdb')
+		else:
+			os.system('cp '+pathPDB+'/'+seqid+'.pdb '+frustdir+'/'+seqid+'.pdb')
+		if os.path.exists(pathpdb):
+			seqpdb=obtain_seq(seqid,JodID)
+			if seq == seqpdb:
+				print('Sequence '+seqid+' checked')
+				out.write('>'+str(seqid)+'\n'+str(seq_to_print)+'\n')
+			else:
+				print('Sequence '+seqid+' not the same as pdb, sequence removed '+ seq +' '+ seqpdb)
+				out_log.write('Sequence '+seqid+' not the same as pdb, sequence removed\n')
+				os.system('rm '+frustdir+'/'+seqid+'.pdb')
+	
+	MSA.close()
+	out.close()
+	out_log.close()
+
 def checks(JodID):
         '''     This function checks the frustration calculations
         Parameters:
@@ -332,7 +370,7 @@ def ChangeAlign():
         frst_sl.close()
         os.system('rm '+path_direc+'/MSA_Chk_Ref_aux_1.fasta')
         os.system('rm '+path_direc+'/MSA_Chk_Ref_aux.fasta')
-
+	
 
 def FinalAlign(JodID):
         '''     This function create the final files
@@ -348,7 +386,7 @@ def FinalAlign(JodID):
         c=0     
         m=0
         control=0 
-        cgaps=0;
+        cgaps=0
         tam=0
         tam=0
         r=0
@@ -357,8 +395,7 @@ def FinalAlign(JodID):
                 seqid=seq_record.id
                 seq=seq_record.seq
                 pdb=seqid
-                frst_sr=''
-                longline=len(seq) - seq.count('X')
+                longline=0
                 if c!=0:
                         out_msa.write('>'+pdb+'\n')
                         out_pos.write('>'+pdb+'\n')
@@ -378,24 +415,26 @@ def FinalAlign(JodID):
                         splitres=''
                         tam=len(seq)
                         lfrst_sr = frst_sr.readline()
-                        if r==1 and len(pdbid)>2:
-                                splitres=lfrst_sr.split(' ')
-                                r= int(splitres[0])
-                                a = int(pdbid[2])-1
-                                while (r<a):
-                                        lfrst_sr=frst_sr.readline()
-                                        r = r + 1
+             #           if r==1 and len(pdbid)>2:
+              #                  splitres=lfrst_sr.split(' ')
+               #                 r= int(splitres[0])
+                #                a = int(pdbid[2])-1
+                 #               while (r<a):
+                  #                      lfrst_sr=frst_sr.readline()
+                   #                     r = r + 1
                         q=0
                         for j in range (0,tam):
                                 if vector[j] == 0:
                                         if seq[j] != '-':
                                                 lfrst_sr = frst_sr.readline()
                                 else:
-                                        if seq[j] == 'Z':
+                                        if seq[j] == 'Z' or seq[j] == 'X':
                                                 out_msa.write('-')
+                                                longline+=1
                                                 q = q + 1
                                         else:
                                                 out_msa.write(str(seq[j]))
+                                                longline+=1
                                                 q = q + 1
                                         if seq[j] == 'Z':
                                                 out_pos.write('Z ')
@@ -411,7 +450,7 @@ def FinalAlign(JodID):
 
                         out_msa.write('\n')
                         out_pos.write('\n')
-        frst_sr.close()
+                        frst_sr.close()
         MSA_Long=open(path_direc+'/Equivalences/long.txt','w')
         MSA_Long.write(str(longline)+'\n')
         MSA_Long.close()
@@ -539,7 +578,7 @@ def add_ref(JodID,prot_ref):
                 sp=line.split()
                 vectorAA.append(sp[2])
                 num.append(sp[1])
-        out.write('Res  AA_Ref  Num_Ref Prot_Ref        %Min    %Neu    %Max    CantMin CantNeu CantMax ICMin   ICNeu   ICMax   ICTot    FrustEstado\n')
+        out.write('Res\tAA_Ref\tNum_Ref\tProt_Ref\t%Min\t%Neu\t%Max\tCantMin\tCantNeu\tCantMax\tICMin\tICNeu\tICMax\tICTot\tFrustIC\n')
         a=0
         for line in ic.readlines():
                 line=line.rstrip('\n')
@@ -612,7 +651,7 @@ def CMaps_Mutational(JodID,path_to_r,prot_ref):
                 os.system('cp '+path_direc+'/Equivalences/long.txt '+path_direc+'/CMaps/long.txt')
                 os.system('cp '+path_to_r+'/*.py* '+path_direc+'/CMaps/')
         frustra=open(frustdir+'FrustraR.R','w')
-        frustra.write('library(frustratometeR)\nPdbsDir <- \''+directory+frustdir+'\'\nResultsDir <- \''+directory+frustdir+'\'\ndir_frustration(PdbsDir = PdbsDir, Mode = \'mutational\', ResultsDir = ResultsDir)\n')
+        frustra.write('library(frustratometeR)\nPdbsDir <- \''+directory+frustdir+'\'\nResultsDir <- \''+directory+frustdir+'\'\ndir_frustration(PdbsDir = PdbsDir, Mode = \'mutational\', ResultsDir = ResultsDir, Graphics = FALSE)\n')
         frustra.close()
         os.system('cd '+frustdir+';Rscript FrustraR.R > FrustraR.log')
         MSA_Long=open(path_direc+'/Equivalences/long.txt','r')
@@ -620,7 +659,7 @@ def CMaps_Mutational(JodID,path_to_r,prot_ref):
         long=long[:-1]
         MSA_Long.close()
         dir_total=directory+path_direc
-        os.system('cd '+path_direc+'/CMaps;python3 IC_Conts_Mutational.py '+str(long)+' '+dir_total)
+        os.system('cd '+path_direc+'/CMaps;python3 IC_Conts_Mutational.py '+str(long)+' '+dir_total+' '+prot_ref)
         os.system('Rscript '+path_to_r+'/IC_conts_Mut.r --dir '+os.getcwd()+'/'+path_direc+'/CMaps/')
         add_ref_Cmaps(JodID,prot_ref,'Mut')
         os.system('cp '+path_direc+'/CMaps/IC_Mut.png'+' '+path_direc+'/OutPutFiles/CMaps'+'_'+JodID+'_Mut.png')
@@ -628,7 +667,7 @@ def CMaps_Mutational(JodID,path_to_r,prot_ref):
 
 def CMaps_Configurational(JodID,path_to_r,prot_ref):
         '''     This function generate the CMaps for Configurational index: 
-                        - JodID: the job name
+                        - JodID: the job name11
                         - path_to_r: path to the R files
         '''
         directory=os.getcwd()+'/'
@@ -642,7 +681,7 @@ def CMaps_Configurational(JodID,path_to_r,prot_ref):
                 os.system('cp '+path_direc+'/Equivalences/long.txt '+path_direc+'/CMaps/long.txt')
                 os.system('cp '+path_to_r+'/*.py* '+path_direc+'/CMaps/')
         frustra=open(frustdir+'FrustraR.R','w')
-        frustra.write('library(frustratometeR)\nPdbsDir <- \''+directory+frustdir+'\'\nResultsDir <- \''+directory+frustdir+'\'\ndir_frustration(PdbsDir = PdbsDir, Mode = \'configurational\', ResultsDir = ResultsDir)\n')
+        frustra.write('library(frustratometeR)\nPdbsDir <- \''+directory+frustdir+'\'\nResultsDir <- \''+directory+frustdir+'\'\ndir_frustration(PdbsDir = PdbsDir, Mode = \'configurational\', ResultsDir = ResultsDir,Graphics = FALSE)\n')
         frustra.close()
         os.system('cd '+frustdir+';Rscript FrustraR.R > FrustraR.log')
         MSA_Long=open(path_direc+'/Equivalences/long.txt','r')
@@ -650,7 +689,7 @@ def CMaps_Configurational(JodID,path_to_r,prot_ref):
         long=long[:-1]
         MSA_Long.close()
         dir_total=directory+path_direc
-        os.system('cd '+path_direc+'/CMaps;python3 IC_Conts_Conf.py '+str(long)+' '+dir_total)
+        os.system('cd '+path_direc+'/CMaps;python3 IC_Conts_Conf.py '+str(long)+' '+dir_total+' '+prot_ref)
         os.system('Rscript '+path_to_r+'/IC_conts_Conf.r --dir '+os.getcwd()+'/'+path_direc+'/CMaps/')
         os.system('cp '+path_direc+'/CMaps/IC_Conf.png'+' '+path_direc+'/OutPutFiles/CMaps'+'_'+JodID+'_Conf.png')
         add_ref_Cmaps(JodID,prot_ref,'Conf')
@@ -665,13 +704,15 @@ def add_ref_Cmaps(JodID,prot_ref,Mode):
         out=open(path_direc+'/CMaps/IC_'+Mode+'_ref','w')
         ic=open(path_direc+'/CMaps/IC_'+Mode,'r')
         vectorAA=[]
+        vectorchain=[]
         num=[]
         for line in res.readlines():
                 line=line.rstrip('\n')
                 sp=line.split()
                 vectorAA.append(sp[2])
+                vectorchain.append(sp[5])
                 num.append(sp[1])
-        out.write('Res  Res AA1 AA2     NumRes1_Ref     NumRes2_Ref     Prot_Ref        NumeroConts     FreqConts       pNEU    pMIN    pMAX    HNEU    HMIN    HMAX    Htotal  ICNEU   ICMIN   ICMAX   ICtotal EstadoConservado\n')
+        out.write('Res\tRes\tAA1\tAA2\tNumRes1_Ref\tChain1_Ref\tNumRes2_Ref\tChain2_Ref\tProt_Ref\tNumeroConts\tFreqConts\tpNEU\tpMIN\tpMAX\tHNEU\tHMIN\tHMAX\tHtotal\tICNEU\tICMIN\tICMAX\tICtotal\tFstConserved\n')
         a=0
         for line in ic.readlines():
                 line=line.rstrip('\n')
@@ -679,7 +720,7 @@ def add_ref_Cmaps(JodID,prot_ref,Mode):
                         a+=1
                 else:
                         sp=line.split()
-                        out.write(sp[0]+'\t'+sp[1]+'\t'+vectorAA[int(sp[0])-1]+'\t'+vectorAA[int(sp[1])-1]+'\t'+str(num[int(sp[0])-1])+'\t'+str(num[int(sp[1])-1])+'\t'+prot_ref+'\t'+sp[2]+'\t'+sp[3]+'\t'+sp[4]+'\t'+sp[5]+'\t'+sp[6]+'\t'+sp[7]+'\t'+sp[8]+'\t'+sp[9]+'\t'+sp[10]+'\t'+sp[11]+'\t'+sp[12]+'\t'+sp[13]+'\t'+sp[14]+'\t'+sp[15]+'\n')
+                        out.write(sp[0]+'\t'+sp[1]+'\t'+vectorAA[int(sp[0])-1]+'\t'+vectorAA[int(sp[1])-1]+'\t'+vectorchain[int(sp[0])-1]+'\t'+vectorchain[int(sp[1])-1]+'\t'+str(num[int(sp[0])-1])+'\t'+str(num[int(sp[1])-1])+'\t'+prot_ref+'\t'+sp[4]+'\t'+sp[5]+'\t'+sp[6]+'\t'+sp[7]+'\t'+sp[8]+'\t'+sp[9]+'\t'+sp[10]+'\t'+sp[11]+'\t'+sp[12]+'\t'+sp[11]+'\t'+sp[12]+'\t'+sp[13]+'\t'+sp[14]+'\t'+sp[15]+'\n')
 
 
         ic.close()
