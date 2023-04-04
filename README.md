@@ -62,8 +62,10 @@ https://github.com/proteinphysiologylab/FrustraEvo/blob/master/wiki/README
 
 ## **You can also find useful examples in our wiki!!:**
 
-https://github.com/proteinphysiologylab/FrustraEvo/tree/master/wiki
+https://github.com/proteinphysiologylab/FrustraEvo/tree/master/Examples_OutputData
 
 ## **You can find the data used in the Wiki examples at:**
 
-https://github.com/proteinphysiologylab/FrustraEvo/tree/master/Data
+https://github.com/proteinphysiologylab/FrustraEvo/tree/master/Examples_InputData
+
+Enjoy :)
