@@ -1,3 +1,6 @@
 For the KRAS family we have used two datasets. 1) that corresponds to the RAS cluster from the Rojas et al, 2012 article (reduced_KRAS.zip) and 2) an automatically generated dataset for which homologous proteins were retrieved with a pipeline. 
 
+The Rojas dataset for this section is the same as the RAS containing cluster for section 4:
+https://github.com/proteinphysiologylab/FrustraEvo/blob/master/Examples_InputData/3._Differential_frustration_conservation_patterns_reveal_lineage_specific_functional_adaptations_within_protein_superfamilies/RAS_superfamily/RAS.zip
+
 The 2nd dataset is too big to be uploaded on GitHub. That dataset will be uploaded to ZENODO upon publication
