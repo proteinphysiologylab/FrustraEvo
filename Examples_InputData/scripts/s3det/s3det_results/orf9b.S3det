@@ -1,0 +1,61 @@
+UI: Initial number of sequences: 21
+UI: Initial number of positions: 98
+UI: Number of outliers: (<40% of identity to any other sequence): 0
+UI: Final number of sequences after removing outliers: 21
+UI: Final number of positions after removing gappy columns: 97
+II: Final number of columns in the disjunctive matrix: 198
+UI: Number of axes selected: 2
+UI: Percentage of initial variance considered informative: 85.2163 %
+UI: Percentage of variance explained by the axis 1  (selected): 66.7627 %
+UI: Percentage of variance explained by the axis 2  (selected): 85.2163 %
+UI: Checking a maximum number of groups equal to: 6
+UI: Stable cluster results have been found
+SC: YES
+UI: Number of groups selected: 3
+II: Clustering index value: CH_Index = 60.8227
+II: F-Fisher: 383.076
+II: Best solution found 500 times out of 500 iterations searching for 3 groups
+Clustering of sequences: 
+CL: orf9b_protein_SARS-CoV-2 MN985325 Wuhan seafood market pneumonia virus	1
+CL: Q3LZX3.1 RecName: Full=Protein 9b; AltName: Full=Accessory protein 9b; AltName: Full=ORF-9b [Bat SARS coronavirus HKU3]	2
+CL: AHX37567.1 protein 13 [Rhinolophus affinis coronavirus]	2
+CL: ADE34788.1 hypothetical protein [Bat SARS coronavirus HKU3-9]	2
+CL: AAZ67041.1 ORF9a [Bat SARS CoV Rm1/2004]	2
+CL: AVP78050.1 hypothetical protein [Bat SARS-like coronavirus]	1
+CL: AVP78039.1 hypothetical protein [Bat SARS-like coronavirus]	1
+CL: ARO76391.1 protein 13 [Severe acute respiratory syndrome-related coronavirus]	2
+CL: ADE34821.1 hypothetical protein [Bat SARS coronavirus HKU3-12]	2
+CL: ADE34764.1 hypothetical protein [Bat SARS coronavirus HKU3-7]	2
+CL: P0C5A6.1 RecName: Full=Protein 9b; AltName: Full=Accessory protein 9b; AltName: Full=ORF-9b [Bat CoV 279/2005]	2
+CL: YP_009825062.1 ORF9b protein [SARS coronavirus Tor2]	2
+CL: AAZ67044.1 ORF13 [Bat SARS coronavirus Rp1]	2
+CL: AAV91641.1 orf12 [SARS coronavirus A022]	2
+CL: Q3I5I6.1 RecName: Full=Protein 9b; AltName: Full=Accessory protein 9b; AltName: Full=ORF-9b [Bat SARS CoV Rp3/2004]	2
+CL: AAU04643.1 orf12 [Civet SARS CoV 007/2004]	2
+CL: ACU31040.1 hypothetical protein [SARS coronavirus Rs_672/2006]	2
+CL: AAZ67037.1 ORF9a [Bat SARS CoV Rf1/2004]	2
+CL: ANA96036.1 9a protein [Bat coronavirus]	2
+CL: 2CME_B The crystal structure of SARS coronavirus ORF-9b protein [Severe acute respiratory syndrome-related coronavirus]	2
+CL: APO40587.1 ORF9b [Severe acute respiratory syndrome-related coronavirus]	3
+
+UI: Number of groups with less than 3 sequences: 1
+Is there enough group diversity to perform the analysis?:
+GD: YES
+
+Are there any position predicted as being important for the whole family?: 
+PR: YES
+Positions predicted (SDPs): 
+Position	Average_rank	Number_of_groups_within_the_complete_partition	List_of_clusters(rank_within_cluster)
+RE: 38	1	2	Partition_based_on: Cluster_1(rank:1) Cluster_2(rank:1) Cluster_3(rank:1)
+RE: 76	1	2	Partition_based_on: Cluster_1(rank:1) Cluster_2_3_(rank:1)
+RE: 56	1	2	Partition_based_on: Cluster_2(rank:1) Cluster_1_3_(rank:1)
+RE: 52	1.5	2	Partition_based_on: Cluster_2(rank:2) Cluster_1_3_(rank:1)
+
+UI: Number of positions predicted to be important for the group segregation: 4
+
+Are there any conserved position at 98 % of identity?: 
+CN: NO
+UI: There are no conserved positions at 98 % of identity
+Conserved positions: 
+
+UI: Number of conserved positions (at 98 % of identity): 0

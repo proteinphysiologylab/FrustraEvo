@@ -1,0 +1,100 @@
+UI: Initial number of sequences: 58
+UI: Initial number of positions: 105
+UI: Number of outliers: (<40% of identity to any other sequence): 1
+OUT: BBA20987.1 envelope protein [Human coronavirus HKU1]
+UI: Final number of sequences after removing outliers: 57
+UI: Final number of positions after removing gappy columns: 76
+II: Final number of columns in the disjunctive matrix: 297
+UI: Number of axes selected: 2
+UI: Percentage of initial variance considered informative: 74.8759 %
+UI: Percentage of variance explained by the axis 1  (selected): 40.6543 %
+UI: Percentage of variance explained by the axis 2  (selected): 74.8759 %
+UI: Checking a maximum number of groups equal to: 15
+UI: Stable cluster results have been found
+SC: YES
+UI: Number of groups selected: 3
+II: Clustering index value: CH_Index = 336.425
+II: F-Fisher: 3681.27
+II: Best solution found 490 times out of 570 iterations searching for 3 groups
+Clustering of sequences: 
+CL: E_protein_SARS-CoV-2 MN985325 Wuhan seafood market pneumonia virus	1
+CL: APO40581.1 E protein [Severe acute respiratory syndrome-related coronavirus]	1
+CL: AGZ48809.1 envelope protein [Bat SARS-like coronavirus RsSHC014]	1
+CL: QDF43816.1 small envelope protein [Coronavirus BtRl-BetaCoV/SC2018]	1
+CL: ADE34757.1 small membrane protein [Bat SARS coronavirus HKU3-7]	1
+CL: ATO98160.1 small envelope protein [Bat SARS-like coronavirus]	1
+CL: AAP51230.1 envelope protein E [SARS coronavirus GD01]	1
+CL: AIA62312.1 small envelope protein [BtRs-BetaCoV/HuB2013]	1
+CL: ACB69908.1 envelope protein E [SARS coronavirus BJ182-12]	1
+CL: ACZ72023.1 envelope protein [SARS coronavirus ExoN1]	1
+CL: YP_003858586.1 envelope protein [Bat coronavirus BM48-31/BGR/2008]	1
+CL: ADC35514.1 envelope protein [SARS coronavirus HKU-39849]	1
+CL: AKZ19089.1 envelope protein [Bat SARS-like coronavirus YNLF_34C]	1
+CL: AHX37560.1 envelope protein [Rhinolophus affinis coronavirus]	1
+CL: ACZ72198.1 envelope protein [SARS coronavirus ExoN1]	1
+CL: AAR23255.1 envelope protein [SARS coronavirus Sino3-11]	1
+CL: ABD75313.1 envelope protein [Bat SARS CoV Rf1/2004]	1
+CL: AGC74167.1 envelope protein [Bat coronavirus Rp/Shaanxi2011]	1
+CL: ABM92862.1 small envelope protein [SARS coronavirus TJ01]	1
+CL: ACZ72257.1 envelope protein [SARS coronavirus ExoN1]	1
+CL: ATO98184.1 small envelope protein [Bat SARS-like coronavirus]	1
+CL: ANA96030.1 envelope protein [Bat coronavirus]	1
+CL: AAS48454.1 small envelope protein [SARS coronavirus BJ01]	1
+CL: 5X29_A NMR structure of the SARS Coronavirus E protein pentameric ion channel [Severe acute respiratory syndrome-related coronavirus]	1
+CL: 2MM4_A Structure of a Conserved Golgi Complex-targeting Signal in Coronavirus Envelope Proteins [Severe acute respiratory syndrome-related coronavirus]	1
+CL: ADY17913.1 putative envelope protein [Zaria bat coronavirus]	1
+CL: YP_009072442.1 envelope protein [Bat Hp-betacoronavirus/Zhejiang2013]	1
+CL: Q0Q4E8.1 RecName: Full=Envelope small membrane protein; Short=E protein; Short=sM protein [Bat coronavirus (BtCoV/133/2005)]	2
+CL: AWH65882.1 E protein [Tylonycteris bat coronavirus HKU4]	2
+CL: ANA96044.1 envelope protein [Bat coronavirus]	2
+CL: AWH65904.1 E protein [Tylonycteris bat coronavirus HKU4]	2
+CL: YP_009513016.1 E [Betacoronavirus Erinaceus/VMC/DEU/2012] [Betacoronavirus Erinaceus/VMC/DEU/2012]	2
+CL: QRN68105.1 envelope protein [Betacoronavirus Erinaceus]	2
+CL: ASL68947.1 envelope protein [Hypsugo bat coronavirus HKU25]	2
+CL: QRN68021.1 envelope protein [Betacoronavirus Erinaceus]	2
+CL: AHY61342.1 small envelope protein [BtVs-BetaCoV/SC2013]	2
+CL: QOQ34386.1 envelope protein [Erinaceus amurensis coronavirus]	2
+CL: YP_009361862.1 small envelope protein [Bat coronavirus]	2
+CL: QGA70697.1 envelope protein [Erinaceus hedgehog coronavirus HKU31]	2
+CL: AVV62542.1 E protein [Middle East respiratory syndrome-related coronavirus]	2
+CL: AUM60019.1 envelope protein [Middle East respiratory syndrome-related coronavirus]	2
+CL: ATQ39391.1 envelope protein [Middle East respiratory syndrome-related coronavirus]	2
+CL: AVV62531.1 E protein [Middle East respiratory syndrome-related coronavirus]	2
+CL: ALA49390.1 envelope protein [Middle East respiratory syndrome-related coronavirus]	2
+CL: AGV08472.1 E protein [Middle East respiratory syndrome-related coronavirus]	2
+CL: ANF29266.1 E protein [Middle East respiratory syndrome-related coronavirus]	2
+CL: ALR69646.1 envelope protein [Middle East respiratory syndrome-related coronavirus]	2
+CL: QBM11741.1 envelope [Middle East respiratory syndrome-related coronavirus]	2
+CL: ALX27237.1 E protein [Middle East respiratory syndrome-related coronavirus]	2
+CL: ANI69894.1 envelope protein [Middle East respiratory syndrome-related coronavirus]	2
+CL: ALA49346.1 envelope protein [Middle East respiratory syndrome-related coronavirus]	2
+CL: ASR18940.1 envelope protein [Ferret enteric coronavirus]	3
+CL: ASU90554.1 envelope protein [Middle East respiratory syndrome-related coronavirus]	2
+CL: QQH14876.1 envelope protein [Bat coronavirus]	2
+CL: AGV08540.1 E protein [Middle East respiratory syndrome-related coronavirus]	2
+CL: QHA24692.1 envelope protein [Pipistrellus abramus bat coronavirus HKU5-related]	2
+CL: ADD49360.1 envelope glycoprotein [Ferret enteric coronavirus]	3
+
+UI: Number of groups with less than 3 sequences: 1
+Is there enough group diversity to perform the analysis?:
+GD: YES
+
+Are there any position predicted as being important for the whole family?: 
+PR: YES
+Positions predicted (SDPs): 
+Position	Average_rank	Number_of_groups_within_the_complete_partition	List_of_clusters(rank_within_cluster)
+RE: 36	1	2	Partition_based_on: Cluster_2(rank:1) Cluster_1_3_(rank:1)
+RE: 66	1	2	Partition_based_on: Cluster_1(rank:1) Cluster_2(rank:1) Cluster_3(rank:1)
+RE: 44	1.5	2	Partition_based_on: Cluster_1(rank:2) Cluster_2(rank:1) Cluster_3(rank:1)
+
+UI: Number of positions predicted to be important for the group segregation: 3
+
+Are there any conserved position at 98 % of identity?: 
+CN: YES
+Conserved positions: 
+CP: 52
+CP: 54
+CP: 59
+CP: 74
+
+UI: Number of conserved positions (at 98 % of identity): 4

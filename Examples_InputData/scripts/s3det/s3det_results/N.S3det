@@ -1,0 +1,609 @@
+UI: Initial number of sequences: 547
+UI: Initial number of positions: 780
+UI: Number of outliers: (<40% of identity to any other sequence): 2
+OUT: YP_009755842.1 nucleocapsid protein [Shrew coronavirus]
+OUT: AVM87578.1 nucleoprotein [Guangdong chinese water skink coronavirus]
+UI: Final number of sequences after removing outliers: 545
+UI: Final number of positions after removing gappy columns: 285
+II: Final number of columns in the disjunctive matrix: 2565
+UI: Number of axes selected: 4
+UI: Percentage of initial variance considered informative: 60.1361 %
+UI: Percentage of variance explained by the axis 1  (selected): 26.0928 %
+UI: Percentage of variance explained by the axis 2  (selected): 42.027 %
+UI: Percentage of variance explained by the axis 3  (selected): 51.7737 %
+UI: Percentage of variance explained by the axis 4  (selected): 60.1361 %
+UI: Checking a maximum number of groups equal to: 50
+UI: Stable cluster results have been found
+SC: YES
+UI: Number of groups selected: 6
+II: Clustering index value: CH_Index = 1132.9
+II: F-Fisher: 4843.46
+II: Best solution found 691 times out of 5450 iterations searching for 6 groups
+Clustering of sequences: 
+CL: N_protein_SARS-CoV-2 MN985325 Wuhan seafood market pneumonia virus	1
+CL: QIG55953.1 nucleocapsid phosphoprotein [Pangolin coronavirus]	1
+CL: QQM18872.1 nucleocapsid protein [Bat coronavirus RacCS203]	1
+CL: AVP78038.1 nucleocapsid protein [Bat SARS-like coronavirus]	1
+CL: QIA48630.1 nucleocapsid phosphoprotein [Pangolin coronavirus]	1
+CL: AHX37566.1 nucleocapsid protein [Rhinolophus affinis coronavirus]	1
+CL: ADE34730.1 nucleocapsid phosphoprotein [Bat SARS coronavirus HKU3-4]	1
+CL: AAR87518.1 putative nucleocapsid protein N [SARS coronavirus TW11]	1
+CL: AAZ67039.1 nucleocapsid protein [Bat SARS CoV Rm1/2004]	1
+CL: AIA62328.1 nucleocapsid protein [BtRs-BetaCoV/GX2013]	1
+CL: AIA62298.1 nucleocapsid protein [BtRf-BetaCoV/HeB2013]	1
+CL: BCG66635.1 nucleocapsid protein [Severe acute respiratory syndrome-related coronavirus]	1
+CL: YP_003858591.1 nucleocapsid [Bat coronavirus BM48-31/BGR/2008]	1
+CL: APO40586.1 N protein [Severe acute respiratory syndrome-related coronavirus]	1
+CL: ADY17917.1 putative nucleoprotein [Zaria bat coronavirus]	1
+CL: YP_009072446.1 nucleocapsid protein [Bat Hp-betacoronavirus/Zhejiang2013]	1
+CL: BBJ36015.1 nucleocapsid phosphoprotein [Bat coronavirus]	1
+CL: YP_009361864.1 nucleocapsid phosphoprotein [Bat coronavirus]	1
+CL: ASL68960.1 nucleocapsid protein [Hypsugo bat coronavirus HKU25]	1
+CL: QRN68086.1 nucleocapsid protein [Betacoronavirus Erinaceus]	1
+CL: QRN68028.1 nucleocapsid protein [Betacoronavirus Erinaceus]	1
+CL: QRN68046.1 nucleocapsid protein [Betacoronavirus Erinaceus]	1
+CL: AGP04904.1 nucleocapsid protein [Pipistrellus bat coronavirus HKU5]	1
+CL: AGP04913.1 nucleocapsid protein [Pipistrellus bat coronavirus HKU5]	1
+CL: AVV62533.1 N protein [Middle East respiratory syndrome-related coronavirus]	1
+CL: AGP04909.1 nucleocapsid protein [Pipistrellus bat coronavirus HKU5]	1
+CL: QRN68107.1 nucleocapsid protein [Betacoronavirus Erinaceus]	1
+CL: AVV62544.1 N protein [Middle East respiratory syndrome-related coronavirus]	1
+CL: ASL68949.1 nucleocapsid protein [Hypsugo bat coronavirus HKU25]	1
+CL: QRN68075.1 nucleocapsid protein [Betacoronavirus Erinaceus]	1
+CL: QOQ34388.1 nucleocapsid protein [Erinaceus amurensis coronavirus]	1
+CL: QRN68063.1 nucleocapsid protein [Betacoronavirus Erinaceus]	1
+CL: Q0Q4E6.1 RecName: Full=Nucleoprotein; AltName: Full=Nucleocapsid protein; Short=NC; Short=Protein N [Bat coronavirus (BtCoV/133/2005)]	1
+CL: AIZ74430.1 N [Middle East respiratory syndrome-related coronavirus] [Middle East respiratory syndrome-related coronavirus]	1
+CL: AGX27818.1 N [Betacoronavirus Erinaceus/VMC/DEU/2012] [Betacoronavirus Erinaceus/VMC/DEU/2012]	1
+CL: AUM60031.1 nucleocapsid protein [Middle East respiratory syndrome-related coronavirus]	1
+CL: QCC20721.1 N [Hedgehog coronavirus 1] [Hedgehog coronavirus 1]	1
+CL: AIG13103.1 N protein [Coronavirus Neoromicia/PML-PHE1/RSA/2011]	1
+CL: QGA70699.1 nucleocapsid protein [Erinaceus hedgehog coronavirus HKU31]	1
+CL: AWV67051.1 capsid [Bat coronavirus]	1
+CL: ABN10939.1 Nucleocapsid phosphoprotein [Bat coronavirus HKU9-4]	1
+CL: YP_009824993.1 nucleocapsid protein [Bat coronavirus]	1
+CL: AVP25400.1 N protein [Rousettus bat coronavirus HKU9]	1
+CL: ADX59470.1 nucleocapsid protein [Eidolon bat coronavirus/Kenya/KY24/2006]	1
+CL: AVP25398.1 N protein [Rousettus bat coronavirus HKU9]	1
+CL: ADM33578.1 nucleocapsid phosphoprotein [Bat coronavirus HKU9-10-1]	1
+CL: AOG30816.1 nucleocapsid protein [Rousettus bat coronavirus]	1
+CL: ADM33586.1 nucleocapsid phosphoprotein [Bat coronavirus HKU9-10-2]	1
+CL: ABN10923.1 Nucleocapsid phosphoprotein [Bat coronavirus HKU9-2]	1
+CL: ADM33570.1 nucleocapsid phosphoprotein [Bat coronavirus HKU9-5-2]	1
+CL: QEH60467.1 nucleocapsid phosphoprotein [Bat coronavirus]	1
+CL: YP_001039975.1 nucleocapsid phosphoprotein [Rousettus bat coronavirus HKU9]	1
+CL: AVP25397.1 N protein [Rousettus bat coronavirus HKU9]	1
+CL: QJX58370.1 nucleocapsid phosphoprotein [Bat coronavirus HKU9-1]	1
+CL: QKF94918.1 nucleocapsid protein [Rousettus bat coronavirus GCCDC1]	1
+CL: BAI67743.1 nucleocapsid phosphoprotein [Bat coronavirus Philippines/Diliman1525G2/2008]	1
+CL: AVP25429.1 N protein [Bat coronavirus GCCDC1]	1
+CL: AWV67059.1 capsid [Bat coronavirus]	1
+CL: QDF43843.1 nucleocapsid protein [Coronavirus BtRt-BetaCoV/GX2018]	1
+CL: QJX58381.1 nucleocapsid phosphoprotein [Coronavirus BtRt-BetaCoV/GX2018]	1
+CL: AVP25396.1 N protein [Rousettus bat coronavirus HKU9]	1
+CL: ADX59478.1 nucleocapsid protein [Rousettus bat coronavirus/Kenya/KY06/2006]	1
+CL: ACN89747.1 nucleocapsid protein [Murine coronavirus MHV-3]	2
+CL: AXT92485.1 nucleocapsid phosphoprotein [Human coronavirus HKU1]	2
+CL: P18446.1 RecName: Full=Nucleoprotein; AltName: Full=Nucleocapsid protein; Short=NC; Short=Protein N [Murine hepatitis virus strain 1]	2
+CL: AGW27840.1 nucleoprotein [Human coronavirus HKU1]	2
+CL: AXT92466.1 nucleocapsid phosphoprotein [Human coronavirus HKU1]	2
+CL: ATN37902.1 nucleocapsid protein [Murine hepatitis virus]	2
+CL: YP_209238.1 nucleocapsid protein [Murine hepatitis virus strain JHM]	2
+CL: P18448.1 RecName: Full=Nucleoprotein; AltName: Full=Nucleocapsid protein; Short=NC; Short=Protein N [Murine hepatitis virus strain S]	2
+CL: ATP66765.1 nucleocapsid protein [Rodent coronavirus]	2
+CL: P59713.1 RecName: Full=Nucleoprotein; AltName: Full=Nucleocapsid protein; Short=NC; Short=Protein N [Puffinosis coronavirus]	2
+CL: QIM73819.1 nucleocapsid protein [Coronaviridae sp.]	2
+CL: AAC16422.1 nucleocapsid protein [Murine hepatitis virus strain 2]	2
+CL: ATP66776.1 nucleocapsid protein [Rodent coronavirus]	2
+CL: AAA46462.1 nucleocapsid protein [Murine hepatitis virus]	2
+CL: Q8JSP4.1 RecName: Full=Nucleoprotein; AltName: Full=Nucleocapsid protein; Short=NC; Short=Protein N [Porcine hemagglutinating encephalomyelitis virus (strain IAF-404)]	2
+CL: AAY68302.1 nucleocapsid protein [Porcine hemagglutinating encephalomyelitis virus]	2
+CL: Q83360.1 RecName: Full=Nucleoprotein; AltName: Full=Nucleocapsid protein; Short=NC; Short=Protein N [Murine coronavirus strain DVIM]	2
+CL: AAA76578.1 nucleoprotein [Murine hepatitis virus]	2
+CL: BAJ04701.1 nucleocapsid protein [Murine hepatitis virus]	2
+CL: Q02915.1 RecName: Full=Nucleoprotein; AltName: Full=Nucleocapsid protein; Short=NC; Short=Protein N [Rat coronavirus (strain 681)]	2
+CL: Q9WCD0.1 RecName: Full=Nucleoprotein; AltName: Full=Nucleocapsid protein; Short=NC; Short=Protein N [Rat coronavirus (strain NJ)]	2
+CL: QCI55924.1 nucleocapsid protein [Murine coronavirus]	2
+CL: AAA74733.1 nucleoprotein [Murine hepatitis virus]	2
+CL: QIM73816.1 nucleocapsid protein [Coronaviridae sp.]	2
+CL: QIM73831.1 nucleocapsid protein [Coronaviridae sp.]	2
+CL: ABP87995.1 nucleocapsid protein [Equine coronavirus]	2
+CL: AAF05706.1 nucleocapsid [Murine hepatitis virus]	2
+CL: BAS18860.1 nucleocapsid protein [Equine coronavirus]	2
+CL: ATP66782.1 nucleocapsid protein [Rodent coronavirus]	2
+CL: AID16664.1 nucleocapsid protein [Longquan Rl rat coronavirus]	2
+CL: AMQ23461.1 nucleocapsid protein [Bovine coronavirus]	2
+CL: ATP66759.1 nucleocapsid protein [Rodent coronavirus]	2
+CL: QOE77323.1 nucleocapsid phosphoprotein [Betacoronavirus HKU24]	2
+CL: ATP66736.1 nucleocapsid protein [Rodent coronavirus]	2
+CL: ANA11064.1 N protein [Canine respiratory coronavirus]	2
+CL: BAM15655.1 nucleocapsid protein [Equine coronavirus]	2
+CL: AIX10719.1 Nucleocapsid glycoprotein [Human coronavirus OC43]	2
+CL: YP_009755837.1 nucleocapsid protein [Rodent coronavirus]	2
+CL: AYR18603.1 nucleocapsid protein [Betacoronavirus sp.]	2
+CL: QRK03926.1 nucleocapsid protein [Human coronavirus OC43]	2
+CL: AFE48809.1 nucleocapsid protein [Rabbit coronavirus HKU14]	2
+CL: AIL49428.1 N protein [Human coronavirus OC43]	2
+CL: AYR18621.1 nucleocapsid protein [Betacoronavirus sp.]	2
+CL: QEY10661.1 N protein [Dromedary camel coronavirus HKU23]	2
+CL: AJL33725.1 nucleocapsid protein [Bovine coronavirus]	2
+CL: QPN00068.1 nucleocapsid protein [Apodemus peninsulae coronavirus]	2
+CL: BBM61453.1 nucleocapsid protein [Bovine coronavirus]	2
+CL: QOE77313.1 nucleocapsid phosphoprotein [Betacoronavirus HKU24]	2
+CL: P33469.1 RecName: Full=Nucleoprotein; AltName: Full=Nucleocapsid protein; Short=NC; Short=Protein N [Human coronavirus OC43]	2
+CL: ATP66753.1 nucleocapsid protein [Rodent coronavirus]	2
+CL: AAB48161.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AKB91487.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AAT45198.1 nucleoprotein [Canine coronavirus]	4
+CL: ACT10860.1 nucleocapsid protein [Feline coronavirus RM]	4
+CL: ARS22437.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABC75294.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AQY55891.1 N protein [Infectious bronchitis virus]	3
+CL: AHC28331.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QRN75106.1 nucleocapsid protein [Feline coronavirus]	4
+CL: AFX81086.1 nucleocapsid protein [Canine coronavirus]	4
+CL: ACR10365.1 nucleocapsid protein [Feline coronavirus]	4
+CL: ACR10294.1 nucleocapsid protein [Feline coronavirus]	4
+CL: ADC34656.1 nucleocapsid protein [Feline coronavirus]	4
+CL: ARS22457.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QRG28807.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABC02824.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABF61546.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: ABW75147.1 N [Turkey coronavirus] [Turkey coronavirus]	3
+CL: AAO59438.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: QDL88280.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ADM36054.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: APP92764.1 nucloecapsid protein [Infectious bronchitis virus]	3
+CL: ADW77548.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AIB54174.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QHI01613.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AXQ05195.1 nucleocapsid N protein [Avian coronavirus]	3
+CL: QDA76280.1 N protein [Infectious bronchitis virus]	3
+CL: QDQ69130.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QDQ69208.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AFZ88842.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: CAX52761.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QQD79821.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AHJ77567.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: Q96598.1 RecName: Full=Nucleoprotein; AltName: Full=Nucleocapsid protein; Short=NC; Short=Protein N [Avian infectious bronchitis virus (strain Vic S)]	3
+CL: QEY95733.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ARS22467.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QGX41973.1 nucleocapsid [Alphacoronavirus sp.]	5
+CL: ADC34637.1 nucleocapsid protein [Feline coronavirus]	4
+CL: AAB48160.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: BAC01161.1 nucleocapsid [Feline coronavirus]	4
+CL: ATE90975.1 nucleocapsid protein [Avian coronavirus]	3
+CL: ADC34655.1 nucleocapsid protein [Feline coronavirus]	4
+CL: QDQ69143.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ANO81461.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ADC34641.1 nucleocapsid protein [Feline coronavirus]	4
+CL: P12648.1 RecName: Full=Nucleoprotein; AltName: Full=Nucleocapsid protein; Short=NC; Short=Protein N [Avian infectious bronchitis virus (strain KB8523)]	3
+CL: AAX19432.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: ACN62555.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: APZ73731.1 N protein [Infectious bronchitis virus]	3
+CL: ABQ84773.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ARJ35788.1 nucleocapsid protein [Avian coronavirus]	3
+CL: AZA07840.1 N protein [Infectious bronchitis virus]	3
+CL: ABF61562.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: AUG98116.1 nucleocapsid protein [Feline coronavirus]	4
+CL: QGX07419.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QLI33802.1 N protein [Infectious bronchitis virus]	3
+CL: QDG02704.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: Q96605.1 RecName: Full=Nucleoprotein; AltName: Full=Nucleocapsid protein; Short=NC; Short=Protein N [Avian infectious bronchitis virus (strain V18/91)]	3
+CL: ABF61501.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: QQH14743.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AGY78354.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ANA11063.1 N protein [Canine coronavirus]	4
+CL: ADV71801.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AEO79901.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QDQ69169.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABC75302.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACT10871.1 nucleocapsid protein [Feline coronavirus UU11]	4
+CL: QDY92366.1 nucleocapsid [Avian coronavirus]	3
+CL: AHJ77568.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: P32923.2 RecName: Full=Nucleoprotein; AltName: Full=Nucleocapsid protein; Short=NC; Short=Protein N [Avian infectious bronchitis virus (strain GRAY)]	3
+CL: ADC35467.1 nucleocapsid protein [Feline coronavirus UU22]	4
+CL: AHC28315.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AAR15909.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AUG69018.1 nucleocapsid protein [Feline coronavirus]	4
+CL: AAA91857.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QDL88283.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AKB91499.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABI14451.1 N [Feline coronavirus] [Feline coronavirus]	4
+CL: QKV27959.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AXR85441.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AHC28321.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ARI46283.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ADV71813.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AMR60487.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACJ54660.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: APZ73814.1 N protein [Infectious bronchitis virus]	3
+CL: ABF61493.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: ACM45236.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AXT92422.1 N protein [Infectious bronchitis virus]	3
+CL: QRR19181.1 nucleocapsid protein [Turkey coronavirus]	3
+CL: AND76881.1 N protein [Infectious bronchitis virus]	3
+CL: ACM07734.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACT10901.1 nucleocapsid protein [Feline coronavirus UU8]	4
+CL: ADC34642.1 nucleocapsid protein [Feline coronavirus]	4
+CL: AAX19439.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: AKB91494.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AAX19437.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: QEY95729.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ADC34657.1 nucleocapsid protein [Feline coronavirus]	4
+CL: AAX19443.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: AAT39492.2 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: YP_009825016.1 nucleocapsid protein [Duck coronavirus]	3
+CL: QDA76262.1 N protein [Pheasant coronavirus]	3
+CL: ALH21120.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AHC28325.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QBP43263.1 N protein [Bat coronavirus]	5
+CL: CAX52764.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AFS18132.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AND76841.1 N protein [Infectious bronchitis virus]	3
+CL: AKB91497.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACN82403.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABF19055.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ADC34653.1 nucleocapsid protein [Feline coronavirus]	4
+CL: ADC34648.1 nucleocapsid protein [Feline coronavirus]	4
+CL: APZ73850.1 N protein [Infectious bronchitis virus]	3
+CL: AYA44698.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ASU62515.1 nucleocapsid protein [Feline coronavirus]	4
+CL: AGZ89679.1 N protein [Infectious bronchitis virus]	3
+CL: ASU62505.1 nucleocapsid protein [Feline coronavirus]	4
+CL: AIA62275.1 nucleocapsid protein [Alphacoronavirus BtMs-AlphaCoV/GS2013]	5
+CL: ADA83492.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AQY55864.1 N protein [Infectious bronchitis virus]	3
+CL: AAX39766.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: BAN67906.1 nucleocapsid protein [Feline coronavirus]	4
+CL: ABF19053.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AHN54763.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AQY55837.1 N protein [Infectious bronchitis virus]	3
+CL: ACR10303.1 nucleocapsid protein [Feline coronavirus]	4
+CL: QGX41967.1 nucleocapsid [Alphacoronavirus sp.]	5
+CL: AHC28330.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: APY26717.1 N protein [Infectious bronchitis virus]	3
+CL: AEF98428.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ARS22417.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABY71194.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QOS02284.1 nucleocapsid protein [Avian coronavirus IA1162/2020]	3
+CL: AMK51955.1 N protein [Infectious bronchitis virus]	3
+CL: AHC28328.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ADC34647.1 nucleocapsid protein [Feline coronavirus]	4
+CL: ADA83482.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABC02828.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AGV02020.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AFN61249.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACJ50166.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AJP08753.1 N protein [Infectious bronchitis virus]	3
+CL: AGY78355.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AQY61330.1 N protein [Infectious bronchitis virus]	3
+CL: AFS18148.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QKV27932.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ARI46299.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QRN75118.1 nucleocapsid protein [Feline coronavirus]	4
+CL: AKC34140.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: BAC01157.1 nucleocapsid [Feline infectious peritonitis virus]	4
+CL: AFS18122.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ADC34646.1 nucleocapsid protein [Feline coronavirus]	4
+CL: QEY95728.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACX31180.1 nucleocapsid glycoprotein [Infectious bronchitis virus]	3
+CL: AKB91481.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QDA76271.1 N protein [Pheasant coronavirus]	3
+CL: ARS23161.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ADC34640.1 nucleocapsid protein [Feline coronavirus]	4
+CL: AAT70080.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABK30933.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACZ67652.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QDA76298.1 N protein [Infectious bronchitis virus]	3
+CL: AFQ31007.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: NP_040838.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AIB54170.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABC02831.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AXQ05208.1 nucleocapsid N protein [Avian coronavirus]	3
+CL: APV46146.1 N protein [Infectious bronchitis virus]	3
+CL: ABD34802.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABQ96870.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ADC34645.1 nucleocapsid protein [Feline coronavirus]	4
+CL: API80977.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACJ12841.1 N [Infectious bronchitis virus] [Infectious bronchitis virus]	3
+CL: AJP08757.1 N protein [Infectious bronchitis virus]	3
+CL: ASU92403.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACN82408.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: YP_009755908.1 nucleocapsid protein [Canada goose coronavirus]	3
+CL: ACJ54662.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACT31320.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: BAJ08261.1 nucleocapsid protein [Feline coronavirus]	4
+CL: ACT10954.1 nucleocapsid protein [Feline coronavirus UU2]	4
+CL: ARB66178.1 N protein [Infectious bronchitis virus]	3
+CL: AYS76114.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AFS18134.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACN81813.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABQ96869.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AEO79892.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AHC28316.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QEI10568.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AOC59728.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ANI21156.1 N protein [Infectious bronchitis virus]	3
+CL: QDQ69104.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABC75295.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ADC34665.1 nucleocapsid protein [Feline coronavirus]	4
+CL: APY23522.1 N protein [Infectious bronchitis virus]	3
+CL: ACS34956.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QDA76253.1 N protein [Infectious bronchitis virus]	3
+CL: AXE75102.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: Q9PZ49.1 RecName: Full=Nucleoprotein; AltName: Full=Nucleocapsid protein; Short=NC; Short=Protein N [Turkey coronavirus (strain NC95)]	3
+CL: AEF98437.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AHC28313.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ADP06474.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: AMO03299.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACX31183.1 nucleocapsid glycoprotein [Infectious bronchitis virus]	3
+CL: API61797.1 N protein [Infectious bronchitis virus]	3
+CL: QDQ69156.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QDA76235.1 N protein [Infectious bronchitis virus]	3
+CL: ABD34803.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ASU92395.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: APY23549.1 N protein [Infectious bronchitis virus]	3
+CL: QLG00095.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ATJ01100.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: CEK09117.1 N [Guinea fowl coronavirus GfCoV/FR/2011] [Guinea fowl coronavirus GfCoV/FR/2011]	3
+CL: ACM07733.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACR10338.1 nucleocapsid protein [Feline coronavirus]	4
+CL: APY23486.1 N protein [Infectious bronchitis virus]	3
+CL: ACJ50182.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACM07732.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: Q9J4B0.1 RecName: Full=Nucleoprotein; AltName: Full=Nucleocapsid protein; Short=NC; Short=Protein N [Avian infectious bronchitis virus (strain DE072)]	3
+CL: AFS18135.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AFS18119.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACZ67654.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QBG64652.1 nucleocapsid [Alphacoronavirus UKMa1]	5
+CL: ACN82398.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACV87268.1 nucleocapsid [Turkey coronavirus]	3
+CL: AAK93797.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AJP08754.1 N protein [Infectious bronchitis virus]	3
+CL: ACX31187.1 nucleocapsid glycoprotein [Infectious bronchitis virus]	3
+CL: AAT70779.1 nucleocapsid protein [Avian infectious bronchitis virus partridge/GD/S14/2003]	3
+CL: ABF61554.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: ANI87718.1 nucloecapsid protein [Infectious bronchitis virus]	3
+CL: AGT52086.1 nucleocapsid protein [Feline coronavirus]	4
+CL: ADO39834.1 nucleocapsid protein [Feline coronavirus UU19]	4
+CL: ADC34644.1 nucleocapsid protein [Feline coronavirus]	4
+CL: YP_001718609.1 nucleocapsid protein [Bat coronavirus 1A]	5
+CL: AEO79898.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABF61472.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: ABC75301.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AUG98114.1 nucleocapsid protein [Feline coronavirus]	4
+CL: APV46182.1 N protein [Infectious bronchitis virus]	3
+CL: ADC34669.1 nucleocapsid protein [Feline coronavirus]	4
+CL: ANY59002.1 nucleocapsid N protein [Avian coronavirus]	3
+CL: AQD20762.1 N protein [Infectious bronchitis virus]	3
+CL: AAX19444.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: ACS44223.1 N [Feline coronavirus] [Feline coronavirus]	4
+CL: ARB66142.1 N protein [Infectious bronchitis virus]	3
+CL: CAI40312.1 putative nucleocapsid protein [Pigeon coronavirus]	3
+CL: ABM68080.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: QEY95735.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AFN61242.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABY71195.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACA43019.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: ACN82411.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AIB54178.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ADC34661.1 nucleocapsid protein [Feline coronavirus]	4
+CL: AAC54068.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AFJ11183.1 N protein [Infectious bronchitis virus]	3
+CL: ABG36802.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ASB16893.1 nucleocapsid protein [Feline coronavirus]	4
+CL: AFS18139.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ARB66187.1 N protein [Infectious bronchitis virus]	3
+CL: YP_008439206.1 nucleoprotein [Bat coronavirus CDPHE15/USA/2006]	5
+CL: AAV88463.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABQ84805.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AAP92682.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AJO26989.1 nucleocapsid protein [Feline coronavirus]	4
+CL: APU51863.1 N protein [Infectious bronchitis virus]	3
+CL: AHC28324.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AEO45968.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AAF06352.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABG75576.1 nucleocapsid [Bat coronavirus 1A]	5
+CL: AFV92605.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ADC34664.1 nucleocapsid protein [Feline coronavirus]	4
+CL: AIB54175.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACR10347.1 nucleocapsid protein [Feline coronavirus]	4
+CL: ACR46115.1 nucleocapsid protein [Feline coronavirus]	4
+CL: Q9PZ51.1 RecName: Full=Nucleoprotein; AltName: Full=Nucleocapsid protein; Short=NC; Short=Protein N [Turkey coronavirus (strain Indiana)]	3
+CL: AUG98115.1 nucleocapsid protein [Feline coronavirus]	4
+CL: AZA07521.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: YP_009380526.1 nucleocapsid protein [Coronavirus AcCoV-JC34]	5
+CL: ABF61538.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: QIM61647.1 nucleoprotein [Avian coronavirus]	3
+CL: AFS18124.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AXB38901.1 nucleopcapsid N protein [Avian coronavirus]	3
+CL: ARI46243.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: APV46101.1 N protein [Infectious bronchitis virus]	3
+CL: Q82616.1 RecName: Full=Nucleoprotein; AltName: Full=Nucleocapsid protein; Short=NC; Short=Protein N [Avian infectious bronchitis virus (strain M41)]	3
+CL: QDQ69182.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABG75577.1 nucleocapsid [Bat coronavirus 1B]	5
+CL: ACZ67655.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AHC28314.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACN82395.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACF77105.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QGM12413.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ADI54962.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: YP_009201734.1 nucleocapsid protein [BtNv-AlphaCoV/SC2013]	5
+CL: ACR10356.1 nucleocapsid protein [Feline coronavirus]	4
+CL: AHY19813.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QOE77273.1 nucleocapsid phosphoprotein [Lucheng Rn rat coronavirus]	5
+CL: AEO79894.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ALQ43524.1 nucleocapsid protein [European turkey coronavirus 080385d]	3
+CL: AGZ89688.1 N protein [Infectious bronchitis virus]	3
+CL: ACN82409.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: APA05105.1 nucleocapsid [Transmissible gastroenteritis virus]	4
+CL: APV46191.1 N protein [Infectious bronchitis virus]	3
+CL: AAX19445.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: AYF53099.1 nucleoprotein [Feline alphacoronavirus 1]	4
+CL: ANQ45740.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ABC02823.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QDM36992.1 nucleocapsid protein [Feline coronavirus]	4
+CL: ADO39855.1 nucleocapsid protein [Feline coronavirus UU30]	4
+CL: QEY95739.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AFV92603.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: YP_009825005.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACA43018.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: QNT22137.1 nucleocapsid protein [Rodent coronavirus]	5
+CL: AHB78807.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ACX31182.1 nucleocapsid glycoprotein [Infectious bronchitis virus]	3
+CL: AGC01549.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: QOE77292.1 nucleocapsid phosphoprotein [Lucheng Rn rat coronavirus]	5
+CL: AYR18497.1 nucleocapsid protein [Alphacoronavirus sp.]	5
+CL: AAX39767.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: AYR18422.1 nucleocapsid protein [Alphacoronavirus sp.]	5
+CL: QJS39688.1 N protein [Infectious bronchitis virus]	3
+CL: ADX59486.1 nucleocapsid protein [Miniopterus bat coronavirus/Kenya/KY27/2006]	5
+CL: ASV45153.1 nucleoprotein [Porcine respiratory coronavirus]	4
+CL: ADC53232.1 nucleoprotein [Transmissible gastroenteritis virus]	4
+CL: AOT21924.1 nucleoprotein [Swine enteric coronavirus]	4
+CL: AAC96008.1 nucleoprotein [Transmissible gastroenteritis virus]	4
+CL: QDM02509.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: AAM97563.1 nucleoprotein [Transmissible gastroenteritis virus]	4
+CL: BAN67924.1 nucleocapsid protein [Canine coronavirus]	4
+CL: APQ31247.1 nucleocapsid protein [Transmissible gastroenteritis virus]	4
+CL: BAN67915.1 nucleocapsid protein [Feline coronavirus]	4
+CL: ABO88143.1 nucleocapsid protein [Raccoon dog coronavirus GZ43/2003]	4
+CL: QDF43793.1 nucleocapsid protein [Coronavirus BtSk-AlphaCoV/GX2018A]	5
+CL: BAC01159.1 nucleocapsid [Feline infectious peritonitis virus]	4
+CL: P33463.1 RecName: Full=Nucleoprotein; AltName: Full=Nucleocapsid protein; Short=NC; Short=Protein N [Porcine respiratory coronavirus (strain 86/137004 / British isolate)]	4
+CL: ADO39823.1 nucleocapsid protein [Feline coronavirus UU40]	4
+CL: AKV62760.1 nucleoprotein [Porcine respiratory coronavirus]	4
+CL: ABY71201.1 nucleocapsid protein [Infectious bronchitis virus]	3
+CL: ATP66770.1 nucleocapsid protein [Rodent coronavirus]	5
+CL: ADB10855.1 nucleocapsid protein [Canine coronavirus]	4
+CL: AYR18571.1 nucleocapsid protein [Alphacoronavirus sp.]	5
+CL: AAQ96369.1 N protein [Canine coronavirus]	4
+CL: ACU56723.1 nucleocapsid protein [Transmissible gastroenteritis virus]	4
+CL: ANR94935.1 nucleocapsid [Transmissible gastroenteritis virus]	4
+CL: ANV78634.1 nucleocapsid protein [Scotophilus kuhlii coronavirus]	5
+CL: ATP66792.1 nucleocapsid protein [Rodent coronavirus]	5
+CL: AAB47502.1 N protein [Feline infectious peritonitis virus, FIPV I, KU-2, Peptide, 377 aa] [Feline infectious peritonitis virus]	4
+CL: AYR18459.1 nucleocapsid protein [Alphacoronavirus sp.]	5
+CL: YP_001876448.1 nucleocapsid protein [Beluga whale coronavirus SW1]	1
+CL: BAN67941.1 nucleocapsid protein [Canine coronavirus]	4
+CL: AEK25516.1 nucleocapsid protein [Feline coronavirus UU47]	4
+CL: QDF43803.1 nucleocapsid protein [Coronavirus BtSk-AlphaCoV/GX2018C]	5
+CL: ADX59462.1 nucleocapsid protein [Chaerephon bat coronavirus/Kenya/KY41/2006]	5
+CL: AUG98113.1 nucleocapsid protein [Feline coronavirus]	4
+CL: BAN67942.1 nucleocapsid protein [Feline coronavirus]	4
+CL: ALK28791.1 N [229E-related bat coronavirus] [229E-related bat coronavirus]	5
+CL: ADC53233.1 nucleoprotein [Transmissible gastroenteritis virus]	4
+CL: AHB63506.1 N protein [Bottlenose dolphin coronavirus HKU22]	1
+CL: ATP66741.1 nucleocapsid protein [Rodent coronavirus]	5
+CL: ASU62494.1 nucleocapsid protein [Feline coronavirus]	4
+CL: AJD09526.1 nucleocapsid protein [Porcine epidemic diarrhea virus]	5
+CL: ASV51729.1 nucleocapsid protein [Porcine epidemic diarrhea virus]	5
+CL: AAZ86083.1 nucleocapsid protein [Feline coronavirus]	4
+CL: ADC34660.1 nucleocapsid protein [Feline coronavirus]	4
+CL: AZN28591.1 nucleocapsid protein [Porcine epidemic diarrhea virus]	5
+CL: AWN93247.1 nucleocapsid protein [Feline coronavirus]	4
+CL: AYP73649.1 nucleocapsid protein [Porcine epidemic diarrhea virus]	5
+CL: BAP19072.1 nucleocapsid protein [Feline coronavirus]	4
+CL: ALR84912.1 nucleocapsid protein [Porcine epidemic diarrhea virus]	5
+CL: AJD09529.1 nucleocapsid protein [Porcine epidemic diarrhea virus]	5
+CL: YP_009824971.1 N protein [NL63-related bat coronavirus]	5
+CL: APD51495.1 N protein [NL63-related bat coronavirus]	5
+CL: AJD09527.1 nucleocapsid protein [Porcine epidemic diarrhea virus]	5
+CL: ABC84374.1 nucleocapsid protein [Porcine epidemic diarrhea virus]	5
+CL: ADL71450.1 nucleocapsid protein [Feline coronavirus UU17]	4
+CL: AIA62216.1 nucleocapsid protein [BtMf-AlphaCoV/GD2012]	5
+CL: ACA43020.1 nucleocapsid [Infectious bronchitis virus]	3
+CL: AXE71626.1 nucleocapsid protein [Feline coronavirus]	4
+CL: QER90708.1 nucleocapsid protein [Bat alphacoronavirus]	5
+CL: AJD09547.1 nucleocapsid protein [Porcine epidemic diarrhea virus]	5
+CL: AWV96570.1 nucleocapsid protein [Porcine deltacoronavirus]	6
+CL: ACT10911.1 nucleocapsid protein [Feline coronavirus UU5]	4
+CL: AUG98125.1 nucleocapsid protein [Feline coronavirus]	4
+CL: QHA24669.1 nucleocapsid protein [Rousettus aegyptiacus bat coronavirus 229E-related]	5
+CL: YP_005352858.1 N gene product [Magpie-robin coronavirus HKU18]	6
+CL: YP_005352850.1 nucleocapsid protein [Sparrow coronavirus HKU17]	6
+CL: ARD25157.1 nucleocapsid protein [Porcine deltacoronavirus]	6
+CL: YP_005352842.1 N gene product [White-eye coronavirus HKU16]	6
+CL: QCQ20042.1 N protein [Porcine epidemic diarrhea virus]	5
+CL: AJD09546.1 nucleocapsid protein [Porcine epidemic diarrhea virus]	5
+CL: QGX41949.1 nucleocapsid [Alphacoronavirus sp.]	5
+CL: AFD98076.1 nucleocapsid protein [Porcine epidemic diarrhea virus]	5
+CL: QHA24675.1 nucleocapsid protein [Miniopterus pusillus bat coronavirus HKU8-related]	5
+CL: YP_001718616.1 nucleocapsid protein [Miniopterus bat coronavirus HKU8]	5
+CL: YP_002308483.1 nucleocapsid phosphoprotein [Bulbul coronavirus HKU11-934]	6
+CL: AWV67138.1 nucleocapsid protein [Sparrow deltacoronavirus]	6
+CL: QLI47734.1 N protein [Deltacoronavirus sp.]	6
+CL: AWV96563.1 nucleocapsid protein [Porcine deltacoronavirus]	6
+CL: AGG34686.1 N protein [Porcine epidemic diarrhea virus]	5
+CL: YP_002308501.1 nucleocapsid phosphoprotein [Thrush coronavirus HKU12-600]	6
+CL: QDE55569.1 nucleocapsid protein [Bat alphacoronavirus]	5
+CL: AIA62224.1 nucleocapsid protein [BtMf-AlphaCoV/HuB2013]	5
+CL: BBC54826.1 nucleoprotein [Falcon coronavirus UAE-HKU27]	6
+CL: BAS25714.1 nucleocapsid protein [Ferret coronavirus]	4
+CL: YP_005352875.1 N gene product [Wigeon coronavirus HKU20]	6
+CL: AVY53339.1 nucleocapsid protein [Alphacoronavirus Mink/China/1/2016]	4
+CL: ASR18942.1 nucleocapsid protein [Ferret enteric coronavirus]	4
+CL: YP_002308510.1 nucleocapsid phosphoprotein [Munia coronavirus HKU13-3514]	6
+CL: AYR18465.1 nucleocapsid protein [Alphacoronavirus sp.]	5
+CL: AYR18589.1 nucleocapsid protein [Alphacoronavirus sp.]	5
+CL: AYR18453.1 nucleocapsid protein [Alphacoronavirus sp.]	5
+CL: AYR18535.1 nucleocapsid protein [Alphacoronavirus sp.]	5
+CL: BAV31353.1 nucleocapsid protein [Ferret coronavirus]	4
+CL: ABC70094.1 nucleocapsid protein [Ferret enteric coronavirus MSU1]	4
+CL: AIF73533.1 nucleocapsid protein [Porcine epidemic diarrhea virus]	5
+CL: QKX95784.1 N protein [Mink coronavirus 1]	4
+CL: QLI47719.1 N protein [Deltacoronavirus sp.]	6
+CL: BBC54865.1 nucleoprotein [Quail coronavirus UAE-HKU30]	6
+CL: AWV96577.1 nucleocapsid protein [Porcine deltacoronavirus]	6
+CL: QKX95793.1 N protein [Mink coronavirus 1]	4
+CL: YP_009019186.1 nucleocapsid protein [Mink coronavirus strain WD1127]	4
+CL: AIA62238.1 nucleocapsid protein [BtMf-AlphaCoV/HeN2013]	5
+CL: YP_005352867.1 N gene product [Night heron coronavirus HKU19]	6
+CL: YP_005352885.1 N gene product [Common moorhen coronavirus HKU21]	6
+CL: ALL74103.1 nucleocapsid protein [Porcine deltacoronavirus]	6
+CL: ADX59492.1 nucleocapsid protein [Miniopterus bat coronavirus/Kenya/KY33/2006]	5
+CL: AQT03445.1 nucleocapsid [Porcine deltacoronavirus]	6
+CL: AXP20285.1 nucleoprotein [Quail deltacoronavirus]	6
+
+UI: Number of groups with less than 3 sequences: 0
+Is there enough group diversity to perform the analysis?:
+GD: YES
+
+Are there any position predicted as being important for the whole family?: 
+PR: YES
+Positions predicted (SDPs): 
+Position	Average_rank	Number_of_groups_within_the_complete_partition	List_of_clusters(rank_within_cluster)
+RE: 212	3	2	Partition_based_on: Cluster_2(rank:5) Cluster_1_3_4_5_6_(rank:1)
+RE: 594	3	4	Partition_based_on: Cluster_2(rank:6) Cluster_3(rank:2) Cluster_6(rank:1) Cluster_1_4_5_(rank:3)
+RE: 592	9.7	3	Partition_based_on: Cluster_3(rank:21) Cluster_6(rank:7) Cluster_1_2_4_5_(rank:1)
+
+UI: Number of positions predicted to be important for the group segregation: 3
+
+Are there any conserved position at 98 % of identity?: 
+CN: YES
+Conserved positions: 
+CP: 11
+CP: 97
+CP: 106
+CP: 133
+CP: 134
+CP: 147
+CP: 148
+CP: 175
+CP: 176
+CP: 179
+CP: 180
+CP: 181
+CP: 207
+CP: 208
+CP: 226
+CP: 256
+CP: 496
+CP: 498
+CP: 506
+CP: 508
+CP: 516
+CP: 530
+
+UI: Number of conserved positions (at 98 % of identity): 22
