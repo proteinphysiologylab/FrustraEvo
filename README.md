@@ -57,15 +57,13 @@ Functions.plots_logo(args.JobId,args.ref,args.RPath)
 
 To run in terminal: `python3 run_logo.py --JobId XXX --fasta XXX.fasta --ref XXXXX --pdb_db XXX`
 
-You can find the description of the FrustraEvo results outputs in this README file
-https://github.com/proteinphysiologylab/FrustraEvo/blob/master/wiki/README
+## **Input files used in our article Freiberger & Ruiz-Serra et al, Biorxiv 2023 are available at:**
+https://github.com/proteinphysiologylab/FrustraEvo/tree/master/Examples_InputData
 
-## **You can also find useful examples in our wiki!!:**
-
+## **Output files used in our article Freiberger & Ruiz-Serra et al, Biorxiv 2023 are available at:**
 https://github.com/proteinphysiologylab/FrustraEvo/tree/master/Examples_OutputData
 
-## **You can find the data used in the Wiki examples at:**
-
-https://github.com/proteinphysiologylab/FrustraEvo/tree/master/Examples_InputData
+You can find the description of the FrustraEvo results outputs in this README file
+https://github.com/proteinphysiologylab/FrustraEvo/blob/master/wiki/README
 
 Enjoy :)
