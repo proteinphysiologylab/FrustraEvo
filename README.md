@@ -10,7 +10,7 @@ frustratometeR (https://github.com/proteinphysiologylab/frustratometeR)
 
 R library : argparse, ggplot2, ggseqlogo, cowplot, seqinr and data.table
 
-# Minimum code to calculate frustration in a protein (You need to creat a .py file and put the code below)
+# Minimum code to calculate frustration in a protein (You need to create a .py file and put the code below)
 ```
 
 import os
