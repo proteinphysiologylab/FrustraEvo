@@ -1,0 +1,2021 @@
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 1fhj-A
+Output file: 1fhj-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  423 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  562 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.000126839 secs
+  read_data CPU = 0.00294018 secs
+141 atoms in group alpha_carbons
+141 atoms in group beta_atoms
+141 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 7 6 7
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.606 | 8.606 | 8.606 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    127.66611    23140.344    23454.068   -26752.418    89493.665 
+Loop time of 1.90735e-06 on 1 procs for 0 steps with 423 atoms
+
+104.9% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 1.907e-06  |            |       |100.00
+
+Nlocal:    423 ave 423 max 423 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    23098 ave 23098 max 23098 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  46196 ave 46196 max 46196 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 46196
+Ave neighs/atom = 109.21
+Ave special neighs/atom = 2.65721
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/1fhj-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 1fsx-A
+Output file: 1fsx-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  423 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  562 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.000128984 secs
+  read_data CPU = 0.00294495 secs
+141 atoms in group alpha_carbons
+141 atoms in group beta_atoms
+141 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 6 7 7
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.606 | 8.606 | 8.606 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    185.84131    3229.1949    3596.1579   -13003.731    86881.464 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 423 atoms
+
+209.7% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    423 ave 423 max 423 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    23029 ave 23029 max 23029 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  46058 ave 46058 max 46058 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 46058
+Ave neighs/atom = 108.884
+Ave special neighs/atom = 2.65721
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/1fsx-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 1hds-A
+Output file: 1hds-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  423 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  562 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.000183105 secs
+  read_data CPU = 0.00299001 secs
+141 atoms in group alpha_carbons
+141 atoms in group beta_atoms
+141 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 5 7 7
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.605 | 8.605 | 8.605 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    494.16347    14381.549    15079.012   -30615.783    71212.574 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 423 atoms
+
+209.7% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    423 ave 423 max 423 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    23103 ave 23103 max 23103 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  46206 ave 46206 max 46206 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 46206
+Ave neighs/atom = 109.234
+Ave special neighs/atom = 2.65721
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/1hds-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 1qpw-A
+Output file: 1qpw-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  423 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  562 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.000298977 secs
+  read_data CPU = 0.00379992 secs
+141 atoms in group alpha_carbons
+141 atoms in group beta_atoms
+141 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 7 8 6
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.606 | 8.606 | 8.606 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    170.92792    3027.2558    3379.6171   -11121.579    92133.649 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 423 atoms
+
+104.9% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    423 ave 423 max 423 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    23047 ave 23047 max 23047 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  46094 ave 46094 max 46094 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 46094
+Ave neighs/atom = 108.969
+Ave special neighs/atom = 2.65721
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/1qpw-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 1s0h-A
+Output file: 1s0h-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  423 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  562 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.000124931 secs
+  read_data CPU = 0.00274611 secs
+141 atoms in group alpha_carbons
+141 atoms in group beta_atoms
+141 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 7 6 7
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.606 | 8.606 | 8.606 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    277.65315    3964.8047    4414.1202   -8635.5881     89157.63 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 423 atoms
+
+104.9% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    423 ave 423 max 423 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    23343 ave 23343 max 23343 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  46686 ave 46686 max 46686 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 46686
+Ave neighs/atom = 110.369
+Ave special neighs/atom = 2.65721
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/1s0h-A.done/FrustrationData
+   PDB has ALT records, taking A only, rm.alt=TRUE
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 2b7h-A
+Output file: 2b7h-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  423 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  562 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.00013423 secs
+  read_data CPU = 0.00300694 secs
+141 atoms in group alpha_carbons
+141 atoms in group beta_atoms
+141 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 7 6 6
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.605 | 8.605 | 8.605 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    223.14732      2454.75    2861.5676   -11376.382    84706.587 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 423 atoms
+
+104.9% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    423 ave 423 max 423 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    24084 ave 24084 max 24084 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  48168 ave 48168 max 48168 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 48168
+Ave neighs/atom = 113.872
+Ave special neighs/atom = 2.65721
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/2b7h-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 2dhb-A
+Output file: 2dhb-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  423 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  562 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.000129938 secs
+  read_data CPU = 0.00315404 secs
+141 atoms in group alpha_carbons
+141 atoms in group beta_atoms
+141 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 7 7 7
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.606 | 8.606 | 8.606 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300     272.6071    8504.6098    8952.3316   -22832.571    95009.297 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 423 atoms
+
+209.7% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    423 ave 423 max 423 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    22803 ave 22803 max 22803 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  45606 ave 45606 max 45606 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 45606
+Ave neighs/atom = 107.816
+Ave special neighs/atom = 2.65721
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/2dhb-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 2dn1-A
+Output file: 2dn1-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  420 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  558 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.000126839 secs
+  read_data CPU = 0.00293493 secs
+140 atoms in group alpha_carbons
+140 atoms in group beta_atoms
+140 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 6 7 6
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.605 | 8.605 | 8.605 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    160.04906    3815.3067    4145.9607   -13005.368    80213.491 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 420 atoms
+
+209.7% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    420 ave 420 max 420 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    23186 ave 23186 max 23186 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  46372 ave 46372 max 46372 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 46372
+Ave neighs/atom = 110.41
+Ave special neighs/atom = 2.65714
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/2dn1-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 2qu0-A
+Output file: 2qu0-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  423 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  562 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.000127077 secs
+  read_data CPU = 0.00287604 secs
+141 atoms in group alpha_carbons
+141 atoms in group beta_atoms
+141 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 6 7 8
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.606 | 8.606 | 8.606 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    212.69909    23895.564    24294.569   -26765.678    91928.227 
+Loop time of 0 on 1 procs for 0 steps with 423 atoms
+
+0.0% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 0          |            |       |  0.00
+
+Nlocal:    423 ave 423 max 423 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    23027 ave 23027 max 23027 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  46054 ave 46054 max 46054 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 46054
+Ave neighs/atom = 108.875
+Ave special neighs/atom = 2.65721
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/2qu0-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 2rao-A
+Output file: 2rao-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  423 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  562 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.000126839 secs
+  read_data CPU = 0.00283408 secs
+141 atoms in group alpha_carbons
+141 atoms in group beta_atoms
+141 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 7 6 7
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.606 | 8.606 | 8.606 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    159.48391    3389.1539    3735.5221    -13953.66    86781.223 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 423 atoms
+
+104.9% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    423 ave 423 max 423 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    22769 ave 22769 max 22769 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  45538 ave 45538 max 45538 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 45538
+Ave neighs/atom = 107.655
+Ave special neighs/atom = 2.65721
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/2rao-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 3a0g-A
+Output file: 3a0g-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  417 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  554 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.00012517 secs
+  read_data CPU = 0.00287199 secs
+139 atoms in group alpha_carbons
+139 atoms in group beta_atoms
+139 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 6 6 7
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.604 | 8.604 | 8.604 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    175.64955    2847.9088    3192.7151   -12921.375    82625.529 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 417 atoms
+
+209.7% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    417 ave 417 max 417 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    22546 ave 22546 max 22546 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  45092 ave 45092 max 45092 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 45092
+Ave neighs/atom = 108.134
+Ave special neighs/atom = 2.65707
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/3a0g-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 3cy5-A
+Output file: 3cy5-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  423 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  562 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.000126839 secs
+  read_data CPU = 0.00286412 secs
+141 atoms in group alpha_carbons
+141 atoms in group beta_atoms
+141 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 7 6 7
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.606 | 8.606 | 8.606 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    206.09527    14199.142    14588.245   -21667.916    94599.435 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 423 atoms
+
+209.7% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    423 ave 423 max 423 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    23326 ave 23326 max 23326 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  46652 ave 46652 max 46652 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 46652
+Ave neighs/atom = 110.288
+Ave special neighs/atom = 2.65721
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/3cy5-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 3d1a-A
+Output file: 3d1a-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  423 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  562 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.000126123 secs
+  read_data CPU = 0.002918 secs
+141 atoms in group alpha_carbons
+141 atoms in group beta_atoms
+141 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 7 6 6
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.605 | 8.605 | 8.605 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    180.40729     6140.518    6505.5861   -18290.276    78807.446 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 423 atoms
+
+209.7% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    423 ave 423 max 423 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    23095 ave 23095 max 23095 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  46190 ave 46190 max 46190 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 46190
+Ave neighs/atom = 109.196
+Ave special neighs/atom = 2.65721
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/3d1a-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 3d4x-A
+Output file: 3d4x-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  423 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  562 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.000128031 secs
+  read_data CPU = 0.00289607 secs
+141 atoms in group alpha_carbons
+141 atoms in group beta_atoms
+141 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 7 7 6
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.606 | 8.606 | 8.606 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    182.02426    2770.7016      3126.93    -14296.68    82652.277 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 423 atoms
+
+209.7% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    423 ave 423 max 423 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    22939 ave 22939 max 22939 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  45878 ave 45878 max 45878 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 45878
+Ave neighs/atom = 108.459
+Ave special neighs/atom = 2.65721
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/3d4x-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 3dht-A
+Output file: 3dht-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  417 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  554 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.000123978 secs
+  read_data CPU = 0.00287819 secs
+139 atoms in group alpha_carbons
+139 atoms in group beta_atoms
+139 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 7 6 6
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.604 | 8.604 | 8.604 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    143.45685    13601.729    13914.625    -25242.75    79725.966 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 417 atoms
+
+209.7% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    417 ave 417 max 417 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    22699 ave 22699 max 22699 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  45398 ave 45398 max 45398 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 45398
+Ave neighs/atom = 108.868
+Ave special neighs/atom = 2.65707
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/3dht-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 3fh9-A
+Output file: 3fh9-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  423 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  562 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.000147104 secs
+  read_data CPU = 0.0038929 secs
+141 atoms in group alpha_carbons
+141 atoms in group beta_atoms
+141 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 7 6 7
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.606 | 8.606 | 8.606 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300     74.71572    3123.9821    3370.3824   -14388.559    96327.683 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 423 atoms
+
+104.9% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    423 ave 423 max 423 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    22002 ave 22002 max 22002 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  44004 ave 44004 max 44004 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 44004
+Ave neighs/atom = 104.028
+Ave special neighs/atom = 2.65721
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/3fh9-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 3gdj-A
+Output file: 3gdj-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  423 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  562 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.000133038 secs
+  read_data CPU = 0.00295377 secs
+141 atoms in group alpha_carbons
+141 atoms in group beta_atoms
+141 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 6 7 8
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.606 | 8.606 | 8.606 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    174.83151    3274.4058    3626.9716   -15749.211    82525.352 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 423 atoms
+
+209.7% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    423 ave 423 max 423 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    23431 ave 23431 max 23431 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  46862 ave 46862 max 46862 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 46862
+Ave neighs/atom = 110.785
+Ave special neighs/atom = 2.65721
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/3gdj-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 3gou-A
+Output file: 3gou-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  423 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  562 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.000154972 secs
+  read_data CPU = 0.002841 secs
+141 atoms in group alpha_carbons
+141 atoms in group beta_atoms
+141 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 7 6 7
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.606 | 8.606 | 8.606 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    221.75875    2763.8911    3170.7264   -11514.414    87093.175 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 423 atoms
+
+104.9% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    423 ave 423 max 423 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    23095 ave 23095 max 23095 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  46190 ave 46190 max 46190 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 46190
+Ave neighs/atom = 109.196
+Ave special neighs/atom = 2.65721
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/3gou-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 3lqd-A
+Output file: 3lqd-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  423 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  562 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.000144005 secs
+  read_data CPU = 0.00325298 secs
+141 atoms in group alpha_carbons
+141 atoms in group beta_atoms
+141 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 7 5 8
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.605 | 8.605 | 8.605 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    236.64816    3316.6723    3731.2492   -13592.669      87613.3 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 423 atoms
+
+209.7% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    423 ave 423 max 423 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    23076 ave 23076 max 23076 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  46152 ave 46152 max 46152 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 46152
+Ave neighs/atom = 109.106
+Ave special neighs/atom = 2.65721
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/3lqd-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 3vre-A
+Output file: 3vre-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  423 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  562 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.000195026 secs
+  read_data CPU = 0.00297093 secs
+141 atoms in group alpha_carbons
+141 atoms in group beta_atoms
+141 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 7 6 7
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.606 | 8.606 | 8.606 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    186.47505    2846.9419    3216.4697   -14380.756    81204.085 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 423 atoms
+
+104.9% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    423 ave 423 max 423 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    23388 ave 23388 max 23388 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  46776 ave 46776 max 46776 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 46776
+Ave neighs/atom = 110.582
+Ave special neighs/atom = 2.65721
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/3vre-A.done/FrustrationData
+-----------------------------Filtering-----------------------------
+-----------------------------Preparing files-----------------------------
+Pdb file: 4yu3-A
+Output file: 4yu3-A
+-----------------------------Setting options-----------------------------
+-----------------------------Calculating-----------------------------
+LAMMPS (3 Mar 2020)
+Reading data file ...
+  orthogonal box = (-20000 -20000 -20000) to (20000 20000 20000)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  423 atoms
+  scanning bonds ...
+  3 = max bonds/atom
+  reading bonds ...
+  562 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:   0          1          1         
+  special bond factors coul: 0          1          1         
+  5 = max # of 1-2 neighbors
+  5 = max # of special neighbors
+  special bonds CPU = 0.00016284 secs
+  read_data CPU = 0.00376105 secs
+141 atoms in group alpha_carbons
+141 atoms in group beta_atoms
+141 atoms in group oxygens
+ABC flag on
+Water flag on
+Burial flag on
+Tertiary_Frustratometer flag on
+
+Neighbor list info ...
+  update every 1 steps, delay 5 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 14.5
+  ghost atom cutoff = 14.5
+  binsize = 7.25, bins = 6 6 7
+  3 neighbor lists, perpetual/occasional/extra = 3 0 0
+  (1) pair vexcluded, perpetual, half/full from (3)
+      attributes: half, newton on
+      pair build: halffull/newton
+      stencil: none
+      bin: none
+  (2) fix backbone, perpetual, copy from (1)
+      attributes: half, newton on
+      pair build: copy
+      stencil: none
+      bin: none
+  (3) fix backbone, perpetual
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 0
+  Time step     : 2
+WARNING: Communication cutoff 14.5 is shorter than a bond length based estimate of 15.655. This may lead to errors. (../comm.cpp:686)
+Per MPI rank memory allocation (min/avg/max) = 8.605 | 8.605 | 8.605 Mbytes
+Step Temp E_pair E_mol TotEng Press Volume 
+       0          300    241.99587    3767.4967    4200.1365   -15321.138    81903.633 
+Loop time of 9.53674e-07 on 1 procs for 0 steps with 423 atoms
+
+209.7% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Bond    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 9.537e-07  |            |       |100.00
+
+Nlocal:    423 ave 423 max 423 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:    0 ave 0 max 0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:    23093 ave 23093 max 23093 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:  46186 ave 46186 max 46186 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 46186
+Ave neighs/atom = 109.187
+Ave special neighs/atom = 2.65721
+Neighbor list builds = 0
+Dangerous builds = 0
+Total wall time: 0:00:00
+-----------------------------Reorganization-----------------------------
+
+
+****Storage information****
+The frustration data was stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/4yu3-A.done/FrustrationData
+
+
+****Storage information****
+Frustration data for all Pdb's directory /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/ are stored in /home/maria/Documentos/EvoFrustra/FrustraEvo_alpha/Frustration/
