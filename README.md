@@ -2,6 +2,9 @@
 
 FrustraEvo is a very simple tool to calculate the frustration logo and the frustration contact maps. As a input files receives a set of aligned sequences (MSA) and their corresponding structures and calculates the degree of frustration conservation across them, per position or contact using the frustratometeR.
 
+A docker containing to run FrustrEvo in any platform without having to deal with dependencies can be accesed from here:
+https://hub.docker.com/r/proteinphysiologylab/frustraevo
+
 Dependencies:
 
 hmmer (`sudo apt-get install -y hmmer`)
