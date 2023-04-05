@@ -63,7 +63,7 @@ https://github.com/proteinphysiologylab/FrustraEvo/tree/master/Examples_InputDat
 ## **Sample Output files are available at:**
 https://github.com/proteinphysiologylab/FrustraEvo/tree/master/Examples_OutputData
 
-## **Full input and output files to reproduce results from the Freiberger-Ruiz Serrra et al 2023 article (https://www.biorxiv.org/content/10.1101/2023.01.25.525527v1) are available at:**
+# **Full input and output files to reproduce results from the Freiberger-Ruiz Serrra et al 2023 article (https://www.biorxiv.org/content/10.1101/2023.01.25.525527v1) are available at:**
 https://github.com/proteinphysiologylab/Freiberger-RuizSerra_et_al2023
 
 You can find the description of the FrustraEvo results outputs in this README file
