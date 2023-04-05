@@ -1,4 +1,4 @@
-# FrustraEvo: A Tool To Study Energetic Patterns Within And Between Protein Families
+# FrustraEvo: A Tool To Study Energetic Patterns in Protein Families
 
 FrustraEvo is a very simple tool to calculate the frustration logo and the frustration contact maps. As a input files receives a set of aligned sequences (MSA) and their corresponding structures and calculates the degree of frustration conservation across them, per position or contact using the frustratometeR.
 
