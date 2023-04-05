@@ -57,6 +57,10 @@ Functions.plots_logo(args.JobId,args.ref,args.RPath)
 
 To run in terminal: `python3 run_logo.py --JobId XXX --fasta XXX.fasta --ref XXXXX --pdb_db XXX`
 
+Example with Sample data once you are located inside of the folder that contains both the MSA (alphas.fasta) and the Pdbs containing folder (Pdbs): 
+
+`python3 run_logo.py --JobId 2022122114524431133 --fasta alphas.fasta --ref 2dn1-A --pdb_db Pdbs`
+
 **Sample Input files are available at:**
 
 https://github.com/proteinphysiologylab/FrustraEvo/tree/master/Examples_InputData
