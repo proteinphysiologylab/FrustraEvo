@@ -4,6 +4,7 @@ import re
 import sys
 from Bio import SeqIO
 import numpy as np
+from scipy.cluster.hierarchy import linkage, dendrogram
 import warnings
 from Bio import BiopythonWarning
 warnings.simplefilter('ignore', BiopythonWarning)
