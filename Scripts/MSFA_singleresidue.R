@@ -120,7 +120,6 @@ for(m in 1:length(msas)){
     
     
     df2$Alignment_position = df2$Res_ref
-    print(df2)
     list_df[[i]] = df2
   }
   
@@ -229,16 +228,15 @@ for (c in unique(ns$Cluster)){
 
 p = plot_grid(plotlist = list_plots,
               ncol =1,
-              rel_heights = c(0.09, h),
+              rel_heights = c(1, max_nseqs),
               labels = c("", cluster_names))
 sc = 7
 a=length(positions_msa)/42
-sc*a
 w = unique(max(mapping_file$Alignment_position, na.rm=T))
 #width = w/sc, height = 0.9*sc
-svg('MSFA.svg',pointsize = "10",width = w/sc, height =sc*a)
+svg('MSFA.svg',pointsize = "100",idth = 100, height = 30)
 p
 invisible(dev.off())
 library(magick)
-testimage <- image_read_svg('MSFA.svg', width = 1400)
+testimage <- image_read_svg('MSFA.svg', width = 2500)
 image_write(testimage, path = "MSFA.png", format = "png")
