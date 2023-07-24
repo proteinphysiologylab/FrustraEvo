@@ -55,7 +55,7 @@ def changes(JodID,MSA_File):
         for seq_record in SeqIO.parse(pathAlign, 'fasta'):
                 seqid=seq_record.id
                 seq=seq_record.seq
-                out.write('>'+seqid+'\n'+str(seq.upper())+'\n')
+                out.write('>'+seqid+'\n'+str(seq.upper()).replace('X','-')+'\n')
 
         out.close()
         out_list.close()
@@ -82,13 +82,13 @@ def obtain_seq(pdbid,JodID):
 	seq=''
 	path_direc='FrustraEvo_'+JodID
 	pdb=open(path_direc+'/Frustration/'+pdbid+'.pdb')
+	nn=-100
 	for lpdb in pdb.readlines():
-		atom=lpdb[0]+lpdb[1]+lpdb[2]+lpdb[3]
-		if atom == 'ATOM':
-			ca=lpdb[13]+lpdb[14]
-			if ca == 'CA' and lpdb[16]==' ' and lpdb[26]==' ':
+		if 'ATOM' == lpdb[0:4] and len(lpdb) > 60:
+			if nn != int(lpdb[22:26]) and lpdb[16]==' ' and lpdb[26]==' ':
 				aa=lpdb[17]+lpdb[18]+lpdb[19]
 				seq+=dic[aa]
+			nn = int(lpdb[22:26])
 	pdb.close()
 	return seq
 	
@@ -401,21 +401,16 @@ def FinalAlign(JodID):
                         out_msa.write('>'+pdb+'\n')
                         out_pos.write('>'+pdb+'\n')
                         frst_sr=open(path_direc+'/Frustration/'+pdb+'.done/FrustrationData/'+pdb+'.pdb_singleresidue','r')
-                        lfrst_sr=frst_sr.readline()
+                        lfrst_sr=frst_sr.readlines()
                 if c==0:
                         c=1
-                        tam=len(seq)
-                        i=0
-                        while(i<tam):
+                        for i in range(0,len(seq)):
                                 if seq[i] == '-' or seq[i] == 'Z':
                                         vector.append(0)
                                 else:
                                         vector.append(1)
-                                i += 1
                 else:
                         splitres=''
-                        tam=len(seq)
-                        lfrst_sr = frst_sr.readline()
              #           if r==1 and len(pdbid)>2:
               #                  splitres=lfrst_sr.split(' ')
                #                 r= int(splitres[0])
@@ -424,30 +419,28 @@ def FinalAlign(JodID):
                   #                      lfrst_sr=frst_sr.readline()
                    #                     r = r + 1
                         q=0
-                        for j in range (0,tam):
+                        for j in range (0,len(seq)):
                                 if vector[j] == 0:
                                         if seq[j] != '-':
-                                                lfrst_sr = frst_sr.readline()
+                                                q += 1
                                 else:
                                         if seq[j] == 'Z' or seq[j] == 'X':
                                                 out_msa.write('-')
                                                 longline+=1
-                                                q = q + 1
+                                                q += 1
                                         else:
                                                 out_msa.write(str(seq[j]))
                                                 longline+=1
-                                                q = q + 1
+                                                if seq[j] != '-':
+                                                     q += 1
                                         if seq[j] == 'Z':
                                                 out_pos.write('Z ')
                                         elif seq[j] == '-':
                                                 out_pos.write('G ')
                                         else:
-                                                if len(splitres) < 2:
-                                                        splitres = lfrst_sr.split(' ')
-                                                lfrst_sr = frst_sr.readline()
+                                                splitres = lfrst_sr[q].split(' ')
                                                 out_pos.write(str(splitres[0])+' ')
-                                                splitres = lfrst_sr.split(' ')
-                                                r = r + 1
+                                                r += 1
 
                         out_msa.write('\n')
                         out_pos.write('\n')
@@ -470,7 +463,7 @@ def Equivalences(JodID):
         pos=open(path_direc+'/Positions','r')
 
         for line in pos.readlines():
-                line=line[:-1]
+                line=line.rstrip('\n')
                 if line[0] == '>':
                         pdbch=line[1:]
                         out=open(path_direc+'/Equivalences/Equival_'+pdbch+'.txt','w')
@@ -484,7 +477,7 @@ def Equivalences(JodID):
                         while(ter<tam - 1):
                                 ter+=1
                                 if sline[ter-1] == 'G' or sline[ter-1] == 'Z':
-                                        out.write(str(ter)+'\tN/A\tN/A\tN/A\tN/A '+splitres[1]+'\n')
+                                        out.write(str(ter)+'\tN/A\tN/A\tN/A\tN/A\t'+splitres[1]+'\n')
 
                                 else:   
                                         frst_sr_line=frst_sr.readline()
@@ -504,11 +497,11 @@ def Equivalences(JodID):
                                                         ter-=1
                                                 if splitres[0] == sline[ter-1] and len(splitres) > 7:
                                                         if float(splitres[7]) > 0.55:
-                                                                out.write(str(ter)+'\t'+str(splitres[0])+'\t'+str(splitres[3])+'\t'+str(splitres[7])+'\t'+'MIN '+splitres[1]+'\n')
+                                                                out.write(str(ter)+'\t'+str(splitres[0])+'\t'+str(splitres[3])+'\t'+str(splitres[7])+'\t'+'MIN\t'+splitres[1]+'\n')
                                                         elif float(splitres[7]) < -1:
-                                                                out.write(str(ter)+'\t'+str(splitres[0])+'\t'+str(splitres[3])+'\t'+str(splitres[7])+'\t'+'MAX '+splitres[1]+'\n')
+                                                                out.write(str(ter)+'\t'+str(splitres[0])+'\t'+str(splitres[3])+'\t'+str(splitres[7])+'\t'+'MAX\t'+splitres[1]+'\n')
                                                         else:
-                                                                out.write(str(ter)+'\t'+str(splitres[0])+'\t'+str(splitres[3])+'\t'+str(splitres[7])+'\t'+'NEU '+splitres[1]+'\n')
+                                                                out.write(str(ter)+'\t'+str(splitres[0])+'\t'+str(splitres[3])+'\t'+str(splitres[7])+'\t'+'NEU\t'+splitres[1]+'\n')
         out.close()
         frst_sr.close()
 
@@ -713,7 +706,8 @@ def add_ref_Cmaps(JodID,prot_ref,Mode):
                 vectorAA.append(sp[2])
                 vectorchain.append(sp[5])
                 num.append(sp[1])
-        out.write('Res\tRes\tAA1\tAA2\tNumRes1_Ref\tChain1_Ref\tNumRes2_Ref\tChain2_Ref\tProt_Ref\tNumeroConts\tFreqConts\tpNEU\tpMIN\tpMAX\tHNEU\tHMIN\tHMAX\tHtotal\tICNEU\tICMIN\tICMAX\tICtotal\tFstConserved\n')
+        out.write('Res1\tRes2\tAA1\tAA2\tNumRes1_Ref\tChain1_Ref\tNumRes2_Ref\tChain2_Ref\tProt_Ref\tNoContacts\tFreqConts\tpNEU\tpMIN\tpMAX\tHNEU\tHMIN\tHMAX\tHtotal\tICNEU\tICMIN\tICMAX\tICtotal\tFstConserved\n')
+
         a=0
         for line in ic.readlines():
                 line=line.rstrip('\n')
@@ -721,15 +715,75 @@ def add_ref_Cmaps(JodID,prot_ref,Mode):
                         a+=1
                 else:
                         sp=line.split()
-                        out.write(sp[0]+'\t'+sp[1]+'\t'+vectorAA[int(sp[0])-1]+'\t'+vectorAA[int(sp[1])-1]+'\t'+vectorchain[int(sp[0])-1]+'\t'+vectorchain[int(sp[1])-1]+'\t'+str(num[int(sp[0])-1])+'\t'+str(num[int(sp[1])-1])+'\t'+prot_ref+'\t'+sp[4]+'\t'+sp[5]+'\t'+sp[6]+'\t'+sp[7]+'\t'+sp[8]+'\t'+sp[9]+'\t'+sp[10]+'\t'+sp[11]+'\t'+sp[12]+'\t'+sp[11]+'\t'+sp[12]+'\t'+sp[13]+'\t'+sp[14]+'\t'+sp[15]+'\n')
+                        out.write(sp[0]+'\t'+sp[1]+'\t'+vectorAA[int(sp[0])-1]+'\t'+vectorAA[int(sp[1])-1]+'\t'+num[int(sp[0])-1]+'\t'+vectorchain[int(sp[0])-1]+ '\t'+str(num[int(sp[1])-1])+'\t'+str(vectorchain[int(sp[1])-1])+'\t'+prot_ref+'\t'+sp[2]+'\t'+sp[3]+'\t'+sp[4]+'\t'+sp[5]+'\t'+sp[6]+'\t'+sp[7]+'\t'+sp[8]+'\t'+sp[9]+'\t'+sp[10]+'\t'+sp[11]+'\t'+sp[12]+'\t'+sp[13]+'\t'+sp[14]+'\t'+sp[15]+'\n')
 
 
         ic.close()
         out.close()
         res.close()
         os.system('cp '+path_direc+'/CMaps/IC_'+Mode+'_ref'+' '+path_direc+'/OutPutFiles/IC_'+Mode+'_'+JodID)
+        
+def df_MSFA(JodID):
+        path_direc='FrustraEvo_'+JodID
+        pos=open(path_direc+'/AuxFiles/PDB_ListChk.txt','r')
+        out=open(path_direc+'/AuxFiles/DF_Colores','w')
+        out.write('PDBID,pos,AA,FstState,FstI\n')
+        for line in pos.readlines():
+                line=line.rstrip('\n')
+                equival=open(path_direc+'/Data/'+line+'.done/Equival_'+line+'.txt','r')
+                for lequiv in equival.readlines():
+                        sp=lequiv.split('\t')
+                        if sp[2] == 'N/A':
+                               out.write(line+','+sp[0]+',-,-,N/A\n')
+                        else:
+                               out.write(line+','+sp[0]+','+sp[2]+','+sp[4]+','+sp[3]+'\n')
+                equival.close()
+        out.close()
+        pos.close()
 
-def clean_files(JodID,path_r,prot_ref):
+def pml_contactos(JodID):
+        print('Creando Visualización')
+        path_direc='FrustraEvo_'+JodID
+        mode=['configurational','mutational']
+        mode2=['Conf','Mut']
+        for i in range(0,len(mode)):
+                list_chk = open(path_direc+'/AuxFiles/PDB_ListChk.txt','r')
+                for line in list_chk.readlines():
+                        pdbid=line.rstrip('\n')
+                        out = open(path_direc+'/Data/'+pdbid+'.done/VisualizationScrips/'+pdbid+'_contacts_'+mode[i]+'.pml','w')
+                        out.write('load '+pdbid+'.pdb, '+pdbid.replace('-','_')+'\nhide line,'+pdbid.replace('-','_')+'\nunset dynamic_measures\nshow cartoon,'+pdbid.replace('-','_')+'\ncolor gray,'+pdbid.replace('-','_')+'\nrun draw_links.py\n')
+                        IC = open(path_direc+'/OutPutFiles/IC_'+mode2[i]+'_'+JodID,'r')
+                        for line in IC.readlines():
+                        	line=line.rstrip('\n')
+                        	sp=line.split()
+                        	if sp[0] !='Res1':
+	                        	if float(sp[21]) > 0.5 and float(sp[10]) >= 0.5:
+                                                col=''
+                                                if sp[22] == 'MAX':
+                                                        col='red'
+                                                elif sp[22] == 'MIN':
+                                                        col='green'
+                                                mut=open(path_direc+'/Data/'+pdbid+'.done/VisualizationScrips/'+pdbid+'.pdb_'+mode[i]+'.pml','r')
+                                                for lmut in mut.readlines():
+                                                        lmut=lmut.rstrip('\n')
+                                                        spmut=lmut.split()
+                                                        if sp[4] in lmut and sp[6] in lmut:
+                                                                if 'green' in lmut and col == 'red':
+                                                                      lmut=lmut.replace('green',col)
+                                                                      lmut=lmut.replace('min_frst','max_frst')
+                                                                elif 'red' in lmut and col == 'green':
+                                                                      lmut=lmut.replace('red',col)
+                                                                      lmut=lmut.replace('max_frst','min_frst')
+                                                                out.write(lmut+'\n')
+                                                                break
+                                                mut.close()
+                        out.write('zoom all\nhide labels\ncolor red, max_frst_wm_'+pdbid.replace('-','_')+'\ncolor green, min_frst_wm_'+pdbid.replace('-','_'))
+
+                        IC.close()
+                        out.close()
+                        list_chk.close()
+                
+def clean_files(JodID,path_r,prot_ref,cmaps):
         path_direc='FrustraEvo_'+JodID
         os.system('mkdir '+path_direc+'/AuxFiles')
         os.system('rm '+path_direc+'/MSA_Final.fasta')
@@ -741,19 +795,19 @@ def clean_files(JodID,path_r,prot_ref):
         os.system('mv '+path_direc+'/PDB_ListChk.txt '+path_direc+'/AuxFiles/')
         os.system('mv '+path_direc+'/Positions '+path_direc+'/AuxFiles/')
         os.system('mv '+path_direc+'/Frustration/ '+path_direc+'/Data/')
-        os.system('cd '+path_direc+'/Data;rm *.pdb*')
-        os.system('rm -r '+path_direc+'/CMaps')
-      #  os.system('rm '+path_direc+'/ *.py*')
+        #os.system('cd '+path_direc+'/Data;rm *.pdb*')
+        if cmaps.lower() == 'yes':
+                os.system('rm -r '+path_direc+'/CMaps')
+        #os.system('rm '+path_direc+'/ *.py*')
         lista=open(path_direc+'/AuxFiles/PDB_ListChk.txt')
-        os.system('Rscript '+path_r+'/MSFA_singleresidue.R -o '+path_direc+'/ -s '+prot_ref+' -c '+JodID) 
-        os.system('cp '+os.getcwd()+'/MSFA.svg '+os.getcwd()+'/'+path_direc+'/OutPutFiles/MSFA_'+JodID+'.svg')
-        os.system('cp '+os.getcwd()+'/MSFA.png '+os.getcwd()+'/'+path_direc+'/OutPutFiles/MSFA_'+JodID+'.png')
         for line in lista.readlines():
                 line=line.rstrip('\n')
                 os.system('mv '+path_direc+'/Equivalences/Equival_'+line+'.txt '+path_direc+'/Data/'+line+'.done/')
         lista.close()
         os.system('rm -r '+path_direc+'/Equivalences/')
-
-
-
+        #ACA LLAMAR A LA FUNCION
+        df_MSFA(JodID)
+        os.system('Rscript '+path_r+'/MSFA.R --dir '+os.getcwd()+'/'+path_direc+'/ --jobid '+JodID)
+        if cmaps.lower() == 'yes':
+                pml_contactos(JodID)
 
