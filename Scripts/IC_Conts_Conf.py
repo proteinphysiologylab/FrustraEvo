@@ -3,16 +3,13 @@ import sys
 import os.path as path
 import os
 import math
+import numpy as np
 
 ##para llenar-----------
 
-#rango de residuos
-posicionmin=1
-posicionmax=int(sys.argv[1])+1
-
 #lista de pdbs para analizar
 listapdbs='PDB_ListChk.txt'
-
+n=int(sys.argv[1])
 #archivo de equivalencia para cada pdb (entre numeracion del pdb y posicion del residuo en alineamiento)
 equivalenciares='Equival_'
 
@@ -24,36 +21,34 @@ frustpath=sys.argv[2]+'/Frustration/'
 #path donde se encuentran las equivalencias entre residuos
 equivalenciapath=sys.argv[2]+'/Equivalences/'
 
+equival_ref=open(equivalenciapath+equivalenciares+sys.argv[3]+'.txt','r')
+lequival=equival_ref.readlines()
+equival_ref.close()
 
 ## funciones ------------
 
 #busca numero de residuo en pdb para cada posicion del alineamiento, ya que el archivo de frustra tiene numeracion pdb.
-def read_X(doc,numres): 
+def read_X(doc,numres,chain): 
 	for a in doc:
-		lin=a.split("\t")
-		ambler=str(lin[0]).rstrip('\n')
-		#print(ambler,numres)
-		if str(ambler) == str(numres):
-			return str(lin[1])
+		lin=a.rstrip('\n')
+		lin=a.split()
+		#print(ambler,numres,lin[4])
+		if int(lin[0]) == int(numres):
+			return lin[1]
 
 #busca linea para contacto en frustra file, y suma 1 a la categoria que corresponda (MAX, MIN o NEU)
 def cont_X(doc,i,j):
 	cut_MIN=0.78
 	cut_MAX=-1.0
-	for a in doc:
-		lin=a.split(" ")
-		#print(lin[0], i, lin[1], j, lin[11])
-		if str(lin[0])==str(i) and str(lin[1])==str(j):		
-			numeroconts.append(1)
-#si dice lin[2], calculo IC de configurational entropy. Si dice lin[3] es de mutational entropy	
-			frst.append(float(lin[11]))
-			if float(lin[11])>= float(cut_MIN):
-				MIN.append(1)
-			elif float(lin[11])<= float(cut_MAX):
-				MAX.append(1)
-			else:
-				NEU.append(1)
-			return True
+	numeroconts.append(1)
+	frst.append(float(doc))
+	if float(doc)>= float(cut_MIN):
+		MIN.append(1)
+	elif float(doc)<= float(cut_MAX):
+		MAX.append(1)
+	else:
+		NEU.append(1)
+	return True
 
 #calculos Shannon 
 
@@ -107,31 +102,49 @@ listpdb=listapdbs.readlines()
 listapdbs.close()
 total=len(listpdb)
 
-salida=open(archivosalida, 'a')
+salida=open(archivosalida, 'w')
 salida.write('Res\tRes\tNumeroConts\tFreqConts\tpNEU\tpMIN\tpMAX\tHNEU\tHMIN\tHMAX\tHtotal\tICNEU\tICMIN\tICMAX\tICtotal\tEstadoConservado\n')
 
-for resi in range(posicionmin, posicionmax):
-	for resj in range(posicionmin, posicionmax):
-#pongo contadores
+matrices=[]
+for h in range(0,len(listpdb)):
+	pdbfile=open(equivalenciapath+equivalenciares+listpdb[h].rstrip('\n')+".txt","r")
+	vect=[]
+	for line in pdbfile.readlines():
+		sp_res=line.split('\t')
+		vect.append(sp_res[1])
+	
+	pdbfile.close()
+	
+	frstfile=open(frustpath+listpdb[h].rstrip('\n')+".done/FrustrationData/"+listpdb[h].rstrip('\n')+".pdb_configurational", "r")
+	matriz = np.zeros((n+2,n+2))
+	for mi in range(len(matriz)):
+		for mj in range(len(matriz)):
+			matriz[mi][mj] = -100
+	
+	for line in frstfile.readlines():
+		sp=line.rstrip('\n').split()
+		if sp[0] in vect and sp[1] in vect:
+			matriz[vect.index(sp[0])][vect.index(sp[1])] = float(sp[11])
+		
+	frstfile.close()
+	matrices.append(matriz)
+	
+for ri in range(0,len(lequival)):
+	lresi=lequival[ri].rstrip('\n')
+	resi=lresi.split()
+	for rj in range(ri+1,len(lequival)):
+		lresj=lequival[rj].rstrip('\n')
+		resj=lresj.split()
 		numeroconts=[]
 		frst=[]
 		NEU=[]
 		MIN=[]
-		MAX=[]
+		MAX=[]		
 
-
-		for j in listpdb: #abre cada renglon del archivo, lee nombre pdb, abre pdb y lo lee
-			pdb=j.rstrip('\n')			
-			pdbfile=open(equivalenciapath+equivalenciares+pdb+".txt","r")
-			arch=pdbfile.readlines() #crea lista cn lineas del doc
-			pdbfile.close()
-			ipdb=read_X(arch,resi)
-			jpdb=read_X(arch,resj)
-			if ipdb!=None and jpdb!=None: #si ese res ambler esta en la estruct
-				frstfile=open(frustpath+pdb+".done/FrustrationData/"+pdb+".pdb_configurational", "r")
-				doc=frstfile.readlines()[1:]
-				frstfile.close()
-				cont_X(doc,ipdb,jpdb)
+		for j in range(0,len(listpdb)): #abre cada renglon del archivo, lee nombre pdb, abre pdb y lo lee
+			m=matrices[j]
+			if m[int(resi[0])][int(resj[0])] != float(-100):
+				cont_X(m[int(resi[0])][int(resj[0])],resi[0],resj[0])
 		conts=sum(numeroconts)
 		num_MIN=sum(MIN)
 		num_MAX=sum(MAX)
@@ -166,7 +179,6 @@ for resi in range(posicionmin, posicionmax):
 
 
 
-			salida.write(str(resi)+"\t"+str(resj)+'\t'+str(conts)+"\t"+str(freqconts)+"\t"+str(pNEU)+'\t'+str(pMIN)+'\t'+str(pMAX)+'\t'+str(HNEU)+'\t'+str(HMIN)+'\t'+str(HMAX)+'\t'+str(Htotal)+'\t'+str(IC_NEU)+'\t'+str(IC_MIN)+'\t'+str(IC_MAX)+'\t'+str(IC_total)+'\t'+str(conservedstate)+"\n")
+			salida.write(str(resi[0])+"\t"+str(resj[0])+'\t'+str(conts)+"\t"+str(freqconts)+"\t"+str(pNEU)+'\t'+str(pMIN)+'\t'+str(pMAX)+'\t'+str(HNEU)+'\t'+str(HMIN)+'\t'+str(HMAX)+'\t'+str(Htotal)+'\t'+str(IC_NEU)+'\t'+str(IC_MIN)+'\t'+str(IC_MAX)+'\t'+str(IC_total)+'\t'+str(conservedstate)+"\n")
 
 salida.close()
-
