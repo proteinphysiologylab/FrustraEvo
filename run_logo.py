@@ -11,7 +11,7 @@ parser.add_argument("--RPath", default='Scripts', help="Path to R script files (
 parser.add_argument("--fasta", help="Name of the fasta")
 parser.add_argument("--ref", default='None', help="Id of the reference protein of your logo (Default: None)")
 parser.add_argument("--pdb_db", default='None', help="Path to the PDBs folder (Default: None)")
-parser.add_argument("--cmaps", default='None', help="Put 'yes' for contactmaps calculation (Default: None)")
+parser.add_argument("--cmaps", default='no', choices=["yes", "no"], help="Put 'yes' for contactmaps calculation (Default: None)")
 
 
 #How to run the pipeline in linux terminal:
@@ -49,8 +49,7 @@ if args.cmaps == 'yes':
         Functions.CMaps_Mutational(args.JobId,args.RPath,args.ref)#Genera los mapas de contacto para el indice mutational
         print('Running CMaps for Configurational')
         Functions.CMaps_Configurational(args.JobId,args.RPath,args.ref)#Genera los mapas de contacto para el indice configurational
-else:
-        args.cmaps = 'no'
+
 Functions.clean_files(args.JobId,args.RPath,args.ref,args.cmaps)
 print('Making Visualization scripts (.pml)')
 Functions.VScript(args.JobId)
