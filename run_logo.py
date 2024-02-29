@@ -11,7 +11,7 @@ parser.add_argument("--RPath", default='Scripts', help="Path to R script files (
 parser.add_argument("--fasta", help="Name of the fasta")
 parser.add_argument("--ref", default='None', help="Id of the reference protein of your logo (Default: None)")
 parser.add_argument("--pdb_db", default='None', help="Path to the PDBs folder (Default: None)")
-parser.add_argument("--cmaps", default='no', choices=["yes", "no"], help="Put 'yes' for contactmaps calculation (Default: None)")
+parser.add_argument("--cmaps", default='no', choices=["yes", "no"], help="Put 'yes' for contactmaps calculation (Default: 'no')")
 
 
 #How to run the pipeline in linux terminal:
