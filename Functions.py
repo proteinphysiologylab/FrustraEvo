@@ -4,10 +4,57 @@ import re
 import sys
 from Bio import SeqIO
 import numpy as np
-from scipy.cluster.hierarchy import linkage, dendrogram
+#from scipy.cluster.hierarchy import linkage, dendrogram
 import warnings
 from Bio import BiopythonWarning
 warnings.simplefilter('ignore', BiopythonWarning)
+
+def pml_contactos(JodID,ref):
+        path_direc='FrustraEvo_'+JodID
+        mode=['configurational','mutational']
+        mode2=['Conf','Mut']
+        for i in range(0,len(mode)):
+                list_chk = open(path_direc+'/AuxFiles/PDB_ListChk.txt','r')
+                for line in list_chk.readlines():
+                        pdbid=line.rstrip('\n')
+                        if pdbid==ref:
+                                table=open(path_direc+'/Data/Conservedresidues_'+mode[i],'w')
+                        out = open(path_direc+'/Data/'+pdbid+'.done/VisualizationScrips/'+pdbid+'_contacts_'+mode[i]+'.pml','w')
+                        out.write('load '+pdbid+'.pdb, '+pdbid.replace('-','_')+'\nhide line,'+pdbid.replace('-','_')+'\nunset dynamic_measures\nshow cartoon,'+pdbid.replace('-','_')+'\ncolor gray,'+pdbid.replace('-','_')+'\nrun draw_links.py\n')
+                        IC = open(path_direc+'/OutPutFiles/IC_'+mode2[i]+'_'+JodID,'r')
+                        for line in IC.readlines():
+                        	line=line.rstrip('\n')
+                        	sp=line.split()
+                        	if sp[0] !='Res1':
+	                        	if float(sp[21]) > 0.5 and float(sp[10]) >= 0.5:
+                                                col=''
+                                                if sp[22] == 'MAX':
+                                                        col='red'
+                                                elif sp[22] == 'MIN':
+                                                        col='green'
+                                                mut=open(path_direc+'/Data/'+pdbid+'.done/VisualizationScrips/'+pdbid+'.pdb_'+mode[i]+'.pml','r')
+                                                for lmut in mut.readlines():
+                                                        lmut=lmut.rstrip('\n')
+                                                        spmut=lmut.split()
+                                                        if sp[4] in lmut and sp[6] in lmut:
+                                                                if pdbid==ref and col !='':
+                                                                      table.write(sp[4]+' '+sp[6]+' '+col+'\n')
+                                                                if 'green' in lmut and col == 'red':
+                                                                      lmut=lmut.replace('green',col)
+                                                                      lmut=lmut.replace('min_frst','max_frst')
+                                                                elif 'red' in lmut and col == 'green':
+                                                                      lmut=lmut.replace('red',col)
+                                                                      lmut=lmut.replace('max_frst','min_frst')
+                                                                out.write(lmut+'\n')
+                                                                break
+                                                mut.close()
+                        if pdbid==ref:
+                                table.close() 
+                        out.write('zoom all\nhide labels\ncolor red, max_frst_wm_'+pdbid.replace('-','_')+'\ncolor green, min_frst_wm_'+pdbid.replace('-','_'))
+
+                        IC.close()
+                        out.close()
+                        list_chk.close()
 
 def copyfiles(JodID,path_to_r,path_to_Pdbs):
 
@@ -85,20 +132,22 @@ def obtain_seq(pdbid,JodID):
 	nn=-100
 	for lpdb in pdb.readlines():
 		if 'ATOM' == lpdb[0:4] and len(lpdb) > 60:
-			if nn != int(lpdb[22:26]) and lpdb[16]==' ' and lpdb[26]==' ':
+			aa=lpdb[17]+lpdb[18]+lpdb[19]
+			if nn != int(lpdb[22:26]) and lpdb[16]==' ' and lpdb[26]==' ' and aa in dic:
 				aa=lpdb[17]+lpdb[18]+lpdb[19]
 				seq+=dic[aa]
 			nn = int(lpdb[22:26])
 	pdb.close()
 	return seq
-	
 
 def checks_seq(list_pdbs,JodID,pathPDB='None'):
 	path_direc='FrustraEvo_'+JodID
+	seqs=0
 	frustdir=path_direc+'/Frustration/'
 	MSA=open(path_direc+'/MSA_Clean_aux.fasta','r')
 	out=open(path_direc+'/MSA_Clean.fasta','w')
-	out_log=open(path_direc+'/ErrorSeq.log','w')
+	#out_log=open(path_direc+'/ErrorSeq.log','w')
+        #len_seq=0
 	for seq_record in SeqIO.parse(MSA, 'fasta'):
 		seqid=seq_record.id
 		seq=seq_record.seq.replace('-','')
@@ -115,13 +164,46 @@ def checks_seq(list_pdbs,JodID,pathPDB='None'):
 				print('Sequence '+seqid+' checked')
 				out.write('>'+str(seqid)+'\n'+str(seq_to_print)+'\n')
 			else:
-				print('Sequence '+seqid+' not the same as pdb, sequence removed '+ seq +' '+ seqpdb)
-				out_log.write('Sequence '+seqid+' not the same as pdb, sequence removed\n')
+				out_log=open(path_direc+'/ErrorSeq.log','a')
+				if seqs == 0:
+					out_log.write('There are errors in the input data, fix them and submit the job again. Take into account that IDs are matched in a case-sensitive way. Take into account that the sequences need to be aligned.\n')
+				print(seqid+' sequence does not match between the MSA and the pdb file')
+				#out_log=open(path_direc+'/ErrorSeq.log','a')
+				out_log.write(seqid+' sequence does not match between the MSA and the pdb file\n')
 				os.system('rm '+frustdir+'/'+seqid+'.pdb')
-	
+				seqs+=1
+				out_log.close()
 	MSA.close()
 	out.close()
-	out_log.close()
+#	archivo_fasta = path_direc+'/MSA_Clean_aux.fasta'
+#	msa_c, n_seq = es_MSA_valido(archivo_fasta)
+#	if not msa_c:
+#		if n_seq == 1:
+#			out_log=open(path_direc+'/ErrorSeq.log','a')
+#			out_log.write('The Fasta file provided is not a valid fasta format.\n')
+#		else:
+#			out_log=open(path_direc+'/ErrorSeq.log','a')
+#			out_log.write('The Fasta file provided has less than 3 sequences, the minimum number of sequences is 3.\n')
+	#out_log.write(str(seqs))
+	#out_log.close()ç
+	#if seqs == 0:
+	#	os.sytem('rm '+path_direc+'/ErrorSeq.log')
+	#return seqs
+
+def es_MSA_valido(archivo_fasta):
+    # Cargar el archivo FASTA
+	secuencias = list(SeqIO.parse(archivo_fasta, "fasta"))
+
+    # Verificar si todas las secuencias tienen la misma longitud
+	c = 1
+	longitud_referencia = len(secuencias[0])
+	for seq in secuencias[1:]:
+		c += 1
+		if len(seq) != longitud_referencia:
+			return False, 1
+	if c < 3:
+		return False, 0
+	return True, 1
 
 def checks(JodID):
         '''     This function checks the frustration calculations
@@ -131,7 +213,7 @@ def checks(JodID):
         path_direc='FrustraEvo_'+JodID
         MSA=open(path_direc+'/MSA_Clean.fasta','r')
         out=open(path_direc+'/MSA_Chk.fasta','w')
-        out_list=open(path_direc+'/PDB_ListChk.txt','w')        
+        out_list=open(path_direc+'/PDB_ListChk.txt','w')
         out_error=open(path_direc+'/EvoFrustra-log','w')
         error=0
         for line in MSA.readlines():
@@ -586,11 +668,14 @@ def add_ref(JodID,prot_ref):
         res.close()
         os.system('cp '+path_direc+'/Equivalences/CharactPosData'+' '+path_direc+'/OutPutFiles/IC_SingleRes_'+JodID)
 
-def VScript(JodID):
+def VScript(JodID,tiempo):
         '''     This function generate the .pml files: 
                         - JodID: the job name
         '''
         path_direc='FrustraEvo_'+JodID
+        out=open(path_direc+'/Time.log','w')
+        out.write(str(tiempo)+'\n')
+        out.close()
         list_chk= open(path_direc+'/AuxFiles/PDB_ListChk.txt','r')
         for line in list_chk:
                 line=line.rstrip('\n')
@@ -707,7 +792,6 @@ def add_ref_Cmaps(JodID,prot_ref,Mode):
                 vectorchain.append(sp[5])
                 num.append(sp[1])
         out.write('Res1\tRes2\tAA1\tAA2\tNumRes1_Ref\tChain1_Ref\tNumRes2_Ref\tChain2_Ref\tProt_Ref\tNoContacts\tFreqConts\tpNEU\tpMIN\tpMAX\tHNEU\tHMIN\tHMAX\tHtotal\tICNEU\tICMIN\tICMAX\tICtotal\tFstConserved\n')
-
         a=0
         for line in ic.readlines():
                 line=line.rstrip('\n')
@@ -715,8 +799,7 @@ def add_ref_Cmaps(JodID,prot_ref,Mode):
                         a+=1
                 else:
                         sp=line.split()
-                        out.write(sp[0]+'\t'+sp[1]+'\t'+vectorAA[int(sp[0])-1]+'\t'+vectorAA[int(sp[1])-1]+'\t'+num[int(sp[0])-1]+'\t'+vectorchain[int(sp[0])-1]+ '\t'+str(num[int(sp[1])-1])+'\t'+str(vectorchain[int(sp[1])-1])+'\t'+prot_ref+'\t'+sp[2]+'\t'+sp[3]+'\t'+sp[4]+'\t'+sp[5]+'\t'+sp[6]+'\t'+sp[7]+'\t'+sp[8]+'\t'+sp[9]+'\t'+sp[10]+'\t'+sp[11]+'\t'+sp[12]+'\t'+sp[13]+'\t'+sp[14]+'\t'+sp[15]+'\n')
-
+                        out.write(sp[0]+'\t'+sp[1]+'\t'+vectorAA[int(sp[0])-1]+'\t'+vectorAA[int(sp[1])-1]+'\t'+num[int(sp[0])-1]+'\t'+vectorchain[int(sp[1])-1]+'\t'+str(num[int(sp[1])-1])+'\t'+str(vectorchain[int(sp[1])-1])+'\t'+prot_ref+'\t'+sp[2]+'\t'+sp[3]+'\t'+sp[4]+'\t'+sp[5]+'\t'+sp[6]+'\t'+sp[7]+'\t'+sp[8]+'\t'+sp[9]+'\t'+sp[10]+'\t'+sp[11]+'\t'+sp[12]+'\t'+sp[13]+'\t'+sp[14]+'\t'+sp[15]+'\n')
 
         ic.close()
         out.close()
@@ -741,49 +824,8 @@ def df_MSFA(JodID):
         out.close()
         pos.close()
 
-def pml_contactos(JodID):
-        print('Creando Visualización')
-        path_direc='FrustraEvo_'+JodID
-        mode=['configurational','mutational']
-        mode2=['Conf','Mut']
-        for i in range(0,len(mode)):
-                list_chk = open(path_direc+'/AuxFiles/PDB_ListChk.txt','r')
-                for line in list_chk.readlines():
-                        pdbid=line.rstrip('\n')
-                        out = open(path_direc+'/Data/'+pdbid+'.done/VisualizationScrips/'+pdbid+'_contacts_'+mode[i]+'.pml','w')
-                        out.write('load '+pdbid+'.pdb, '+pdbid.replace('-','_')+'\nhide line,'+pdbid.replace('-','_')+'\nunset dynamic_measures\nshow cartoon,'+pdbid.replace('-','_')+'\ncolor gray,'+pdbid.replace('-','_')+'\nrun draw_links.py\n')
-                        IC = open(path_direc+'/OutPutFiles/IC_'+mode2[i]+'_'+JodID,'r')
-                        for line in IC.readlines():
-                        	line=line.rstrip('\n')
-                        	sp=line.split()
-                        	if sp[0] !='Res1':
-	                        	if float(sp[21]) > 0.5 and float(sp[10]) >= 0.5:
-                                                col=''
-                                                if sp[22] == 'MAX':
-                                                        col='red'
-                                                elif sp[22] == 'MIN':
-                                                        col='green'
-                                                mut=open(path_direc+'/Data/'+pdbid+'.done/VisualizationScrips/'+pdbid+'.pdb_'+mode[i]+'.pml','r')
-                                                for lmut in mut.readlines():
-                                                        lmut=lmut.rstrip('\n')
-                                                        spmut=lmut.split()
-                                                        if sp[4] in lmut and sp[6] in lmut:
-                                                                if 'green' in lmut and col == 'red':
-                                                                      lmut=lmut.replace('green',col)
-                                                                      lmut=lmut.replace('min_frst','max_frst')
-                                                                elif 'red' in lmut and col == 'green':
-                                                                      lmut=lmut.replace('red',col)
-                                                                      lmut=lmut.replace('max_frst','min_frst')
-                                                                out.write(lmut+'\n')
-                                                                break
-                                                mut.close()
-                        out.write('zoom all\nhide labels\ncolor red, max_frst_wm_'+pdbid.replace('-','_')+'\ncolor green, min_frst_wm_'+pdbid.replace('-','_'))
 
-                        IC.close()
-                        out.close()
-                        list_chk.close()
-                
-def clean_files(JodID,path_r,prot_ref,cmaps):
+def clean_files(JodID,path_r,prot_ref):
         path_direc='FrustraEvo_'+JodID
         os.system('mkdir '+path_direc+'/AuxFiles')
         os.system('rm '+path_direc+'/MSA_Final.fasta')
@@ -796,8 +838,7 @@ def clean_files(JodID,path_r,prot_ref,cmaps):
         os.system('mv '+path_direc+'/Positions '+path_direc+'/AuxFiles/')
         os.system('mv '+path_direc+'/Frustration/ '+path_direc+'/Data/')
         #os.system('cd '+path_direc+'/Data;rm *.pdb*')
-        if cmaps.lower() == 'yes':
-                os.system('rm -r '+path_direc+'/CMaps')
+        os.system('rm -r '+path_direc+'/CMaps')
         #os.system('rm '+path_direc+'/ *.py*')
         lista=open(path_direc+'/AuxFiles/PDB_ListChk.txt')
         for line in lista.readlines():
@@ -808,6 +849,6 @@ def clean_files(JodID,path_r,prot_ref,cmaps):
         #ACA LLAMAR A LA FUNCION
         df_MSFA(JodID)
         os.system('Rscript '+path_r+'/MSFA.R --dir '+os.getcwd()+'/'+path_direc+'/ --jobid '+JodID)
-        if cmaps.lower() == 'yes':
-                pml_contactos(JodID)
+        pml_contactos(JodID,prot_ref)
+
 
