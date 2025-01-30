@@ -835,7 +835,7 @@ def df_MSFA(JodID):
         pos.close()
 
 
-def clean_files(JodID,path_r,prot_ref):
+def clean_files(JodID,path_r,prot_ref, cmaps):
         path_direc='FrustraEvo_'+JodID
         os.system('mkdir '+path_direc+'/AuxFiles')
         os.system('rm '+path_direc+'/MSA_Final.fasta')
@@ -848,7 +848,8 @@ def clean_files(JodID,path_r,prot_ref):
         os.system('mv '+path_direc+'/Positions '+path_direc+'/AuxFiles/')
         os.system('mv '+path_direc+'/Frustration/ '+path_direc+'/Data/')
         #os.system('cd '+path_direc+'/Data;rm *.pdb*')
-        os.system('rm -r '+path_direc+'/CMaps')
+        if cmaps.lower() == 'yes': #add clause for cmaps
+                os.system('rm -r '+path_direc+'/CMaps')
         #os.system('rm '+path_direc+'/ *.py*')
         lista=open(path_direc+'/AuxFiles/PDB_ListChk.txt')
         for line in lista.readlines():
@@ -859,6 +860,7 @@ def clean_files(JodID,path_r,prot_ref):
         #ACA LLAMAR A LA FUNCION
         df_MSFA(JodID)
         os.system('Rscript '+path_r+'/MSFA.R --dir '+os.getcwd()+'/'+path_direc+'/ --jobid '+JodID)
-        pml_contactos(JodID,prot_ref)
+        if cmaps.lower() == 'yes': #add clause for cmaps
+                pml_contactos(JodID,prot_ref)
 
 
