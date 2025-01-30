@@ -1,7 +1,8 @@
 import sys
 
 # Define the URL of the 'info.txt' file
-infoUrl = "./../FrustraEvo_"+sys.argv[1]+"/OutPutFiles/IC_"+sys.argv[2]+"_"+sys.argv[1]
+#infoUrl = "./../FrustraEvo_"+sys.argv[1]+"/OutPutFiles/IC_"+sys.argv[2]+"_"+sys.argv[1]
+infoUrl = "./FrustraEvo_"+sys.argv[1]+"/OutPutFiles/IC_"+sys.argv[2]+"_"+sys.argv[1] #fix relative path
 
 # Fetch the contents of the file using urllib.request.urlopen()
 def create_coloring(infoUrl):

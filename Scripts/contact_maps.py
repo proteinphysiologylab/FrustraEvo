@@ -10,11 +10,15 @@ import os
 #inputs
 
 job_id=sys.argv[1]
-structure_pdb='./../FrustraEvo_'+job_id+'/Data/'+sys.argv[2]+'.done/VisualizationScrips/'+sys.argv[2]+'.pdb'
+#structure_pdb='./../FrustraEvo_'+job_id+'/Data/'+sys.argv[2]+'.done/VisualizationScrips/'+sys.argv[2]+'.pdb'
+structure_pdb='./FrustraEvo_'+job_id+'/Data/'+sys.argv[2]+'.done/VisualizationScrips/'+sys.argv[2]+'.pdb' #fix relative path
 pdb_id=sys.argv[2]
-IC_SR='./../FrustraEvo_'+job_id+'/OutPutFiles/'+sys.argv[3]
-IC_MUT='./../FrustraEvo_'+job_id+'/OutPutFiles/'+sys.argv[4]
-IC_CONF='./../FrustraEvo_'+job_id+'/OutPutFiles/'+sys.argv[5]
+#IC_SR='./../FrustraEvo_'+job_id+'/OutPutFiles/'+sys.argv[3]
+#IC_MUT='./../FrustraEvo_'+job_id+'/OutPutFiles/'+sys.argv[4]
+#IC_CONF='./../FrustraEvo_'+job_id+'/OutPutFiles/'+sys.argv[5]
+IC_SR='./FrustraEvo_'+job_id+'/OutPutFiles/'+sys.argv[3] #fix relative path
+IC_MUT='./FrustraEvo_'+job_id+'/OutPutFiles/'+sys.argv[4] #fix relative path
+IC_CONF='./FrustraEvo_'+job_id+'/OutPutFiles/'+sys.argv[5] #fix relative path
 
 # Fetch the contents of the file using urllib.request.urlopen()
 def create_coloring(infoUrl):
@@ -51,7 +55,7 @@ def get_residue_coordinates(structure, chain_id, residue_id):
    return None
 
 def format_row(row):
-   print(row)
+   #print(row) #avoid overreporting
    a = ', '.join(map(str, row['coord_Res1']))
    b = ', '.join(map(str, row['coord_Res2']))
    color = row['contact_color']
@@ -210,34 +214,42 @@ htmlString=('''
 </html>
 ''')    
     
-os.system('mkdir ./../FrustraEvo_'+job_id+'/molstar')
+#os.system('mkdir ./../FrustraEvo_'+job_id+'/molstar')
+os.system('mkdir ./FrustraEvo_'+job_id+'/molstar')
 
-
-with open('./../FrustraEvo_'+job_id+'/molstar/molstar_mut_aux.txt','w') as file:
+#with open('./../FrustraEvo_'+job_id+'/molstar/molstar_mut_aux.txt','w') as file:
+with open('./FrustraEvo_'+job_id+'/molstar/molstar_mut_aux.txt','w') as file: #fix relative path
     file.write(formatted_string_concat_mut)
     
-with open('./../FrustraEvo_'+job_id+'/molstar/molstar_mut_aux.txt', 'r') as file:
+#with open('./../FrustraEvo_'+job_id+'/molstar/molstar_mut_aux.txt', 'r') as file:
+with open('./FrustraEvo_'+job_id+'/molstar/molstar_mut_aux.txt', 'r') as file: #fix relative path
     lines = [line.strip('\t\n') for line in file]
 
 # Concatenas todas las líneas en una sola cadena
 concatenated_string = ''.join(lines)
 
 # Luego, puedes escribir la cadena concatenada en otro archivo o utilizarla como desees
-with open('./../FrustraEvo_'+job_id+'/molstar/molstar_mut.txt', 'w') as output_file:
+#with open('./../FrustraEvo_'+job_id+'/molstar/molstar_mut.txt', 'w') as output_file:
+with open('./FrustraEvo_'+job_id+'/molstar/molstar_mut.txt', 'w') as output_file: #fix relative path
     output_file.write(concatenated_string)
 
-with open('./../FrustraEvo_'+job_id+'/molstar/molstar_conf_aux.txt','w') as file:
+#with open('./../FrustraEvo_'+job_id+'/molstar/molstar_conf_aux.txt','w') as file:
+with open('./FrustraEvo_'+job_id+'/molstar/molstar_conf_aux.txt','w') as file: #fix relative path
     file.write(formatted_string_concat_conf)
     
-with open('./../FrustraEvo_'+job_id+'/molstar/molstar_conf_aux.txt', 'r') as file:
+#with open('./../FrustraEvo_'+job_id+'/molstar/molstar_conf_aux.txt', 'r') as file:
+with open('./FrustraEvo_'+job_id+'/molstar/molstar_conf_aux.txt', 'r') as file: #fix relative path
     lines = [line.strip('\t\n') for line in file]
 
 # Concatenas todas las líneas en una sola cadena
 concatenated_string = ''.join(lines)
 
 # Luego, puedes escribir la cadena concatenada en otro archivo o utilizarla como desees
-with open('./../FrustraEvo_'+job_id+'/molstar/molstar_conf.txt', 'w') as output_file:
+#with open('./../FrustraEvo_'+job_id+'/molstar/molstar_conf.txt', 'w') as output_file:
+with open('./FrustraEvo_'+job_id+'/molstar/molstar_conf.txt', 'w') as output_file: #fix relative path
     output_file.write(concatenated_string)
 
-os.system('rm ./../FrustraEvo_'+job_id+'/molstar/molstar_conf_aux.txt')
-os.system('rm ./../FrustraEvo_'+job_id+'/molstar/molstar_mut_aux.txt')
+#os.system('rm ./../FrustraEvo_'+job_id+'/molstar/molstar_conf_aux.txt')
+#os.system('rm ./../FrustraEvo_'+job_id+'/molstar/molstar_mut_aux.txt')
+os.system('rm ./FrustraEvo_'+job_id+'/molstar/molstar_conf_aux.txt') #fix relative path
+os.system('rm ./FrustraEvo_'+job_id+'/molstar/molstar_mut_aux.txt') #fix relative path

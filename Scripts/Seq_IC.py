@@ -29,11 +29,14 @@ def calculate_entropy_for_msa(msa_file):
     return entropy_values
 
 # Ruta del archivo de MSA en formato FASTA
-msa_file_path ='./../FrustraEvo_'+sys.argv[1]+'/OutPutFiles/'+'MSA_'+sys.argv[1]+'.fasta'
+#msa_file_path ='./../FrustraEvo_'+sys.argv[1]+'/OutPutFiles/'+'MSA_'+sys.argv[1]+'.fasta'
+msa_file_path ='./FrustraEvo_'+sys.argv[1]+'/OutPutFiles/'+'MSA_'+sys.argv[1]+'.fasta' #fix relative path
 
 # Calcular la entropía para el MSA
 entropies = calculate_entropy_for_msa(msa_file_path)
-out=open('./../FrustraEvo_'+sys.argv[1]+'/OutPutFiles/SeqIC_'+sys.argv[1]+'.tab','w')
+#out=open('./../FrustraEvo_'+sys.argv[1]+'/OutPutFiles/SeqIC_'+sys.argv[1]+'.tab','w')
+out=open('./FrustraEvo_'+sys.argv[1]+'/OutPutFiles/SeqIC_'+sys.argv[1]+'.tab','w') #fix relative path
+
 out.write('Position\tEntropy\n')
 # Imprimir la entropía de cada posición en el MSA
 for position, entropy in enumerate(entropies):
