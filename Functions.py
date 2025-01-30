@@ -122,7 +122,11 @@ def FrustraPDB(list_pdbs,JodID,pathPDB='None'):
         frustra=open(frustdir+'FrustraR.R','w')
         frustra.write('library(frustratometeR)\nPdbsDir <- \''+directory+frustdir+'\'\nResultsDir <-\''+directory+frustdir+'\'\ndir_frustration(PdbsDir = PdbsDir, Mode = \'singleresidue\', ResultsDir = ResultsDir)\n')
         frustra.close()
-        os.system('cd '+frustdir+';Rscript FrustraR.R > FrustraR.log')
+        #os.system('cd '+frustdir+';Rscript FrustraR.R > FrustraR.log')
+        #added by mfernan3 to supress PDBConstructionWarnings
+        command = f'cd {frustdir} && Rscript FrustraR.R > FrustraR.log 2>&1'
+        os.system(command)
+
 
 def obtain_seq(pdbid,JodID):
 	dic =  {'ALA' : 'A','ARG' : 'R','ASN' : 'N','ASP' : 'D','CYS' : 'C','GLN' : 'Q','GLU' : 'E','GLY' : 'G','HIS' : 'H','ILE' : 'I','LEU' : 'L','LYS' : 'K','MET' : 'M','PHE' : 'F','PRO' : 'P','SER' : 'S','THR' : 'T','TRP' : 'W','TYR' : 'Y', 'VAL' : 'V'}
@@ -732,7 +736,10 @@ def CMaps_Mutational(JodID,path_to_r,prot_ref):
         frustra=open(frustdir+'FrustraR.R','w')
         frustra.write('library(frustratometeR)\nPdbsDir <- \''+directory+frustdir+'\'\nResultsDir <- \''+directory+frustdir+'\'\ndir_frustration(PdbsDir = PdbsDir, Mode = \'mutational\', ResultsDir = ResultsDir, Graphics = FALSE)\n')
         frustra.close()
-        os.system('cd '+frustdir+';Rscript FrustraR.R > FrustraR.log')
+        #os.system('cd '+frustdir+';Rscript FrustraR.R > FrustraR.log')
+        #added by mfernan3 to supress PDBConstructionWarnings
+        command = f'cd {frustdir} && Rscript FrustraR.R > FrustraR.log 2>&1'
+        os.system(command)
         MSA_Long=open(path_direc+'/Equivalences/long.txt','r')
         long=MSA_Long.readline()
         long=long[:-1]
@@ -762,7 +769,10 @@ def CMaps_Configurational(JodID,path_to_r,prot_ref):
         frustra=open(frustdir+'FrustraR.R','w')
         frustra.write('library(frustratometeR)\nPdbsDir <- \''+directory+frustdir+'\'\nResultsDir <- \''+directory+frustdir+'\'\ndir_frustration(PdbsDir = PdbsDir, Mode = \'configurational\', ResultsDir = ResultsDir,Graphics = FALSE)\n')
         frustra.close()
-        os.system('cd '+frustdir+';Rscript FrustraR.R > FrustraR.log')
+        #os.system('cd '+frustdir+';Rscript FrustraR.R > FrustraR.log')
+        #added by mfernan3 to supress PDBConstructionWarnings
+        command = f'cd {frustdir} && Rscript FrustraR.R > FrustraR.log 2>&1'
+        os.system(command)
         MSA_Long=open(path_direc+'/Equivalences/long.txt','r')
         long=MSA_Long.readline()
         long=long[:-1]
