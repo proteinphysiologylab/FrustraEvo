@@ -77,7 +77,7 @@ if not os.path.exists(path_file):
         out_log.write(' Calculating Configurational Frustration Index and Contact Maps...\n')
         out_log.close()
         Functions.CMaps_Configurational(args.JobId,args.RPath,args.ref)#Genera los mapas de contacto para el indice configurational
-  Functions.clean_files(args.JobId,args.RPath,args.ref)  
+  Functions.clean_files(args.JobId,args.RPath,args.ref, cmaps) #add cmaps  
   end_time = time.time()
   elapsed_time = end_time - start_time
 #path_direc='FrustraEvo_'+args.JobId
@@ -88,8 +88,10 @@ if not os.path.exists(path_file):
   out_log.write(' Generating Output Files...\n')
   out_log.close()
   Functions.VScript(args.JobId,elapsed_time)
-  os.system('cd '+args.RPath+';python3 setup_render.py '+args.JobId+' SingleRes')
-  os.system('cd '+args.RPath+';python3 Seq_IC.py '+args.JobId)
+#  os.system('cd '+args.RPath+';python3 setup_render.py '+args.JobId+' SingleRes')
+#  os.system('cd '+args.RPath+';python3 Seq_IC.py '+args.JobId)
+  os.system(f'python3 {args.RPath}/setup_render.py {args.JobId} SinfleRes') #avoid cd
+  os.system(f'python3 {args.RPath}/Seq_IC.py {args.JobId}') #avoid cd
 #contact_maps.py	
   if args.cmaps == 'yes': #add clause to check for cmaps
   #os.system('cd '+args.RPath+';python3 contact_maps.py '+args.JobId+' '+args.ref+' IC_SingleRes_'+args.JobId+' IC_Mut_'+args.JobId+' IC_Conf_'+args.JobId)
