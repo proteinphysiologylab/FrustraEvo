@@ -91,8 +91,9 @@ if not os.path.exists(path_file):
   os.system('cd '+args.RPath+';python3 setup_render.py '+args.JobId+' SingleRes')
   os.system('cd '+args.RPath+';python3 Seq_IC.py '+args.JobId)
 #contact_maps.py	
-  os.system('cd '+args.RPath+';python3 contact_maps.py '+args.JobId+' '+args.ref+' IC_SingleRes_'+args.JobId+' IC_Mut_'+args.JobId+' IC_Conf_'+args.JobId)
-
+  if args.cmaps == 'yes': #add clause to check for cmaps
+  #os.system('cd '+args.RPath+';python3 contact_maps.py '+args.JobId+' '+args.ref+' IC_SingleRes_'+args.JobId+' IC_Mut_'+args.JobId+' IC_Conf_'+args.JobId)
+        os.system(f'python3 {args.RPath}/contact_maps.py {args.JobId} {args.ref} IC_SingleRes_{args.JobId} IC_Mut_{args.JobId} IC_Conf_{args.JobId}')#avoid changing dir
 out_log=open('results/CheckPoints_FE','a')
 out_log.write(' Job finished')
 out_log.close()
