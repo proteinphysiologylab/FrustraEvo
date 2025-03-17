@@ -2,6 +2,27 @@ import os
 import sys
 import time
 
+DEBUG_BANNER = r"""
+##################################################
+#                                                #
+#      DEBUG MODE ACTIVATED! BUGS BEWARE!        #
+#                                                #
+#   _________________________________________    #
+#  |                                         |   #
+#  |  "It's not a bug, it's a feature!"      |   #
+#  |  - Every Developer Ever                 |   #
+#  |_________________________________________|   #
+#                                                #
+#  \   ^__^                                      #
+#   \  (oo)\_______                              #
+#      (__)\       )\/\                          #
+#          ||----w |                             #
+#          ||     ||                             #
+#                                                #
+##################################################
+"""
+print(DEBUG_BANNER)
+
 # Registra el tiempo de inicio
 start_time = time.time()
 
