@@ -107,7 +107,7 @@ def changes(JodID,MSA_File):
         out.close()
         out_list.close()
 
-def FrustraPDB(list_pdbs,JodID,pathPDB='None'):
+def FrustraPDB(list_pdbs, JodID, seqdist, pathPDB='None'):
         '''     This function is for the frustration calculation
                 Parameters:
                         - list_pdbs: the list with the Pdbs 
@@ -120,7 +120,17 @@ def FrustraPDB(list_pdbs,JodID,pathPDB='None'):
         frustdir=path_direc+'/Frustration/'
         directory=os.getcwd()+'/'
         frustra=open(frustdir+'FrustraR.R','w')
-        frustra.write('library(frustratometeR)\nPdbsDir <- \''+directory+frustdir+'\'\nResultsDir <-\''+directory+frustdir+'\'\ndir_frustration(PdbsDir = PdbsDir, Mode = \'singleresidue\', ResultsDir = ResultsDir)\n')
+        #frustra.write('library(frustratometeR)\nPdbsDir <- \''+directory+frustdir+'\'\nResultsDir <-\''+directory+frustdir+'\'\ndir_frustration(PdbsDir = PdbsDir, Mode = \'singleresidue\', ResultsDir = ResultsDir)\n')
+        #added by mfernan3 to include the seqdist flag
+        frustra.write(f"library(frustratometeR)\n"
+              f"PdbsDir <- '{directory}{frustdir}'\n"
+              f"ResultsDir <- '{directory}{frustdir}'\n"
+              f"dir_frustration(\n"
+              f"    PdbsDir = PdbsDir,\n"
+              f"    SeqDist = {seqdist},\n"
+              f"    Mode = 'singleresidue',\n"
+              f"    ResultsDir = ResultsDir\n"
+              f")\n")
         frustra.close()
         #os.system('cd '+frustdir+';Rscript FrustraR.R > FrustraR.log')
         #added by mfernan3 to supress PDBConstructionWarnings
@@ -718,7 +728,8 @@ def VScript(JodID,tiempo):
                 ECon.close()
         list_chk.close()
 
-def CMaps_Mutational(JodID,path_to_r,prot_ref):
+def CMaps_Mutational(JodID, seqdist, path_to_r,prot_ref):
+        print('SeqdistMUT '+seqdist)
         '''     This function generate the CMaps for mutational index: 
                         - JodID: the job name
                         - path_to_r: path to the R files
@@ -734,7 +745,18 @@ def CMaps_Mutational(JodID,path_to_r,prot_ref):
                 os.system('cp '+path_direc+'/Equivalences/long.txt '+path_direc+'/CMaps/long.txt')
                 os.system('cp '+path_to_r+'/*.py* '+path_direc+'/CMaps/')
         frustra=open(frustdir+'FrustraR.R','w')
-        frustra.write('library(frustratometeR)\nPdbsDir <- \''+directory+frustdir+'\'\nResultsDir <- \''+directory+frustdir+'\'\ndir_frustration(PdbsDir = PdbsDir, Mode = \'mutational\', ResultsDir = ResultsDir, Graphics = FALSE)\n')
+        #frustra.write('library(frustratometeR)\nPdbsDir <- \''+directory+frustdir+'\'\nResultsDir <- \''+directory+frustdir+'\'\ndir_frustration(PdbsDir = PdbsDir, Mode = \'mutational\', ResultsDir = ResultsDir, Graphics = FALSE)\n')
+        #added by mfernan3 to include the seqdist flag
+        frustra.write(f"library(frustratometeR)\n"
+              f"PdbsDir <- '{directory}{frustdir}'\n"
+              f"ResultsDir <- '{directory}{frustdir}'\n"
+              f"dir_frustration(\n"
+              f"    PdbsDir = PdbsDir,\n"
+              f"    SeqDist = {seqdist},\n"
+              f"    Mode = 'mutational',\n"
+              f"    ResultsDir = ResultsDir,\n"
+              f"    Graphics = FALSE\n"
+              f")\n")
         frustra.close()
         #os.system('cd '+frustdir+';Rscript FrustraR.R > FrustraR.log')
         #added by mfernan3 to supress PDBConstructionWarnings
@@ -751,7 +773,8 @@ def CMaps_Mutational(JodID,path_to_r,prot_ref):
         os.system('cp '+path_direc+'/CMaps/IC_Mut.png'+' '+path_direc+'/OutPutFiles/CMaps'+'_'+JodID+'_Mut.png')
 
 
-def CMaps_Configurational(JodID,path_to_r,prot_ref):
+def CMaps_Configurational(JodID, seqdist, path_to_r,prot_ref):
+        print('SeqdistCONF '+seqdist)
         '''     This function generate the CMaps for Configurational index: 
                         - JodID: the job name11
                         - path_to_r: path to the R files
@@ -767,7 +790,19 @@ def CMaps_Configurational(JodID,path_to_r,prot_ref):
                 os.system('cp '+path_direc+'/Equivalences/long.txt '+path_direc+'/CMaps/long.txt')
                 os.system('cp '+path_to_r+'/*.py* '+path_direc+'/CMaps/')
         frustra=open(frustdir+'FrustraR.R','w')
-        frustra.write('library(frustratometeR)\nPdbsDir <- \''+directory+frustdir+'\'\nResultsDir <- \''+directory+frustdir+'\'\ndir_frustration(PdbsDir = PdbsDir, Mode = \'configurational\', ResultsDir = ResultsDir,Graphics = FALSE)\n')
+        #frustra.write('library(frustratometeR)\nPdbsDir <- \''+directory+frustdir+'\'\nResultsDir <- \''+directory+frustdir+'\'\ndir_frustration(PdbsDir = PdbsDir, Mode = \'configurational\', ResultsDir = ResultsDir,Graphics = FALSE)\n')
+        #added by mfernan3 to include the seqdist flag
+        frustra.write(f"library(frustratometeR)\n"
+              f"PdbsDir <- '{directory}{frustdir}'\n"
+              f"ResultsDir <- '{directory}{frustdir}'\n"
+              f"dir_frustration(\n"
+              f"    PdbsDir = PdbsDir,\n"
+              f"    SeqDist = {seqdist},\n"
+              f"    Mode = 'configurational',\n"
+              f"    ResultsDir = ResultsDir,\n"
+              f"    Graphics = FALSE\n"
+              f")\n")
+              
         frustra.close()
         #os.system('cd '+frustdir+';Rscript FrustraR.R > FrustraR.log')
         #added by mfernan3 to supress PDBConstructionWarnings

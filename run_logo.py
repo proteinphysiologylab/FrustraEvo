@@ -26,7 +26,7 @@ print(DEBUG_BANNER)
 # Registra el tiempo de inicio
 start_time = time.time()
 
-sys.path.append('')#Path to Functions.py file
+sys.path.append('/home/mfernan3/Documents/BSC/PhD/FrustraEvo/GitHub/FrustraEvo/Functions.py')#Path to Functions.py file
 import Functions
 import argparse
 
@@ -37,7 +37,7 @@ parser.add_argument("--fasta", help="Name of the fasta")
 parser.add_argument("--ref", default='None', help="Id of the reference protein of your logo (Default: None)")
 parser.add_argument("--pdb_db", default='None', help="Path to the PDBs folder (Default: None)")
 parser.add_argument("--cmaps", default='None', help="Put 'yes' for contactmaps calculation (Default: None)")
-
+parser.add_argument("--SeqDist", default='12', choices=['3', '12'], help="Sequence at which contacts are considered to interact (3 or 12). (Default: 12)")
 
 #How to run the pipeline in linux terminal:
 #python run_logo.py JobId RPath fasta list_file ref pdb_db 
@@ -63,7 +63,7 @@ if not os.path.exists(path_file):
   out_log=open('FrustraEvo_'+args.JobId+'/CheckPoints_FE','a')
   out_log.write(' Calculating Single Residue Frustration Index...\n')
   out_log.close()
-  Functions.FrustraPDB(list_file,args.JobId,args.pdb_db)
+  Functions.FrustraPDB(list_file,args.JobId, args.SeqDist, args.pdb_db) #add seqdist
   out_log=open('FrustraEvo_'+args.JobId+'/CheckPoints_FE','a')
   out_log.write(' Running Internal Checks...\n')
   out_log.close()
@@ -93,12 +93,12 @@ if not os.path.exists(path_file):
         out_log=open('FrustraEvo_'+args.JobId+'/CheckPoints_FE','a')
         out_log.write(' Calculating Mutational Frustration Index and Contact Maps...\n')
         out_log.close()
-        Functions.CMaps_Mutational(args.JobId,args.RPath,args.ref)#Genera los mapas de contacto para el indice mutational
+        Functions.CMaps_Mutational(args.JobId, args.SeqDist, args.RPath,args.ref)#Genera los mapas de contacto para el indice mutational and seqdist
         out_log=open('FrustraEvo_'+args.JobId+'/CheckPoints_FE','a')
         out_log.write(' Calculating Configurational Frustration Index and Contact Maps...\n')
         out_log.close()
-        Functions.CMaps_Configurational(args.JobId,args.RPath,args.ref)#Genera los mapas de contacto para el indice configurational
-  Functions.clean_files(args.JobId,args.RPath,args.ref, cmaps) #add cmaps  
+        Functions.CMaps_Configurational(args.JobId, args.SeqDist, args.RPath,args.ref)#Genera los mapas de contacto para el indice configurational and seqdist
+  Functions.clean_files(args.JobId,args.RPath,args.ref, args.cmaps) #add cmaps  
   end_time = time.time()
   elapsed_time = end_time - start_time
 #path_direc='FrustraEvo_'+args.JobId
@@ -111,7 +111,7 @@ if not os.path.exists(path_file):
   Functions.VScript(args.JobId,elapsed_time)
 #  os.system('cd '+args.RPath+';python3 setup_render.py '+args.JobId+' SingleRes')
 #  os.system('cd '+args.RPath+';python3 Seq_IC.py '+args.JobId)
-  os.system(f'python3 {args.RPath}/setup_render.py {args.JobId} SinfleRes') #avoid cd
+  os.system(f'python3 {args.RPath}/setup_render.py {args.JobId} SingleRes') #avoid cd
   os.system(f'python3 {args.RPath}/Seq_IC.py {args.JobId}') #avoid cd
 #contact_maps.py	
   if args.cmaps == 'yes': #add clause to check for cmaps
