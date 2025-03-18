@@ -93,7 +93,7 @@ if not os.path.exists(path_file):
         out_log=open('FrustraEvo_'+args.JobId+'/CheckPoints_FE','a')
         out_log.write(' Calculating Mutational Frustration Index and Contact Maps...\n')
         out_log.close()
-        Functions.CMaps_Mutational(args.JobId, args.SeqDist, args.RPath,args.ref)#Genera los mapas de contacto para el indice mutational and seqdist
+        Functions.CMaps_Mutational(args.JobId, args.SeqDist, args.RPath, args.ref)#Genera los mapas de contacto para el indice mutational and seqdist
         out_log=open('FrustraEvo_'+args.JobId+'/CheckPoints_FE','a')
         out_log.write(' Calculating Configurational Frustration Index and Contact Maps...\n')
         out_log.close()

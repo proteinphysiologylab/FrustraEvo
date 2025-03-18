@@ -4,88 +4,73 @@ import re
 import sys
 from Bio import SeqIO
 import numpy as np
-# from scipy.cluster.hierarchy import linkage, dendrogram
+#from scipy.cluster.hierarchy import linkage, dendrogram
 import warnings
 from Bio import BiopythonWarning
 warnings.simplefilter('ignore', BiopythonWarning)
 
-
-def pml_contactos(JodID, ref):
-        path_direc = 'FrustraEvo_'+JodID
-        mode = ['configurational', 'mutational']
-        mode2 = ['Conf', 'Mut']
-        for i in range(0, len(mode)):
-                list_chk = open(path_direc+'/AuxFiles/PDB_ListChk.txt', 'r')
+def pml_contactos(JodID,ref):
+        path_direc='FrustraEvo_'+JodID
+        mode=['configurational','mutational']
+        mode2=['Conf','Mut']
+        for i in range(0,len(mode)):
+                list_chk = open(path_direc+'/AuxFiles/PDB_ListChk.txt','r')
                 for line in list_chk.readlines():
-                        pdbid = line.rstrip('\n')
-                        if pdbid == ref:
-                                table = open(
-                                    path_direc+'/Data/Conservedresidues_'+mode[i], 'w')
-                        out = open(path_direc+'/Data/'+pdbid+'.done/VisualizationScrips/' +
-                                   pdbid+'_contacts_'+mode[i]+'.pml', 'w')
-                        out.write('load '+pdbid+'.pdb, '+pdbid.replace('-', '_')+'\nhide line,'+pdbid.replace('-', '_') +
-                                  '\nunset dynamic_measures\nshow cartoon,'+pdbid.replace('-', '_')+'\ncolor gray,'+pdbid.replace('-', '_')+'\nrun draw_links.py\n')
-                        IC = open(path_direc+'/OutPutFiles/IC_' +
-                                  mode2[i]+'_'+JodID, 'r')
+                        pdbid=line.rstrip('\n')
+                        if pdbid==ref:
+                                table=open(path_direc+'/Data/Conservedresidues_'+mode[i],'w')
+                        out = open(path_direc+'/Data/'+pdbid+'.done/VisualizationScrips/'+pdbid+'_contacts_'+mode[i]+'.pml','w')
+                        out.write('load '+pdbid+'.pdb, '+pdbid.replace('-','_')+'\nhide line,'+pdbid.replace('-','_')+'\nunset dynamic_measures\nshow cartoon,'+pdbid.replace('-','_')+'\ncolor gray,'+pdbid.replace('-','_')+'\nrun draw_links.py\n')
+                        IC = open(path_direc+'/OutPutFiles/IC_'+mode2[i]+'_'+JodID,'r')
                         for line in IC.readlines():
-                        	line = line.rstrip('\n')
-                        	sp = line.split()
-                        	if sp[0] != 'Res1':
+                        	line=line.rstrip('\n')
+                        	sp=line.split()
+                        	if sp[0] !='Res1':
 	                        	if float(sp[21]) > 0.5 and float(sp[10]) >= 0.5:
-                                                col = ''
+                                                col=''
                                                 if sp[22] == 'MAX':
-                                                        col = 'red'
+                                                        col='red'
                                                 elif sp[22] == 'MIN':
-                                                        col = 'green'
-                                                mut = open(
-                                                    path_direc+'/Data/'+pdbid+'.done/VisualizationScrips/'+pdbid+'.pdb_'+mode[i]+'.pml', 'r')
+                                                        col='green'
+                                                mut=open(path_direc+'/Data/'+pdbid+'.done/VisualizationScrips/'+pdbid+'.pdb_'+mode[i]+'.pml','r')
                                                 for lmut in mut.readlines():
-                                                        lmut = lmut.rstrip(
-                                                            '\n')
-                                                        spmut = lmut.split()
+                                                        lmut=lmut.rstrip('\n')
+                                                        spmut=lmut.split()
                                                         if sp[4] in lmut and sp[6] in lmut:
-                                                                if pdbid == ref and col != '':
-                                                                      table.write(
-                                                                          sp[4]+' '+sp[6]+' '+col+'\n')
+                                                                if pdbid==ref and col !='':
+                                                                      table.write(sp[4]+' '+sp[6]+' '+col+'\n')
                                                                 if 'green' in lmut and col == 'red':
-                                                                      lmut = lmut.replace(
-                                                                          'green', col)
-                                                                      lmut = lmut.replace(
-                                                                          'min_frst', 'max_frst')
+                                                                      lmut=lmut.replace('green',col)
+                                                                      lmut=lmut.replace('min_frst','max_frst')
                                                                 elif 'red' in lmut and col == 'green':
-                                                                      lmut = lmut.replace(
-                                                                          'red', col)
-                                                                      lmut = lmut.replace(
-                                                                          'max_frst', 'min_frst')
-                                                                out.write(
-                                                                    lmut+'\n')
+                                                                      lmut=lmut.replace('red',col)
+                                                                      lmut=lmut.replace('max_frst','min_frst')
+                                                                out.write(lmut+'\n')
                                                                 break
                                                 mut.close()
-                        if pdbid == ref:
-                                table.close()
-                        out.write('zoom all\nhide labels\ncolor red, max_frst_wm_'+pdbid.replace(
-                            '-', '_')+'\ncolor green, min_frst_wm_'+pdbid.replace('-', '_'))
+                        if pdbid==ref:
+                                table.close() 
+                        out.write('zoom all\nhide labels\ncolor red, max_frst_wm_'+pdbid.replace('-','_')+'\ncolor green, min_frst_wm_'+pdbid.replace('-','_'))
 
                         IC.close()
                         out.close()
                         list_chk.close()
 
+def copyfiles(JodID,path_to_r,path_to_Pdbs):
 
-def copyfiles(JodID, path_to_r, path_to_Pdbs):
         '''     This function is for the creation of folders and copying of necessary files
                 Parameters:
                         - JodID: the job name
                         - path_to_r: path to the R files
         '''
-        path_direc = 'FrustraEvo_'+JodID
+        path_direc='FrustraEvo_'+JodID
         if os.path.isdir(path_direc):
                 os.system('rm -r '+path_direc)
         os.system('mkdir '+path_direc)
         os.system('mkdir '+path_direc+'/Equivalences')
         os.system('mkdir '+path_direc+'/OutPutFiles')
         os.system('mkdir '+path_direc+'/Frustration')
-        # os.system('cp '+path_to_r+'/*.R* '+path_direc+'/Equivalences/')
-
+        #os.system('cp '+path_to_r+'/*.R* '+path_direc+'/Equivalences/')
 
 def pdb_list(fasta_file):
         '''     This function is for the creation of folders and copying of necessary files
@@ -93,53 +78,50 @@ def pdb_list(fasta_file):
                         - fasta_file: MSA of input
                         - pathPDB: path to the folder with the pdbs ()
         '''
-        msa = open(fasta_file)
-        sp = fasta_file.split('.')
-        out = open(sp[0]+'.list', 'w')
+        msa=open(fasta_file)
+        sp=fasta_file.split('.')
+        out=open(sp[0]+'.list','w')
         for lmsa in msa.readlines():
                 if lmsa[0] == '>':
                         out.write(lmsa[1:])
         out.close()
         msa.close()
-        return (sp[0]+'.list')
+        return(sp[0]+'.list')
 
-
-def changes(JodID, MSA_File):
+def changes(JodID,MSA_File):
         '''     This function make changes in the MSA and make a List
                 Parameters:
                         - JodID: the job name
                         - MSA_File: the MSA
 
         '''
-        path_direc = 'FrustraEvo_'+JodID
-        out = open(path_direc+'/MSA_Clean_aux.fasta', 'w')
-        out_list = open(path_direc+'/PDB_List.txt', 'w')
-        pathAlign = MSA_File
+        path_direc='FrustraEvo_'+JodID
+        out=open(path_direc+'/MSA_Clean_aux.fasta','w')
+        out_list=open(path_direc+'/PDB_List.txt','w')
+        pathAlign=MSA_File
         for seq_record in SeqIO.parse(pathAlign, 'fasta'):
-                seqid = seq_record.id
-                seq = seq_record.seq
-                out.write('>'+seqid+'\n' +
-                          str(seq.upper()).replace('X', '-')+'\n')
+                seqid=seq_record.id
+                seq=seq_record.seq
+                out.write('>'+seqid+'\n'+str(seq.upper()).replace('X','-')+'\n')
 
         out.close()
         out_list.close()
 
-
 def FrustraPDB(list_pdbs, JodID, seqdist, pathPDB='None'):
         '''     This function is for the frustration calculation
                 Parameters:
-                        - list_pdbs: the list with the Pdbs
+                        - list_pdbs: the list with the Pdbs 
                         - JodID: the job name
                         - pathPDB: path to the folder with the pdbs ()
 
         If you do not have the pdbs structures, the pipeline will download them from the Protein Data Bank database
         '''
-        path_direc = 'FrustraEvo_'+JodID
-        frustdir = path_direc+'/Frustration/'
-        directory = os.getcwd()+'/'
-        frustra = open(frustdir+'FrustraR.R', 'w')
-        # frustra.write('library(frustratometeR)\nPdbsDir <- \''+directory+frustdir+'\'\nResultsDir <-\''+directory+frustdir+'\'\ndir_frustration(PdbsDir = PdbsDir, Mode = \'singleresidue\', ResultsDir = ResultsDir)\n')
-        # added by mfernan3 to include the seqdist flag
+        path_direc='FrustraEvo_'+JodID
+        frustdir=path_direc+'/Frustration/'
+        directory=os.getcwd()+'/'
+        frustra=open(frustdir+'FrustraR.R','w')
+        #frustra.write('library(frustratometeR)\nPdbsDir <- \''+directory+frustdir+'\'\nResultsDir <-\''+directory+frustdir+'\'\ndir_frustration(PdbsDir = PdbsDir, Mode = \'singleresidue\', ResultsDir = ResultsDir)\n')
+        #added by mfernan3 to include the seqdist flag
         frustra.write(f"library(frustratometeR)\n"
               f"PdbsDir <- '{directory}{frustdir}'\n"
               f"ResultsDir <- '{directory}{frustdir}'\n"
@@ -150,70 +132,66 @@ def FrustraPDB(list_pdbs, JodID, seqdist, pathPDB='None'):
               f"    ResultsDir = ResultsDir\n"
               f")\n")
         frustra.close()
-        # os.system('cd '+frustdir+';Rscript FrustraR.R > FrustraR.log')
-        # added by mfernan3 to supress PDBConstructionWarnings
+        #os.system('cd '+frustdir+';Rscript FrustraR.R > FrustraR.log')
+        #added by mfernan3 to supress PDBConstructionWarnings
         command = f'cd {frustdir} && Rscript FrustraR.R > FrustraR.log 2>&1'
         os.system(command)
 
 
-def obtain_seq(pdbid, JodID):
-	dic = {'ALA': 'A', 'ARG': 'R', 'ASN': 'N', 'ASP': 'D', 'CYS': 'C', 'GLN': 'Q', 'GLU': 'E', 'GLY': 'G', 'HIS': 'H', 'ILE': 'I',
-	    'LEU': 'L', 'LYS': 'K', 'MET': 'M', 'PHE': 'F', 'PRO': 'P', 'SER': 'S', 'THR': 'T', 'TRP': 'W', 'TYR': 'Y', 'VAL': 'V'}
-	seq = ''
-	path_direc = 'FrustraEvo_'+JodID
-	pdb = open(path_direc+'/Frustration/'+pdbid+'.pdb')
-	nn = -100
+def obtain_seq(pdbid,JodID):
+	dic =  {'ALA' : 'A','ARG' : 'R','ASN' : 'N','ASP' : 'D','CYS' : 'C','GLN' : 'Q','GLU' : 'E','GLY' : 'G','HIS' : 'H','ILE' : 'I','LEU' : 'L','LYS' : 'K','MET' : 'M','PHE' : 'F','PRO' : 'P','SER' : 'S','THR' : 'T','TRP' : 'W','TYR' : 'Y', 'VAL' : 'V'}
+	seq=''
+	path_direc='FrustraEvo_'+JodID
+	pdb=open(path_direc+'/Frustration/'+pdbid+'.pdb')
+	nn=-100
 	for lpdb in pdb.readlines():
 		if 'ATOM' == lpdb[0:4] and len(lpdb) > 60:
-			aa = lpdb[17]+lpdb[18]+lpdb[19]
-			if nn != int(lpdb[22:26]) and lpdb[16] == ' ' and lpdb[26] == ' ' and aa in dic:
-				aa = lpdb[17]+lpdb[18]+lpdb[19]
-				seq += dic[aa]
+			aa=lpdb[17]+lpdb[18]+lpdb[19]
+			if nn != int(lpdb[22:26]) and lpdb[16]==' ' and lpdb[26]==' ' and aa in dic:
+				aa=lpdb[17]+lpdb[18]+lpdb[19]
+				seq+=dic[aa]
 			nn = int(lpdb[22:26])
 	pdb.close()
 	return seq
 
-#include MAFFT
-from Bio.Align.Applications import MafftCommandline
-
-def checks_seq(list_pdbs, JodID, pathPDB='None'):
-    flag_seqs = 0  # added by mfernan3 to see if ANY seq missmatch
-    path_direc='FrustraEvo_'+JodID
-    seqs=0
-    frustdir=path_direc+'/Frustration/'
-    MSA=open(path_direc+'/MSA_Clean_aux.fasta','r')
+def checks_seq(list_pdbs,JodID,pathPDB='None'):
+    flag_seqs = 0 #added by mfernan3 to see if ANY seq missmatch
+	path_direc='FrustraEvo_'+JodID
+	seqs=0
+	frustdir=path_direc+'/Frustration/'
+	MSA=open(path_direc+'/MSA_Clean_aux.fasta','r')
     out_alt = open(path_direc + '/Seqs_Clean.fasta', 'w') #temporal file with extracted sequences added by mfernan3
-    out=open(path_direc+'/MSA_Clean.fasta','w')
-    #out_log=open(path_direc+'/ErrorSeq.log','w')
+	out=open(path_direc+'/MSA_Clean.fasta','w')
+	#out_log=open(path_direc+'/ErrorSeq.log','w')
         #len_seq=0
-    for seq_record in SeqIO.parse(MSA, 'fasta'):
-        seqid=seq_record.id
-        seq=seq_record.seq.replace('-','')
-        seq_to_print=seq_record.seq
-        pathpdb=path_direc+'/Frustration/'+seqid+'.pdb'
-        pathdb=pathPDB+'/'+seqid+'.pdb'
-        if not os.path.exists(pathdb):
-            os.system('cd '+frustdir+'/;wget \'http://www.rcsb.org/pdb/files/'+seqid+'.pdb\' -O '+JodID+'/Frustration/'+seqid+'.pdb')
-        else:
-            os.system('cp '+pathPDB+'/'+seqid+'.pdb '+frustdir+'/'+seqid+'.pdb')
-        if os.path.exists(pathpdb):
-            seqpdb=obtain_seq(seqid,JodID)
-            if seq == seqpdb:
-                print('Sequence '+seqid+' checked')
-                out.write('>'+str(seqid)+'\n'+str(seq_to_print)+'\n')
-                out_alt.write('>' + str(seqid) + '\n' + str(seq_to_print.replace('-', '')) + '\n') # also add it to the alt file in case
-            #else:
-            #	out_log=open(path_direc+'/ErrorSeq.log','a')
-            #	if seqs == 0:
-            #		out_log.write('There are errors in the input data, fix them and submit the job again. Take into account that IDs are matched in a case-sensitive way. Take into account that the sequences need to be aligned.\n')
-            #	print(seqid+' sequence does not match between the MSA and the pdb file')
-                #out_log=open(path_direc+'/ErrorSeq.log','a')
-            #	out_log.write(seqid+' sequence does not match between the MSA and the pdb file\n')
-            #	os.system('rm '+frustdir+'/'+seqid+'.pdb')
-            #	seqs+=1
-            #	out_log.close()
-    #MSA.close()
-    #out.close()
+	for seq_record in SeqIO.parse(MSA, 'fasta'):
+		seqid=seq_record.id
+		seq=seq_record.seq.replace('-','')
+		seq_to_print=seq_record.seq
+		pathpdb=path_direc+'/Frustration/'+seqid+'.pdb'
+		pathdb=pathPDB+'/'+seqid+'.pdb'
+		if not os.path.exists(pathdb):
+			os.system('cd '+frustdir+'/;wget \'http://www.rcsb.org/pdb/files/'+seqid+'.pdb\' -O '+JodID+'/Frustration/'+seqid+'.pdb')
+		else:
+			os.system('cp '+pathPDB+'/'+seqid+'.pdb '+frustdir+'/'+seqid+'.pdb')
+		if os.path.exists(pathpdb):
+			seqpdb=obtain_seq(seqid,JodID)
+			if seq == seqpdb:
+				print('Sequence '+seqid+' checked')
+				out.write('>'+str(seqid)+'\n'+str(seq_to_print)+'\n')
+				out_alt.write('>' + str(seqid) + '\n' + str(seq_to_print.replace('-', '')) + '\n') # also add it to the alt file in case
+			#else:
+			#	out_log=open(path_direc+'/ErrorSeq.log','a')
+			#	if seqs == 0:
+			#		out_log.write('There are errors in the input data, fix them and submit the job again. Take into account that IDs are matched in a case-sensitive way. Take into account that the sequences need to be aligned.\n')
+			#	print(seqid+' sequence does not match between the MSA and the pdb file')
+				#out_log=open(path_direc+'/ErrorSeq.log','a')
+			#	out_log.write(seqid+' sequence does not match between the MSA and the pdb file\n')
+			#	os.system('rm '+frustdir+'/'+seqid+'.pdb')
+			#	seqs+=1
+			#	out_log.close()
+	#MSA.close()
+	#out.close()
 #	archivo_fasta = path_direc+'/MSA_Clean_aux.fasta'
 #	msa_c, n_seq = es_MSA_valido(archivo_fasta)
 #	if not msa_c:
@@ -223,11 +201,11 @@ def checks_seq(list_pdbs, JodID, pathPDB='None'):
 #		else:
 #			out_log=open(path_direc+'/ErrorSeq.log','a')
 #			out_log.write('The Fasta file provided has less than 3 sequences, the minimum number of sequences is 3.\n')
-    #out_log.write(str(seqs))
-    #out_log.close()ç
-    #if seqs == 0:
-    #	os.sytem('rm '+path_direc+'/ErrorSeq.log')
-    #return seqs
+	#out_log.write(str(seqs))
+	#out_log.close()ç
+	#if seqs == 0:
+	#	os.sytem('rm '+path_direc+'/ErrorSeq.log')
+	#return seqs
 
 ################################################################################# ADDED BY MFERNAN3 TO AUTOMATICALLY MATCH THE SEQS ################################################################################################
             else:
@@ -235,12 +213,12 @@ def checks_seq(list_pdbs, JodID, pathPDB='None'):
                 print('Sequence ' + seqid + ' not the same as pdb, extracting sequence from PDB file')
                 # Write the crystal sequence without aligning
                 out_alt.write('>' + str(seqid) + '\n' + str(seqpdb) + '\n')
-                #out_log.write('Sequence ' + seqid + ' not the same as pdb, sequence extracted from PDB file\n+' + seqpdb + '\n')
+                out_log.write('Sequence ' + seqid + ' not the same as pdb, sequence extracted from PDB file\n+' + seqpdb + '\n')
     # Close all opened files
     MSA.close()
     out.close()
     out_alt.close()
-    #out_log.close()
+    out_log.close()
     
     # If there was at least ONE sequence that didn't match and needed extraction
     if flag_seqs == 1:
@@ -280,7 +258,9 @@ def remove_line_breaks(input_file, output_file):
                 sequence += line.strip()
         # After processing all lines, write the last sequence
         if sequence:
-            out_file.write(sequence + "\n")            
+            out_file.write(sequence + "\n")
+            
+            
             
 def es_MSA_valido(archivo_fasta):
     # Cargar el archivo FASTA
