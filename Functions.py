@@ -956,6 +956,8 @@ def clean_files(JodID,path_r,prot_ref, cmaps):
         os.system('mv '+path_direc+'/MSA_Chk.fasta '+path_direc+'/AuxFiles/')
         os.system('mv '+path_direc+'/MSA_Chk_Ref.fasta '+path_direc+'/AuxFiles/')
         os.system('mv '+path_direc+'/MSA_Clean.fasta '+path_direc+'/AuxFiles/')
+        os.system('mv '+path_direc+'/Seqs_Clean.fasta '+path_direc+'/AuxFiles/')
+        os.system('rm '+path_direc+'/temp_MSA_Clean.fasta')
         os.system('mv '+path_direc+'/PDB_List.txt '+path_direc+'/AuxFiles/')
         os.system('mv '+path_direc+'/PDB_ListChk.txt '+path_direc+'/AuxFiles/')
         os.system('mv '+path_direc+'/Positions '+path_direc+'/AuxFiles/')
