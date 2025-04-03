@@ -9,6 +9,29 @@ import warnings
 from Bio import BiopythonWarning
 warnings.simplefilter('ignore', BiopythonWarning)
 
+def clean_visualization(JodID,ref):
+        path_direc='FrustraEvo_'+JodID
+        mode=['configurational','mutational']
+        for i in range(0,len(mode)):
+                list_chk = open(path_direc+'/AuxFiles/PDB_ListChk.txt','r')
+                for line in list_chk.readlines():
+                        pdbid=line.rstrip('\n')
+                        mut=open(path_direc+'/Data/'+pdbid+'.done/VisualizationScrips/'+pdbid+'.pdb_'+mode[i]+'.pml')
+                        out=open(path_direc+'/Data/'+pdbid+'.done/VisualizationScrips/'+pdbid+'.pdb_'+mode[i]+'_aux.pml','w')
+                        for lmut in mut.readlines():
+                              #/root/FrustraEvo/FrustraEvo_2025221121748871616/Frustration/1.done/VisualizationScrips/
+                              if 'root' in lmut:
+
+                                 if 'VisualizationScrips' in lmut:
+                                      out.write('load '+pdbid+'.pdb, '+pdbid.replace('-','_')+'\n')
+                                 if 'draw_links.py' in lmut:
+                                      out.write('run draw_links.py\n')
+                              else:
+                                 out.write(lmut)
+                        mut.close()
+                        out.close()
+                        os.system('mv '+path_direc+'/Data/'+pdbid+'.done/VisualizationScrips/'+pdbid+'.pdb_'+mode[i]+'aux.pml '+path_direc+'/Data/'+pdbid+'.done/VisualizationScrips/'+pdbid+'.pdb'+mode[i]+'.pml')
+
 def pml_contactos(JodID,ref):
         path_direc='FrustraEvo_'+JodID
         mode=['configurational','mutational']
