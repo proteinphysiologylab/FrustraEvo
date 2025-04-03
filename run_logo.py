@@ -93,6 +93,8 @@ if not os.path.exists(path_file):
 #contact_maps.py	
   os.system('cd '+args.RPath+';python3 contact_maps.py '+args.JobId+' '+args.ref+' IC_SingleRes_'+args.JobId+' IC_Mut_'+args.JobId+' IC_Conf_'+args.JobId)
 
+Functions.clean_visualization(args.JobId,args.ref)
+
 out_log=open('results/CheckPoints_FE','a')
 out_log.write(' Job finished')
 out_log.close()
