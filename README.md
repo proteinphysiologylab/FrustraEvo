@@ -13,6 +13,9 @@ frustratometeR (https://github.com/proteinphysiologylab/frustratometeR)
 
 R library : argparse, ggplot2, ggseqlogo, cowplot, seqinr and data.table
 
+# Colab Notebook
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/engelberger/FrustraEvo/blob/master/FrustraEvo_Colab.ipynb)
+
 # Minimum code to calculate frustration in a protein (You need to create a .py file (e.g run_logo.py) and put the following code)
 ```
 
